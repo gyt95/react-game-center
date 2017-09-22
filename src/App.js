@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
-import './style/test.scss';
+// import './style/base.scss';
 import './config/config.js';
 
 import { Router,Route } from 'react-router-dom';
@@ -21,13 +21,17 @@ class App extends Component {
     return (
       <div>
         <Router history = {history}>
-          <div> 
-              <Route to="/" component = { Home }/>
-              <Route to="/category" component = { Category }/>
-              <Route to="/billboard" component = { Billboard }/>
-              <Route to="/discover" component = { Find }/>
-              <Route to="/my" component = { My }/>
+          <div>
+
+            <div> 
+              <Route exact path="/" component = { Home }/>
+              <Route path="/category" component = { Category }/>
+              <Route path="/billboard" component = { Billboard }/>
+              <Route path="/find" component = { Find }/>
+              <Route path="/my" component = { My }/>
+            </div>
             <Footer/>
+
           </div>
         </Router>
       </div>

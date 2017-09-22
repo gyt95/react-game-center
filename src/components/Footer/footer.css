@@ -1,0 +1,18 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer a {
+  color: #000;
+}
+
+.footer ul {
+  display: flex;
+  justify-content: center;
+}
+
+.footer ul li {
+  padding: 0 0.8rem;
+}
