@@ -5,6 +5,10 @@ body {
   font-size: 14px;
 }
 
+body .container {
+  padding-top: 3.4rem;
+}
+
 ul {
   margin: 0;
   padding: 0;

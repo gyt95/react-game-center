@@ -1,5 +1,5 @@
 ## React Game Center
-基于React构建一个
+基于React构建一个实用游戏资讯App
 
 ## 技术栈
 react + react-router + redux + scss + ES6
@@ -20,7 +20,7 @@ npm run build //发布环境
 ## 说明
 > 希望通过项目实践加深对React编程思想的理解，以及对React&Redux工作原理有更好的认识。因此，如果单纯停留在“如何运用React全家桶进行开发”层面上，本项目就失去了意义
 
-> 开发环境 nodejs 8.4.0
+> 开发环境 [nodejs](https://nodejs.org/zh-cn/) 8.4.0
 
 > 使用了Facebook官方推出的 [Create React App](https://github.com/facebookincubator/create-react-app) 脚手架来快速构建React应用
 

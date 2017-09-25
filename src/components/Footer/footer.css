@@ -4,15 +4,31 @@
   width: 100%;
 }
 
+.footer p {
+  margin: 0;
+}
+
 .footer a {
   color: #000;
 }
 
 .footer ul {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .footer ul li {
   padding: 0 0.8rem;
+}
+
+.footer ul p {
+  text-align: center;
+  color: grey;
+}
+
+.footer i {
+  color: grey;
+  font-size: 20px;
+  text-align: center;
+  display: block;
 }
