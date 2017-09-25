@@ -1,0 +1,100 @@
+.home{
+    ul{
+        display: inline-block;
+    }
+    img{
+        width: 100%;
+    }
+    .navbar{
+        padding: 0.8rem 0;
+        ul{
+            display: flex;
+            justify-content: space-around;
+            padding: 0.8rem 0;
+            li{
+                text-align: center;
+            }
+            p{
+                background-image: url('../../images/index_sprite.png');
+                background-repeat: no-repeat;
+                width: 3.1rem;
+                height: 3.1rem;
+                margin: auto;
+            }
+            .nav-icon1{background-position: 0 0;}
+            .nav-icon2{background-position: -3.3rem 0;}
+            .nav-icon3{background-position: -6.7rem 0;}
+            .nav-icon4{background-position: 0 -3.3rem;}
+            .nav-icon5{background-position: -3.4rem -3.3rem;}
+        }
+    }
+    .card{
+        display: flex;
+        justify-content: center;
+        padding: 0.8rem 0;
+        .left-card{
+            border-bottom: 1px solid green;
+            margin-right: 0.5rem;
+        }
+        .right-card{
+            margin-left: 0.5rem;
+            border-bottom: 1px solid orangered;
+        }
+        .left-card,.right-card{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            .text{
+                p{
+                    font-size: 16px;
+                }
+                span{
+                    color: grey;
+                    font-size: 12px;
+                    margin-top: 0.8rem;
+                    display: block;
+                }
+            }
+            .pic{
+                width: 5rem;
+            }
+        }
+    }
+    .game-list{
+        padding-bottom: 4rem;
+        img{
+            width: 6rem;
+        }
+        .list-title{
+            display: flex;
+            justify-content: space-between;
+            span:first-child{margin-left:1rem;}
+            span:last-child{margin-right:1rem;}
+        }
+        .list-details{
+            width: 100%;
+            li{
+                display: flex;
+                justify-content: space-around;
+                padding: 0.8rem;
+                .item-detail{
+                    flex: 1;
+                    padding: 0.6rem;
+                    span{
+                        display: block;
+                        color: grey;
+                        font-size: 12px;
+                    }
+                }
+            }
+           
+        }
+        button{
+            border: 1px solid orange;
+            color: orange;
+            padding: 0.5rem 1.2rem;
+            background: #fff;
+            border-radius: 5px;
+        }
+    }
+}

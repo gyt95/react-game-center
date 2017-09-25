@@ -1,0 +1,136 @@
+.home ul {
+  display: inline-block;
+}
+
+.home img {
+  width: 100%;
+}
+
+.home .navbar {
+  padding: 0.8rem 0;
+}
+
+.home .navbar ul {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.8rem 0;
+}
+
+.home .navbar ul li {
+  text-align: center;
+}
+
+.home .navbar ul p {
+  background-image: url("../../images/index_sprite.png");
+  background-repeat: no-repeat;
+  width: 3.1rem;
+  height: 3.1rem;
+  margin: auto;
+}
+
+.home .navbar ul .nav-icon1 {
+  background-position: 0 0;
+}
+
+.home .navbar ul .nav-icon2 {
+  background-position: -3.3rem 0;
+}
+
+.home .navbar ul .nav-icon3 {
+  background-position: -6.7rem 0;
+}
+
+.home .navbar ul .nav-icon4 {
+  background-position: 0 -3.3rem;
+}
+
+.home .navbar ul .nav-icon5 {
+  background-position: -3.4rem -3.3rem;
+}
+
+.home .card {
+  display: flex;
+  justify-content: center;
+  padding: 0.8rem 0;
+}
+
+.home .card .left-card {
+  border-bottom: 1px solid green;
+  margin-right: 0.5rem;
+}
+
+.home .card .right-card {
+  margin-left: 0.5rem;
+  border-bottom: 1px solid orangered;
+}
+
+.home .card .left-card, .home .card .right-card {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.home .card .left-card .text p, .home .card .right-card .text p {
+  font-size: 16px;
+}
+
+.home .card .left-card .text span, .home .card .right-card .text span {
+  color: grey;
+  font-size: 12px;
+  margin-top: 0.8rem;
+  display: block;
+}
+
+.home .card .left-card .pic, .home .card .right-card .pic {
+  width: 5rem;
+}
+
+.home .game-list {
+  padding-bottom: 4rem;
+}
+
+.home .game-list img {
+  width: 6rem;
+}
+
+.home .game-list .list-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.home .game-list .list-title span:first-child {
+  margin-left: 1rem;
+}
+
+.home .game-list .list-title span:last-child {
+  margin-right: 1rem;
+}
+
+.home .game-list .list-details {
+  width: 100%;
+}
+
+.home .game-list .list-details li {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.8rem;
+}
+
+.home .game-list .list-details li .item-detail {
+  flex: 1;
+  padding: 0.6rem;
+}
+
+.home .game-list .list-details li .item-detail span {
+  display: block;
+  color: grey;
+  font-size: 12px;
+}
+
+.home .game-list button {
+  border: 1px solid orange;
+  color: orange;
+  padding: 0.5rem 1.2rem;
+  background: #fff;
+  border-radius: 5px;
+}
