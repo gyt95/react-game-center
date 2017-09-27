@@ -7,7 +7,7 @@ class Footer extends Component{
         return(
             <div className="footer">
                 <ul>
-                    <li>
+                    <li className="active">
                         <Link to="/">
                             <i className="iconfont icon-shouye"></i>
                             <p>首页</p>
@@ -23,12 +23,6 @@ class Footer extends Component{
                         <Link to="/billboard">
                             <i className="iconfont icon-bangdanpaihangon"></i>
                             <p>榜单</p>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/find">
-                            <i className="iconfont icon-faxian"></i>
-                            <p>发现</p>
                         </Link>
                     </li>
                     <li>

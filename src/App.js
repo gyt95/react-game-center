@@ -9,24 +9,26 @@ import Footer from './components/Footer/footer';
 import Home from './components/Home/home';
 import Billboard from './components/Billboard/billboard';
 import Category from './components/Category/category';
-import Find from './components/Find/find';
 import My from './components/My/my';
 
 import createHistory from 'history/createBrowserHistory';
 const history = createHistory();
 
 class App extends Component {
+  // componentDidMount(){
+  //   var k = window.screen.height - 36 - 46;
+  //   this.refs.body.style.height = k + 'px';
+  // }
   render() {
     return (
       <div>
         <Router history = {history}>
           <div>
             <Header/>
-            <div className="container"> 
+            <div className="container" ref="body"> 
               <Route exact path="/" component = { Home }/>
               <Route path="/category" component = { Category }/>
               <Route path="/billboard" component = { Billboard }/>
-              <Route path="/find" component = { Find }/>
               <Route path="/my" component = { My }/>
             </div>
             <Footer/>

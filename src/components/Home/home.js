@@ -63,7 +63,7 @@ class Home extends Component{
                                 <span className="item-size">模拟 | 104.9m</span>
                                 <span className="item-text">2017年经典手游重磅巨制！</span>
                             </div>
-                            <div><button>下载</button></div>
+                            <div className="item-btn"><button>下载</button></div>
                         </li>
                         <li>
                             <div><img src={jyqk} alt=""/></div>
@@ -72,7 +72,7 @@ class Home extends Component{
                                 <span className="item-size">角色 | 162.3m</span>
                                 <span className="item-text">人气极高的角色扮演类型游戏</span>
                             </div>
-                            <div><button>下载</button></div>
+                            <div className="item-btn"><button>下载</button></div>
                         </li>
                         <li>
                             <div><img src={jzmyj} alt=""/></div>
@@ -81,7 +81,7 @@ class Home extends Component{
                                 <span className="item-size">养成 | 133.1m</span>
                                 <span className="item-text">故事性极强的养成类型游戏</span>
                             </div>
-                            <div><button>下载</button></div>
+                            <div className="item-btn"><button>下载</button></div>
                         </li>
                         <li>
                             <div><img src={jpjd} alt=""/></div>
@@ -90,7 +90,7 @@ class Home extends Component{
                                 <span className="item-size">策略 | 220.7m</span>
                                 <span className="item-text">追求策略性、创造性的军事世界</span>
                             </div>
-                            <div><button>下载</button></div>
+                            <div className="item-btn"><button>下载</button></div>
                         </li>
                     </ul>
                </div>

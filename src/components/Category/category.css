@@ -1,0 +1,92 @@
+.category-box {
+  background: #efefef;
+  padding-bottom: 3.2rem;
+}
+
+.category-box .top-box ul {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.category-box .top-box ul .top-part {
+  margin: 0 2rem;
+}
+
+.category-box .down-box {
+  display: flex;
+  flex-direction: row;
+}
+
+.category-box .down-box .title {
+  margin: auto;
+  padding: 1rem;
+  width: 10rem;
+  padding-left: 2rem;
+}
+
+.category-box .down-box .title span:last-child {
+  text-align: center;
+  display: block;
+  margin-top: 0.4rem;
+  width: 100%;
+}
+
+.category-box .down-box .type {
+  width: 100%;
+  text-align: center;
+}
+
+.category-box .down-box .type ul {
+  text-align: center;
+}
+
+.category-box .down-box .type ul li {
+  min-width: 5rem;
+  display: inline-block;
+  padding: 1rem;
+  text-align: center;
+}
+
+.category-box .top-box, .category-box .down-box {
+  margin-bottom: 1rem;
+  background: #fff;
+}
+
+.category-box .top-box span:first-child, .category-box .down-box span:first-child {
+  background-image: url("../../images/category_sprite.png");
+  background-repeat: no-repeat;
+  width: 3.3rem;
+  height: 3.2rem;
+  margin: auto;
+  display: block;
+  background-size: 13.6rem;
+}
+
+.category-box .top-box .icon1, .category-box .down-box .icon1 {
+  background-position: 0 -3.7rem;
+}
+
+.category-box .top-box .icon2, .category-box .down-box .icon2 {
+  background-position: -3.3rem 0;
+}
+
+.category-box .top-box .icon3, .category-box .down-box .icon3 {
+  background-position: -6.8rem 0;
+}
+
+.category-box .top-box .icon4, .category-box .down-box .icon4 {
+  background-position: -3.3rem -3.5rem;
+}
+
+.category-box .top-box .icon5, .category-box .down-box .icon5 {
+  background-position: -6.7rem -3.6rem;
+}
+
+.category-box .top-box .icon6, .category-box .down-box .icon6 {
+  background-position: -10.2rem 0;
+}
+
+.category-box .top-box .icon7, .category-box .down-box .icon7 {
+  background-position: 0 0;
+}

@@ -1,0 +1,64 @@
+.category-box{
+    background: #efefef;
+    padding-bottom: 3.2rem;
+    .top-box{
+        ul{
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+            .top-part{
+                margin: 0 2rem;
+            }
+        }
+    }
+    
+    .down-box{
+        display: flex;
+        flex-direction: row;
+        .title{
+            margin: auto;
+            padding: 1rem;
+            width: 10rem;
+            padding-left: 2rem;
+            span:last-child{
+                text-align: center;
+                display: block;
+                margin-top: 0.4rem;
+                width: 100%;
+            }
+        }
+        .type{
+            width: 100%; //左侧.title设固定宽度，右侧.type宽度要100%，否则一行超过3个tab
+            text-align: center;
+            ul {
+                text-align: center;
+                li{
+                    min-width: 5rem;
+                    display: inline-block;
+                    padding: 1rem;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .top-box,.down-box{
+        margin-bottom: 1rem;
+        background: #fff;
+        span:first-child{
+            background-image: url('../../images/category_sprite.png');
+            background-repeat: no-repeat;
+            width: 3.3rem;
+            height: 3.2rem;
+            margin: auto;
+            display: block;
+            background-size: 13.6rem;
+        }
+        .icon1{ background-position: 0 -3.7rem; }
+        .icon2{ background-position: -3.3rem 0; }
+        .icon3{ background-position: -6.8rem 0 }
+        .icon4{ background-position: -3.3rem -3.5rem; }
+        .icon5{ background-position: -6.7rem -3.6rem; }
+        .icon6{ background-position: -10.2rem 0; }
+        .icon7{ background-position: 0 0; }
+    }
+}

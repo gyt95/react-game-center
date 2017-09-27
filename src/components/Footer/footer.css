@@ -27,6 +27,14 @@
 .footer ul p {
   text-align: center;
   color: grey;
+  font-size: 12px;
+}
+
+.footer ul .active {
+  background-image: -webkit-gradient(linear, 0 0, right 0, from(#f78223), to(#f99f27));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
 }
 
 .footer i {

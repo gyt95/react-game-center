@@ -4,7 +4,7 @@
       recalc = () => {
         let clientWidth = docEl.clientWidth; 
         if (!clientWidth) return;
-        docEl.style.fontSize = (clientWidth / 750) + 'px';
+        docEl.style.fontSize = 20 * (clientWidth / 750) + 'px';
         // clientWidth为手机的分辨率，后面的值为设计图大小
         // 假如是iphone6，屏幕尺寸375，html的font-size为
       };

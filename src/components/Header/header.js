@@ -7,7 +7,8 @@ class Header extends Component{
         return(
             <div className="header">
                 <span>雷神</span>
-                <div>
+                <div className="search-input">
+                    <i className="iconfont icon-sousuo"></i>
                     <input type="text"/>
                 </div>
                 <Link to="/download" className="download-btn">
