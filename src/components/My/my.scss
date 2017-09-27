@@ -1,0 +1,61 @@
+.my-box{
+    background: #f2f2f2;
+    .user-info{
+        display: flex;
+        justify-content: space-around;
+        padding: 1rem 0.6rem 1rem 0.8rem;
+        .user-avatar{
+            img{
+                width: 5rem;
+            }
+        }
+        .user-text{
+            flex: 2;
+            margin-left: 1rem;
+            p{
+                line-height: 3rem;
+            }
+            span{
+                font-size: 12px;
+            }
+        }
+    }
+    .basic-func{
+        padding: 0 0.6rem;
+        ul li{
+            display: flex;
+            padding: 0.5rem 0;
+        }
+        .func-img{
+            display: block;
+            padding: 0.5rem;
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+        .title{
+            margin-left: 1rem;
+            line-height: 3.8rem;
+            flex: 2;
+        }
+    }
+    .logout-btn{
+        display: block;
+        width: 90%;
+        padding: 1rem;
+        background: red;
+        color: #fff;
+        border: 0;
+        margin: auto;
+        border-radius: 5px;
+        display: none;
+    }
+    .user-info,.basic-func{
+        margin-bottom: 1rem;
+        background: #fff;
+        button{
+            background: #fff;
+            border: 0;
+            outline: 0;
+        }
+    }
+}

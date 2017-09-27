@@ -3,7 +3,7 @@
   height: 2.8125rem;
   background: #f57d27;
   position: fixed;
-  padding: 0.3rem 0 0.6rem 0;
+  padding: 0.5rem 0 0.9rem 0;
   display: flex;
   justify-content: space-around;
 }
@@ -12,6 +12,7 @@
   line-height: 3.1rem;
   color: #fff;
   font-size: 16px;
+  margin-left: 0.5rem;
 }
 
 .header .search-input {

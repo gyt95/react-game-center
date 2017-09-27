@@ -1,0 +1,71 @@
+.my-box {
+  background: #f2f2f2;
+}
+
+.my-box .user-info {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem 0.6rem 1rem 0.8rem;
+}
+
+.my-box .user-info .user-avatar img {
+  width: 5rem;
+}
+
+.my-box .user-info .user-text {
+  flex: 2;
+  margin-left: 1rem;
+}
+
+.my-box .user-info .user-text p {
+  line-height: 3rem;
+}
+
+.my-box .user-info .user-text span {
+  font-size: 12px;
+}
+
+.my-box .basic-func {
+  padding: 0 0.6rem;
+}
+
+.my-box .basic-func ul li {
+  display: flex;
+  padding: 0.5rem 0;
+}
+
+.my-box .basic-func .func-img {
+  display: block;
+  padding: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.my-box .basic-func .title {
+  margin-left: 1rem;
+  line-height: 3.8rem;
+  flex: 2;
+}
+
+.my-box .logout-btn {
+  display: block;
+  width: 90%;
+  padding: 1rem;
+  background: red;
+  color: #fff;
+  border: 0;
+  margin: auto;
+  border-radius: 5px;
+  display: none;
+}
+
+.my-box .user-info, .my-box .basic-func {
+  margin-bottom: 1rem;
+  background: #fff;
+}
+
+.my-box .user-info button, .my-box .basic-func button {
+  background: #fff;
+  border: 0;
+  outline: 0;
+}
