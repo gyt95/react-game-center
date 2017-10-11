@@ -1,35 +1,38 @@
 import React, { Component }  from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './footer.scss';
 
 class Footer extends Component{
+    componentWillMount(){
+
+    }
     render(){
         return(
             <div className="footer">
                 <ul>
-                    <li className="active">
-                        <Link to="/">
+                    <li>
+                        <NavLink exact activeClassName="active" to="/">
                             <i className="iconfont icon-shouye"></i>
                             <p>首页</p>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/category">
+                        <NavLink activeClassName="active" to="/category">
                             <i className="iconfont icon-wendashoujibanICON-"></i>
                             <p>分类</p>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/billboard">
+                        <NavLink activeClassName="active" to="/billboard">
                             <i className="iconfont icon-bangdanpaihangon"></i>
                             <p>榜单</p>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/my">
+                        <NavLink activeClassName="active" to="/my">
                             <i className="iconfont icon-wo"></i>
                             <p>我</p>
-                        </Link>
+                        </NavLink>
                     </li>
                 </ul>
             </div>
