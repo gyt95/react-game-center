@@ -50,7 +50,7 @@
             padding-bottom: 1rem;
             .text{
                 p{
-                    font-size: 16px;
+                    font-size: 14px;
                 }
                 span{
                     color: grey;
@@ -67,13 +67,14 @@
     .game-list{
         padding-bottom: 4.5rem;
         img{
-            width: 6rem;
+            width: 4.5rem;
+            height: 4.5rem;
         }
         .list-title{
             display: flex;
             justify-content: space-between;
             padding: 0.8rem 0.5rem;
-            span:first-child{margin-left:1rem;}
+            span:first-child{margin-left:0.5rem;}
             span:last-child{margin-right:1rem;}
         }
         .list-details{
@@ -84,7 +85,8 @@
                 padding: 0.8rem 1rem;
                 .item-detail{
                     flex: 1;
-                    padding: 0.6rem;
+                    padding: 0 0.6rem;
+                    line-height: 1.5rem;
                     span{
                         display: block;
                         color: grey;
@@ -92,7 +94,8 @@
                     }
                 }
                 .item-btn{
-                    padding-top: 1.5rem;
+                    //padding-top: 1.5rem;
+                    line-height: 4rem;
                     button{
                         border: 1px solid #f27d2e;
                         color: #f27d2e;

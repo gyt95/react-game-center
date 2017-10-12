@@ -74,7 +74,7 @@
 }
 
 .home .card .left-card .text p, .home .card .right-card .text p {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .home .card .left-card .text span, .home .card .right-card .text span {
@@ -93,7 +93,8 @@
 }
 
 .home .game-list img {
-  width: 6rem;
+  width: 4.5rem;
+  height: 4.5rem;
 }
 
 .home .game-list .list-title {
@@ -103,7 +104,7 @@
 }
 
 .home .game-list .list-title span:first-child {
-  margin-left: 1rem;
+  margin-left: 0.5rem;
 }
 
 .home .game-list .list-title span:last-child {
@@ -122,7 +123,8 @@
 
 .home .game-list .list-details li .item-detail {
   flex: 1;
-  padding: 0.6rem;
+  padding: 0 0.6rem;
+  line-height: 1.5rem;
 }
 
 .home .game-list .list-details li .item-detail span {
@@ -132,7 +134,7 @@
 }
 
 .home .game-list .list-details li .item-btn {
-  padding-top: 1.5rem;
+  line-height: 4rem;
 }
 
 .home .game-list .list-details li .item-btn button {

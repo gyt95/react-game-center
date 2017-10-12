@@ -14,7 +14,7 @@
 
 .my-box .user-info .user-text {
   flex: 2;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
 }
 
 .my-box .user-info .user-text p {
