@@ -109,4 +109,14 @@
         }
        
     }
+    .back-top{
+        position: fixed;
+        right: 1rem;
+        bottom: 5rem;
+        width: 5rem;
+        display: none;
+    }
+    .showBack{
+        display: block;
+    }
 }
