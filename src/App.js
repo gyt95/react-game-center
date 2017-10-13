@@ -10,15 +10,12 @@ import Home from './components/Home/home';
 import Billboard from './components/Billboard/billboard';
 import Category from './components/Category/category';
 import My from './components/My/my';
+import Search from './components/Search/search';
 
 import createHistory from 'history/createBrowserHistory';
 const history = createHistory();
 
 class App extends Component {
-  // componentDidMount(){
-  //   var k = window.screen.height - 36 - 46;
-  //   this.refs.body.style.height = k + 'px';
-  // }
   render() {
     return (
       <div>
@@ -30,6 +27,7 @@ class App extends Component {
               <Route path="/category" component = { Category }/>
               <Route path="/billboard" component = { Billboard }/>
               <Route path="/my" component = { My }/>
+              <Route path="/search" component = { Search }/>
             </div>
             <Footer/>
           </div>

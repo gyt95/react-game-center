@@ -3,20 +3,24 @@ import { Link } from 'react-router-dom';
 import './header.scss';
 
 class Header extends Component{
+    constructor(props) {
+        super(props);
+        this.locations = window.location.pathname;
+    }
     render(){
         return(
             <div className="header">
-                <span>雷神</span>
-                <div className="search-input">
+                <Link to="/" className="head-left">雷神</Link>
+                <Link to="/search" className="search-input">
                     <i className="iconfont icon-sousuo"></i>
                     <input type="text"/>
-                </div>
+                </Link>
                 <Link to="/download" className="download-btn">
                     <i className="iconfont icon-xiazai1"></i>
                 </Link>
                 <Link to="/more" className="more-btn">
                     <i className="iconfont icon-iconfontlttb"></i>
-                </Link>                
+                </Link>
             </div>
         )
     }
