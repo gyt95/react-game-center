@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 
 import { Router,Route } from 'react-router-dom';
 
-import Header from './components/Header/header';
-import Footer from './components/Footer/footer';
+// import Header from './components/Header/header';
+// import Footer from './components/Footer/footer';
 
 import Home from './components/Home/home';
 import Billboard from './components/Billboard/billboard';
@@ -21,7 +21,6 @@ class App extends Component {
       <div>
         <Router history = {history}>
           <div>
-            <Header/>
             <div className="container" ref="body"> 
               <Route exact path="/" component = { Home }/>
               <Route path="/category" component = { Category }/>
@@ -29,7 +28,6 @@ class App extends Component {
               <Route path="/my" component = { My }/>
               <Route path="/search" component = { Search }/>
             </div>
-            <Footer/>
           </div>
         </Router>
       </div>

@@ -5,8 +5,13 @@ body {
     font-size: 14px;
     background: #f2f2f2;
     .container{
-        padding-top: 4rem;
         background: #fff;
+    }
+    .home{
+        padding-top: 4rem;
+    }
+    .my-box,.search-box{
+        @extend .home
     }
 }
   
