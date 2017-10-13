@@ -1,8 +1,13 @@
 import React, { Component }  from 'react';
 import { NavLink } from 'react-router-dom';
+
 import './footer.scss';
 
 class Footer extends Component{
+    constructor(props) {
+        super(props);
+        this.locations = window.location.pathname;
+    }
     render(){
         return(
             <div className="footer">
