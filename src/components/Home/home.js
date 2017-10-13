@@ -11,12 +11,6 @@ import './home.scss';
 let timer = null; //定时器
 
 class Home extends Component{
-    // 旧版写法，es6去掉了这个hook函数，规定state在constructor中实现
-    // getInitialState(){
-    //     return {
-    //         showBack: false
-    //     }
-    // }
     constructor(props){
         super(props)
         this.state = {
@@ -26,43 +20,41 @@ class Home extends Component{
         this.backClick = this.backClick.bind(this)
     }
 
-    /**监听滚动条事件(不懂) */
+    /**监听滚动条事件 */
     scrollHandler = this.handleScroll.bind(this);
     componentDidMount() {
-        //理论上此时的this指向的是window，但由于上面已经通过显示绑定this，将this指向了当前组件
+        //理论上此时的this指向的是window，但由于已经在constructor()中通过显示绑定this，将this指向了当前组件
         //因此现在监听器中的this指向的是这个组件
         window.addEventListener('scroll', this.scrollHandler);
     }
      _handleScroll(scrollTop,screenHeight) {
-       
+        // console.log(scrollTop)         //滚动条距离页面的高度
+        const sh = screenHeight / 2;
+        if(scrollTop > sh){
+            this.setState({
+                showBack: true
+            })
+        }else{
+            this.setState({
+                showBack: false
+            })
+        }
+        if(this.state.isTop === false){
+            clearInterval(timer)
+        }
+        this.setState({
+            isTop: false
+        })
     }
     handleScroll(event) {
         let scrollTop = event.srcElement.body.scrollTop;  
         let screenHeight = window.screen.height;  
-        // this._handleScroll(scrollTop,screenHeight);
-         // console.log(scrollTop)         //滚动条距离页面的高度
-         const sh = screenHeight / 2;
-         if(scrollTop > sh){
-             this.setState({
-                 showBack: true
-             })
-         }else{
-             this.setState({
-                 showBack: false
-             })
-         }
-         if(this.state.isTop === false){
-             clearInterval(timer)
-         }
-         this.setState({
-             isTop: false
-         })
+        this._handleScroll(scrollTop,screenHeight);
     }
     componentWillUnmount() {
         window.removeEventListener('scroll', this.scrollHandler);
     }
-    /**监听滚动条事件(不懂) */
-
+    /**回到顶部 */
     backClick(){  
         timer = setInterval(()=>{
             let osTop = document.body.scrollTop;
@@ -77,6 +69,7 @@ class Home extends Component{
             }
         }, 30)
     }
+
     render(){
         let text = this.state.showBack ? 'block' : 'none';
         let style = {
