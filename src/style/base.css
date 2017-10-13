@@ -7,8 +7,11 @@ body {
 }
 
 body .container {
-  padding-top: 4rem;
   background: #fff;
+}
+
+body .home, body .my-box, body .search-box {
+  padding-top: 4rem;
 }
 
 ul {
