@@ -3,9 +3,6 @@ import { NavLink } from 'react-router-dom';
 import './footer.scss';
 
 class Footer extends Component{
-    componentWillMount(){
-
-    }
     render(){
         return(
             <div className="footer">
