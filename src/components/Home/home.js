@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import '../../mock/mockdata.js';
 import Header from '../Header/header';
 import Footer from '../Footer/footer';
 import banner1 from '../../images/banner1.png';
 import card1 from '../../images/index_card1.png';
 import card2 from '../../images/index_card2.png';
 import hjqy from '../../images/index_hjqy.png';
-import jyqk from '../../images/index_jyqk.png';
-import jzmyj from '../../images/index_jzmyj.png';
-import jpjd from '../../images/index_jpjd.png';
+// import jyqk from '../../images/index_jyqk.png';
+// import jzmyj from '../../images/index_jzmyj.png';
+// import jpjd from '../../images/index_jpjd.png';
 import './home.scss';
 
 let timer = null; //定时器
@@ -16,6 +18,9 @@ class Home extends Component{
     constructor(props){
         super(props)
         this.state = {
+            gamesList:{
+                subjects:[]
+            },
             showBack: false,  //回到顶部按钮是否显示
             isTop: false  //是否回滚到顶部，手动终止回滚时，通过判断isTop来清空定时器
         }
@@ -28,6 +33,16 @@ class Home extends Component{
         //理论上此时的this指向的是window，但由于已经在constructor()中通过显示绑定this，将this指向了当前组件
         //因此现在监听器中的this指向的是这个组件
         window.addEventListener('scroll', this.scrollHandler);
+
+        axios
+            .get('/data', {dataType: 'json'})
+            .then(res =>{
+                console.log(res.data)
+                this.setState({
+                    gamesList: res.data
+                })
+        })
+        
     }
      _handleScroll(scrollTop,screenHeight) {
         // console.log(scrollTop)         //滚动条距离页面的高度
@@ -76,7 +91,20 @@ class Home extends Component{
         let text = this.state.showBack ? 'block' : 'none';
         let style = {
             display: text
-        }
+        };
+        let gamesList = this.state.gamesList.subjects.map(function(data){
+            return(
+                <li key={data.id}>
+                    <div><img src={hjqy} alt=""/></div>
+                    <div className="item-detail">
+                        <p className="item-name">{data.title}</p>
+                        <span className="item-size">{data.type} | {data.size}</span>
+                        <span className="item-text">2017年经典手游重磅巨制！</span>
+                    </div>
+                    <div className="item-btn"><button>下载</button></div>
+                </li>
+            )
+        })
         return(
             <div>
                 <Header/>
@@ -117,78 +145,7 @@ class Home extends Component{
                             <span>更多 > </span>
                         </div>
                         <ul className="list-details">
-                            <li>
-                                <div><img src={hjqy} alt=""/></div>
-                                <div className="item-detail">
-                                    <p className="item-name">幻剑奇缘</p>
-                                    <span className="item-size">模拟 | 104.9m</span>
-                                    <span className="item-text">2017年经典手游重磅巨制！</span>
-                                </div>
-                                <div className="item-btn"><button>下载</button></div>
-                            </li>
-                            <li>
-                                <div><img src={jyqk} alt=""/></div>
-                                <div className="item-detail">
-                                    <p className="item-name">剑雨乾坤</p>
-                                    <span className="item-size">角色 | 162.3m</span>
-                                    <span className="item-text">人气极高的角色扮演类型游戏</span>
-                                </div>
-                                <div className="item-btn"><button>下载</button></div>
-                            </li>
-                            <li>
-                                <div><img src={jzmyj} alt=""/></div>
-                                <div className="item-detail">
-                                    <p className="item-name">九转牧云记</p>
-                                    <span className="item-size">养成 | 133.1m</span>
-                                    <span className="item-text">故事性极强的养成类型游戏</span>
-                                </div>
-                                <div className="item-btn"><button>下载</button></div>
-                            </li>
-                            <li>
-                                <div><img src={jpjd} alt=""/></div>
-                                <div className="item-detail">
-                                    <p className="item-name">巨炮舰队</p>
-                                    <span className="item-size">策略 | 220.7m</span>
-                                    <span className="item-text">追求策略性、创造性的军事世界</span>
-                                </div>
-                                <div className="item-btn"><button>下载</button></div>
-                            </li>
-                            <li>
-                                <div><img src={jpjd} alt=""/></div>
-                                <div className="item-detail">
-                                    <p className="item-name">巨炮舰队</p>
-                                    <span className="item-size">策略 | 220.7m</span>
-                                    <span className="item-text">追求策略性、创造性的军事世界</span>
-                                </div>
-                                <div className="item-btn"><button>下载</button></div>
-                            </li>
-                            <li>
-                                <div><img src={jpjd} alt=""/></div>
-                                <div className="item-detail">
-                                    <p className="item-name">巨炮舰队</p>
-                                    <span className="item-size">策略 | 220.7m</span>
-                                    <span className="item-text">追求策略性、创造性的军事世界</span>
-                                </div>
-                                <div className="item-btn"><button>下载</button></div>
-                            </li>
-                            <li>
-                                <div><img src={jpjd} alt=""/></div>
-                                <div className="item-detail">
-                                    <p className="item-name">巨炮舰队</p>
-                                    <span className="item-size">策略 | 220.7m</span>
-                                    <span className="item-text">追求策略性、创造性的军事世界</span>
-                                </div>
-                                <div className="item-btn"><button>下载</button></div>
-                            </li>
-                            <li>
-                                <div><img src={jpjd} alt=""/></div>
-                                <div className="item-detail">
-                                    <p className="item-name">巨炮舰队</p>
-                                    <span className="item-size">策略 | 220.7m</span>
-                                    <span className="item-text">追求策略性、创造性的军事世界</span>
-                                </div>
-                                <div className="item-btn"><button>下载</button></div>
-                            </li>
+                            { gamesList }
                         </ul>
                     </div>
                     <div className="back-top" style = {style} onClick = { this.backClick }>
