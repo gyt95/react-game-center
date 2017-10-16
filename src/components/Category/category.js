@@ -3,19 +3,19 @@ import Header from '../Header/header';
 import Footer from '../Footer/footer';
 import './category.scss';
 
+let cateData = {
+    netgame_list: ['国战','即时','武侠','仙侠','魔幻','回合'],
+
+}
+
 class Category extends Component{
     
-    componentWillMount(){
-        // 这里的话就会报错，为什么呢？因为DOM还没渲染出来
-        // console.log(this.refs.body.clientWidth)
-
-        // 一般用于请求服务器数据
-    }
-    // componentDidMount(){
-    //     var k = window.screen.height - 36 - 46;
-    //     this.refs.body.style.height = k + 'px';
-    // }
     render(){
+        let list1 = cateData.netgame_list.map((data,index)=>{
+            return(
+                <li key={index}>{data}</li>
+            )
+        });
         return(
             <div>
                 <Header/>
@@ -43,12 +43,7 @@ class Category extends Component{
                         </div>
                         <div className="type">
                             <ul>
-                                <li>国战</li>
-                                <li>即时</li>
-                                <li>武侠</li>
-                                <li>仙侠</li>
-                                <li>魔幻</li>
-                                <li>回合</li>
+                                { list1 }
                             </ul>
                         </div>
                     </div>
