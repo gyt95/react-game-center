@@ -22,7 +22,7 @@ Mock.mock('/data', {
     "subjects|10":[
         {
             "id|+1": 20171001,
-            "title": ()=>Random.game_title(),
+            title: ()=>Random.game_title(),
             "content": "2017年经典手游重磅巨制！",
             "size": "@float(100, 400, 0, 1)m",
             type: ()=>Random.constellation()
