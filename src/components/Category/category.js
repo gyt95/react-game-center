@@ -4,14 +4,43 @@ import Footer from '../Footer/footer';
 import './category.scss';
 
 let cateData = {
-    netgame_list: ['国战','即时','武侠','仙侠','魔幻','回合'],
-
+    net: {
+        name: '大型网游',
+        list: ['国战','即时','武侠','仙侠','魔幻','回合']
+    },
+    relax: {
+        name: '休闲游戏',
+        list: ['消除','塔防','捕鱼','跑酷','换装','模拟经营'],
+    },
+    shot: {
+        name: '射击',
+        list: ['FPS','第三人称','飞机坦克','未来科幻','反恐','休闲射击'],
+    },
+    strategy: {
+        name: '策略经营',
+        list: ['战争','二战','三国','中世纪','模拟经营','真是修复过'],
+    }
 }
 
 class Category extends Component{
     
     render(){
-        let list1 = cateData.netgame_list.map((data,index)=>{
+        let list1 = cateData.net.list.map((data,index)=>{
+            return(
+                <li key={index}>{data}</li>
+            )
+        });
+        let list2 = cateData.relax.list.map((data,index)=>{
+            return(
+                <li key={index}>{data}</li>
+            )
+        });
+        let list3 = cateData.shot.list.map((data,index)=>{
+            return(
+                <li key={index}>{data}</li>
+            )
+        });
+        let list4 = cateData.strategy.list.map((data,index)=>{
             return(
                 <li key={index}>{data}</li>
             )
@@ -39,7 +68,7 @@ class Category extends Component{
                     <div className="down-box">
                         <div className="title">
                             <span className="icon4"></span>
-                            <span>大型网游</span>
+                            <span>{ cateData.net.name }</span>
                         </div>
                         <div className="type">
                             <ul>
@@ -50,48 +79,33 @@ class Category extends Component{
                     <div className="down-box">
                         <div className="title">
                             <span className="icon5"></span>
-                            <span>休闲游戏</span>
+                            <span>{ cateData.relax.name }</span>
                         </div>
                         <div className="type">
                             <ul>
-                                <li>消除</li>
-                                <li>塔防</li>
-                                <li>捕鱼</li>
-                                <li>跑酷</li>
-                                <li>换装</li>
-                                <li>模拟经营</li>
+                                { list2 }
                             </ul>
                         </div>
                     </div>
                     <div className="down-box">
                         <div className="title">
                             <span className="icon6"></span>
-                            <span>射击</span>
+                            <span>{ cateData.shot.name }</span>
                         </div>
                         <div className="type">
                             <ul>
-                                <li>FPS</li>
-                                <li>第三人称</li>
-                                <li>飞机坦克</li>
-                                <li>未来科幻</li>
-                                <li>反恐</li>
-                                <li>休闲射击</li>
+                                { list3 }
                             </ul>
                         </div>
                     </div>
                     <div className="down-box">
                         <div className="title">
                             <span className="icon7"></span>
-                            <span>策略经营</span>
+                            <span>{ cateData.strategy.name }</span>
                         </div>
                         <div className="type">
                             <ul>
-                                <li>战争</li>
-                                <li>二战</li>
-                                <li>三国</li>
-                                <li>中世纪</li>
-                                <li>模拟经营</li>
-                                <li>真是修复过</li>
+                               { list4 }
                             </ul>
                         </div>
                     </div>
