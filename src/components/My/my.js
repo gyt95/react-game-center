@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../Header/header';
 import Footer from '../Footer/footer';
 import avatar from '../../images/my_avatar.png';
@@ -14,14 +15,16 @@ class My extends Component{
             <div>
                 <Header/>
                 <div className="my-box">
-                    <div className="user-info">
-                        <div className="user-avatar"><img src={avatar} alt=""/></div>
-                        <div className="user-text">
-                            <p>点此登录</p>
-                            <span>游戏首发、最新礼包、活动信息快人一步</span>
+                    <Link to="/login">
+                        <div className="user-info">
+                            <div className="user-avatar"><img src={avatar} alt=""/></div>
+                            <div className="user-text">
+                                <p>点此登录</p>
+                                <span>游戏首发、最新礼包、活动信息快人一步</span>
+                            </div>
+                            <button>></button>
                         </div>
-                        <button>></button>
-                    </div>
+                    </Link>
                     <div className="basic-func">
                         <ul>
                             <li>

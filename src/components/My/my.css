@@ -2,6 +2,10 @@
   background: #f2f2f2;
 }
 
+.my-box a {
+  color: #000;
+}
+
 .my-box .user-info {
   display: flex;
   justify-content: space-around;
