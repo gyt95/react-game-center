@@ -3,6 +3,7 @@ import axios from 'axios';
 import '../../mock/mockdata.js';
 import Header from '../Header/header';
 import Footer from '../Footer/footer';
+import Loading from '../Loading/loading';
 import banner1 from '../../images/banner1.png';
 import card1 from '../../images/index_card1.png';
 import card2 from '../../images/index_card2.png';
@@ -19,7 +20,8 @@ class Home extends Component{
                 subjects:[]
             },
             showBack: false,  //回到顶部按钮是否显示
-            isTop: false  //是否回滚到顶部，手动终止回滚时，通过判断isTop来清空定时器
+            isTop: false,  //是否回滚到顶部，手动终止回滚时，通过判断isTop来清空定时器
+            loading: true,
         }
         this.backClick = this.backClick.bind(this)
     }
@@ -36,12 +38,13 @@ class Home extends Component{
             .then(res =>{
                 console.log(res.data)
                 this.setState({
-                    gamesList: res.data
+                    gamesList: res.data,
+                    loading: false,
                 })
         })
         
     }
-     _handleScroll(scrollTop,screenHeight) {
+    _handleScroll(scrollTop,screenHeight) {
         // console.log(scrollTop)         //滚动条距离页面的高度
         const sh = screenHeight / 2;
         if(scrollTop > sh){
@@ -103,52 +106,60 @@ class Home extends Component{
             )
         })
         return(
-            <div>
+            <div className="main">
                 <Header/>
-                <div className="home">
-                    <img src={banner1} alt=""/>
-                    <div className="navbar">
-                        <ul>
-                            <li><p className="nav-icon1"/>新游</li>
-                            <li><p className="nav-icon2"/>网游</li>
-                            <li><p className="nav-icon3"/>每日推荐</li>
-                            <li><p className="nav-icon4"/>单机</li>
-                            <li><p className="nav-icon5"/>开测</li>
-                        </ul>
-                    </div>
-                    <div className="card">
-                        <div className="left-card">
-                            <div className="text">
-                                <p>金币中心</p>
-                                <span>赚金币换i7</span>
+                {
+                    this.state.loading
+                    ? 
+                        <Loading />
+                    : 
+                    <div className="home">
+                        <img src={banner1} alt=""/>
+                        <div className="navbar">
+                            <ul>
+                                <li><p className="nav-icon1"/>新游</li>
+                                <li><p className="nav-icon2"/>网游</li>
+                                <li><p className="nav-icon3"/>每日推荐</li>
+                                <li><p className="nav-icon4"/>单机</li>
+                                <li><p className="nav-icon5"/>开测</li>
+                            </ul>
+                        </div>
+                        <div className="card">
+                            <div className="left-card">
+                                <div className="text">
+                                    <p>金币中心</p>
+                                    <span>赚金币换i7</span>
+                                </div>
+                                <div className="pic">
+                                    <img src={card1} alt=""/>
+                                </div>
                             </div>
-                            <div className="pic">
-                                <img src={card1} alt=""/>
+                            <div className="right-card">
+                                <div className="text">
+                                    <p>新游试玩</p>
+                                    <span>与主策论游戏</span>
+                                </div>
+                                <div className="pic">
+                                    <img src={card2} alt=""/>
+                                </div>
                             </div>
                         </div>
-                        <div className="right-card">
-                            <div className="text">
-                                <p>新游试玩</p>
-                                <span>与主策论游戏</span>
+                        <div className="game-list">
+                            <div className="list-title">
+                                <span>本周人气游戏风向标</span>
+                                <span>更多 > </span>
                             </div>
-                            <div className="pic">
-                                <img src={card2} alt=""/>
-                            </div>
+                            <ul className="list-details">
+                                { gamesList }
+                            </ul>
+                        </div>
+                        <div className="back-top" style = {style} onClick = { this.backClick }>
+                            <img src={card2} alt=""/>
                         </div>
                     </div>
-                    <div className="game-list">
-                        <div className="list-title">
-                            <span>本周人气游戏风向标</span>
-                            <span>更多 > </span>
-                        </div>
-                        <ul className="list-details">
-                            { gamesList }
-                        </ul>
-                    </div>
-                    <div className="back-top" style = {style} onClick = { this.backClick }>
-                        <img src={card2} alt=""/>
-                    </div>
-                </div>
+                    
+                }
+                
                 <Footer/>
             </div>
         )
