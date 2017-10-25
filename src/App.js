@@ -6,6 +6,7 @@ import Billboard from './components/Billboard/billboard';
 import Category from './components/Category/category';
 import My from './components/My/my';
 import Search from './components/Search/search';
+import Login from './components/Login/login';
 
 import createHistory from 'history/createBrowserHistory';
 const history = createHistory();
@@ -22,6 +23,7 @@ class App extends Component {
               <Route path="/billboard" component = { Billboard }/>
               <Route path="/my" component = { My }/>
               <Route path="/search" component = { Search }/>
+              <Route path="/login" component = { Login }/>
             </div>
           </div>
         </Router>
