@@ -49,11 +49,10 @@
   outline: 0;
   border: 0;
   font-size: 16px;
-  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  box-shadow: 0 0 0px 1000px white inset;
 }
 
 .login-box .form-table button {
-  display: inline-block;
   font-weight: normal;
   line-height: 1.25;
   text-align: center;
