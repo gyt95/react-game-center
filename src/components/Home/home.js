@@ -8,7 +8,7 @@ import banner1 from '../../images/banner1.png';
 import card1 from '../../images/index_card1.png';
 import card2 from '../../images/index_card2.png';
 import hjqy from '../../images/index_hjqy.png';
-import './home.css';
+import './home.scss';
 
 let timer = null; //定时器
 
