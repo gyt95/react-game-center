@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../Header/header';
 import Footer from '../Footer/footer';
-import './category.css';
+import './category.scss';
 
 let cateData = {
     nav: [

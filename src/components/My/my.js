@@ -7,7 +7,7 @@ import icon1 from '../../images/my_icon1.png';
 import icon2 from '../../images/my_icon2.png';
 import icon3 from '../../images/my_icon3.png';
 import icon4 from '../../images/my_icon4.png';
-import './my.css';
+import './my.scss';
 
 class My extends Component{
     render(){
