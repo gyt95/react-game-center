@@ -3,6 +3,11 @@ import { inject, observer }  from 'mobx-react';
 import { Link } from 'react-router-dom';
 import './login.scss';
 
+/**
+ * @observer 将组件变为一个观察者，响应状态变化
+ * 注意了，这里引入的是mobx-react
+ */
+
 @inject('authStore')
 @observer
 
@@ -19,7 +24,8 @@ class Login extends Component {
     handleSubmitForm = (e) => {
         e.preventDefault();
         this.props.authStore.login()
-        //   .then(() => this.props.history.replace('/'));
+        
+        console.log(this.props.authStore.values)
         console.log(this.props.history.replace('/'))
     };
     render(){
@@ -37,7 +43,7 @@ class Login extends Component {
                                     type = "text"
                                     placeholder = "Username"
                                     value = { values.username }
-                                    onChange = { this.handleUsernameChange }    
+                                    onChange = { this.handleUsernameChange } 
                                 />
                             </fieldset>
 

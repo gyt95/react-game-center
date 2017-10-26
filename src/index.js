@@ -9,11 +9,15 @@ import './config/config.js';
 import App from './App';
 
 import authStore from './stores/authStore';
+import userStore from './stores/userStore';
+import commonStore from './stores/commonStore';
 
 import registerServiceWorker from './registerServiceWorker';
 
 const stores = {
     authStore,
+    userStore,
+    commonStore
 }
 
 useStrict(true); //开启严格模式（好处？）
