@@ -12,7 +12,6 @@ import './my.scss';
 import { inject, observer } from 'mobx-react';
 
 const LoggedOutView = props =>{
-    console.log(props)
     if(props.currentUser == null){
         return (
             <Link to="/login">
@@ -36,7 +35,6 @@ const LoggedOutView = props =>{
 
 
 const LoggedInView = props =>{
-    console.log(props)
     if(props.currentUser){
         return (
             <Link to="/">
@@ -60,8 +58,6 @@ const LoggedInView = props =>{
 
 class My extends Component{
     render(){
-        const { currentUser } = this.props.userStore;
-        console.log(currentUser)
         return(
             <div>
                 <Header/>

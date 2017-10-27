@@ -25,8 +25,9 @@ class Login extends Component {
         e.preventDefault();
         this.props.authStore.login()
 
-        console.log(this.props.authStore.values)
-        this.props.history.replace('/')
+        if(this.props.authStore.values.username === 'aaa' 
+        && this.props.authStore.values.password === 'bbb' )
+            this.props.history.replace('/')
     };
     render(){
         const { values, inProgress } = this.props.authStore;

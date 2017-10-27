@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import '../../mock/mockdata.js';
+import './home.scss';
+import hjqy from '../../images/index_hjqy.png';
+
 import Header from '../Header/header';
 import Footer from '../Footer/footer';
 import Loading from '../Loading/loading';
-import banner1 from '../../images/banner1.png';
-import card1 from '../../images/index_card1.png';
-import card2 from '../../images/index_card2.png';
-import hjqy from '../../images/index_hjqy.png';
-import './home.scss';
+import Content from '../Content/content';
 
 let timer = null; //定时器
 
@@ -90,9 +89,7 @@ class Home extends Component{
 
     render(){
         let text = this.state.showBack ? 'block' : 'none';
-        let style = {
-            display: text
-        };
+        let style = { display: text };
         let gamesList = this.state.gamesList.subjects.map(function(data){
             return(
                 <li key={data.id}>
@@ -109,56 +106,13 @@ class Home extends Component{
         return(
             <div className="main">
                 <Header/>
+
                 {
                     this.state.loading
                     ? 
                         <Loading />
                     : 
-                    <div className="home">
-                        <img src={banner1} alt=""/>
-                        <div className="navbar">
-                            <ul>
-                                <li><p className="nav-icon1"/>新游</li>
-                                <li><p className="nav-icon2"/>网游</li>
-                                <li><p className="nav-icon3"/>每日推荐</li>
-                                <li><p className="nav-icon4"/>单机</li>
-                                <li><p className="nav-icon5"/>开测</li>
-                            </ul>
-                        </div>
-                        <div className="card">
-                            <div className="left-card">
-                                <div className="text">
-                                    <p>金币中心</p>
-                                    <span>赚金币换i7</span>
-                                </div>
-                                <div className="pic">
-                                    <img src={card1} alt=""/>
-                                </div>
-                            </div>
-                            <div className="right-card">
-                                <div className="text">
-                                    <p>新游试玩</p>
-                                    <span>与主策论游戏</span>
-                                </div>
-                                <div className="pic">
-                                    <img src={card2} alt=""/>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="game-list">
-                            <div className="list-title">
-                                <span>本周人气游戏风向标</span>
-                                <span>更多 > </span>
-                            </div>
-                            <ul className="list-details">
-                                { gamesList }
-                            </ul>
-                        </div>
-                        <div className="back-top" style = {style} onClick = { this.backClick }>
-                            <img src={card2} alt=""/>
-                        </div>
-                    </div>
-                    
+                        <Content list = {gamesList} style = {style} onClick = {this.backClick}/> 
                 }
                 
                 <Footer/>
