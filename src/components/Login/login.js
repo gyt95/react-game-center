@@ -24,9 +24,9 @@ class Login extends Component {
     handleSubmitForm = (e) => {
         e.preventDefault();
         this.props.authStore.login()
-        
+
         console.log(this.props.authStore.values)
-        console.log(this.props.history.replace('/'))
+        this.props.history.replace('/')
     };
     render(){
         const { values, inProgress } = this.props.authStore;

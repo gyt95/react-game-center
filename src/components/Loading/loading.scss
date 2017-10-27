@@ -1,0 +1,46 @@
+.loading{
+    width: 140px;
+    height: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    span{
+        width: 15px;
+        height: 100%;
+        margin-right: 10px;
+        display: inline-block;
+        background: orange;
+        border-radius: 50%;
+        animation: load 1.04s ease infinite;
+        // 设置height使圆点可见，设置margin-right使圆点之间有间距
+
+        &:nth-child(1){
+            animation-delay: 0.13s;
+        }
+        &:nth-child(2){
+            animation-delay: 0.26s;
+        }
+        &:nth-child(3){
+            animation-delay: 0.39s;
+        }
+        &:nth-child(4){
+            animation-delay: 0.52s;
+        }
+        &:nth-child(5){
+            animation-delay: 0.65s;
+        }
+    }
+}
+
+@keyframes load {
+    0%{
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100%{
+        opacity: 0.2;
+        transform: scale(.2);        
+    }
+}
+

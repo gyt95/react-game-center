@@ -34,9 +34,10 @@ class Home extends Component{
         window.addEventListener('scroll', this.scrollHandler);
 
         axios
-            .get('/data', {dataType: 'json'})
+        .get('/data', {dataType: 'json'})
             .then(res =>{
                 console.log(res.data)
+                // this.props.commonStore.saveData(res.data);
                 this.setState({
                     gamesList: res.data,
                     loading: false,
