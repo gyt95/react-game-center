@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import '../../mock/mockdata.js';
+import { inject, observer } from 'mobx-react';
 import './home.scss';
 import hjqy from '../../images/index_hjqy.png';
 
@@ -11,6 +10,8 @@ import Content from '../Content/content';
 
 let timer = null; //定时器
 
+@inject('userStore', 'commonStore')
+@observer
 class Home extends Component{
     constructor(props){
         super(props)
@@ -32,17 +33,14 @@ class Home extends Component{
         //因此现在监听器中的this指向的是这个组件
         window.addEventListener('scroll', this.scrollHandler);
 
-        axios
-        .get('/data', {dataType: 'json'})
-            .then(res =>{
-                console.log(res.data)
-                // this.props.commonStore.saveData(res.data);
-                this.setState({
-                    gamesList: res.data,
-                    loading: false,
-                })
-        })
-        
+        //记住回调要用箭头函数，用ES5语法会导致内部this的指向全局，报错setState undefined
+        this.props.commonStore.loadHomeData().then(data => {
+            console.log(data)
+            this.setState({
+                gamesList: data,
+                loading: false
+            }) 
+        });
     }
     _handleScroll(scrollTop,screenHeight) {
         // console.log(scrollTop)         //滚动条距离页面的高度
@@ -90,7 +88,7 @@ class Home extends Component{
     render(){
         let text = this.state.showBack ? 'block' : 'none';
         let style = { display: text };
-        let gamesList = this.state.gamesList.subjects.map(function(data){
+        let gamesList = this.state.gamesList.subjects.map(data =>{
             return(
                 <li key={data.id}>
                     <div><img src={hjqy} alt=""/></div>
