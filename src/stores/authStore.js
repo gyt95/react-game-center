@@ -9,7 +9,7 @@ import userStore from './userStore';
  */
 
 class AuthStore {
-    @observable inProgress = false; //判断是否在验证账号中，是，则禁用登陆按钮
+    // @observable inProgress = false; //判断是否在验证账号中，是，则禁用登陆按钮
     @observable errors = undefined; //判断是否登录失败，失败内容
 
     @observable values = {  //登录时需要输入的内容
@@ -31,24 +31,24 @@ class AuthStore {
     }
 
     @action login(){
-        this.inProgress = true;
+        
         this.errors = undefined;
 
         let name = this.values.username;
         let pswd = this.values.password;
 
         if(name === 'aaa' && pswd === 'bbb'){
-            console.log(this.inProgress);
+            
             userStore.pullUser(toJS(this.values)) //通过toJS方法将对象转换为json
 
             // 另一种方法，利用解构赋值
             // userStore.pullUser({ user:{ name, pswd } })
 
             commonStore.changeStatus();
-            this.inProgress = false;
-        }
-        
-        console.log(this.values)
+
+        }     
+
+
     }
 }
 
