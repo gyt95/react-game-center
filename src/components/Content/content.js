@@ -6,6 +6,7 @@ import card2 from '../../images/index_card2.png';
 
 
 class Content extends Component {
+    
     render(){
         const settings = {
             arrows: false,
@@ -32,7 +33,7 @@ class Content extends Component {
                 </div>
                 <div className="card">
                     <div className="left-card">
-                        <div className="text">
+                        <div className="text" onChange={this.test}>
                             <p>金币中心</p>
                             <span>赚金币换i7</span>
                         </div>
