@@ -14,7 +14,6 @@ class CommonStore {
         return axios
         .get('/data', {dataType: 'json'})
             .then(res =>{
-                console.log(res.data)
                 this.homeData = res.data;
                 return toJS(this.homeData);
         })
