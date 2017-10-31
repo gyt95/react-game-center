@@ -4,13 +4,17 @@
   "private": true,
   "dependencies": {
     "axios": "^0.16.2",
+    "material-ui": "^0.19.4",
     "mockjs": "^1.0.1-beta3",
     "node-sass": "^4.5.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.13",
-    "sass-loader": "^6.0.6"
+    "react-slick": "^0.15.4",
+    "react-swipeable-views": "^0.12.8",
+    "sass-loader": "^6.0.6",
+    "slick-carousel": "^1.8.1"
   },
   "scripts": {
     "start": "react-app-rewired start",

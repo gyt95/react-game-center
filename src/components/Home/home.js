@@ -32,7 +32,6 @@ class Home extends Component{
         //理论上此时的this指向的是window，但由于已经在constructor()中通过显示绑定this，将this指向了当前组件
         //因此现在监听器中的this指向的是这个组件
         window.addEventListener('scroll', this.scrollHandler);
-
         //记住回调要用箭头函数，用ES5语法会导致内部this的指向全局，报错setState undefined
         this.props.commonStore.loadHomeData().then(data => {
             console.log(data)

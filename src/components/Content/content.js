@@ -1,14 +1,26 @@
 import React, { Component } from 'react';
-
+import Slider from 'react-slick';
 import banner1 from '../../images/banner1.png';
 import card1 from '../../images/index_card1.png';
 import card2 from '../../images/index_card2.png';
 
+
 class Content extends Component {
     render(){
+        const settings = {
+            arrows: false,
+            infinite: true,
+            // autoplay: 1000,
+            speed: 500
+        }
         return(
             <div className="home">
-                <img src={banner1} alt=""/>
+                <Slider {...settings}>
+                    <img src={banner1} alt=""/>
+                    <img src={banner1} alt=""/>
+                    <img src={banner1} alt=""/>
+                </Slider>
+                
                 <div className="navbar">
                     <ul>
                         <li><p className="nav-icon1"/>新游</li>
