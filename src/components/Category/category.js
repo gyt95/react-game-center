@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from '../Header/header';
 import Footer from '../Footer/footer';
 import './category.scss';
-import {IntervalEnhance} from './IntervalEnhance';
+
 let cateData = {
     nav: [
         {
@@ -82,7 +82,7 @@ class Category extends Component{
                 <div className="down-box" key={ index }>
                     <div className="title">
                         <span className={ name }></span>
-                        <span>{ data.name }{this.props.seconds}</span>
+                        <span>{ data.name }</span>
                     </div>
                     <div className="type">
                         <ul>
@@ -107,4 +107,4 @@ class Category extends Component{
     }
 }
 
-export default IntervalEnhance(Category);
+export default Category;

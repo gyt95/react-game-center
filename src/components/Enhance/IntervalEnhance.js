@@ -21,7 +21,7 @@ export var IntervalEnhance = ComposeComponent => class extends ComposeComponent 
 
     tick() {
         this.setState({
-            seconds: this.state.seconds + 1000
+            seconds: this.state.seconds + 1
         });
     }
 

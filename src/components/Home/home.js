@@ -7,7 +7,7 @@ import hjqy from '../../images/index_hjqy.png';
 import Header from '../Header/header';
 import Footer from '../Footer/footer';
 import Loading from '../Loading/loading';
-import Content from '../Content/content';
+import Content from './content';
 
 let timer = null; //定时器
 

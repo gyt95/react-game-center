@@ -2,6 +2,8 @@ import React,{ Component } from 'react';
 import { Link } from 'react-router-dom';
 import './header.scss';
 
+import {IntervalEnhance} from '../Enhance/IntervalEnhance';
+
 class Header extends Component{
     constructor(props) {
         super(props);
@@ -10,7 +12,7 @@ class Header extends Component{
     render(){
         return(
             <div className="header">
-                <Link to="/" className="head-left">雷神</Link>
+                <Link to="/" className="head-left">雷神{this.props.seconds}</Link>
                 <Link to="/search" className="search-input">
                     <i className="iconfont icon-sousuo"></i>
                     <input type="text"/>
@@ -26,4 +28,4 @@ class Header extends Component{
     }
 }
 
-export default Header;
+export default IntervalEnhance(Header);
