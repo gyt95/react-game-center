@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
+
 import banner1 from '../../images/banner1.png';
 import card1 from '../../images/index_card1.png';
 import card2 from '../../images/index_card2.png';

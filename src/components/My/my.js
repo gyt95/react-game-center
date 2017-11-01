@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../Header/header';
-import Footer from '../Footer/footer';
+import { inject, observer } from 'mobx-react';
+
+import './my.scss';
 import avatar from '../../images/my_avatar.png';
 import avatar2 from '../../images/hongbao.png';
 import icon1 from '../../images/my_icon1.png';
 import icon2 from '../../images/my_icon2.png';
 import icon3 from '../../images/my_icon3.png';
 import icon4 from '../../images/my_icon4.png';
-import './my.scss';
-import { inject, observer } from 'mobx-react';
+
+import Header from '../Header/header';
+import Footer from '../Footer/footer';
 
 const LoggedOutView = props =>{
     if(props.currentUser == null){

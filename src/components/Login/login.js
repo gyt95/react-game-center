@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { inject, observer }  from 'mobx-react';
 import { Link } from 'react-router-dom';
+
 import './login.scss';
 import Tips from '../Tips/tips'
+
 /**
  * @observer 将组件变为一个观察者，响应状态变化
  * 注意了，这里引入的是mobx-react

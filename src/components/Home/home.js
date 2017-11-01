@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { toJS } from 'mobx';
+
 import './home.scss';
 import hjqy from '../../images/index_hjqy.png';
 

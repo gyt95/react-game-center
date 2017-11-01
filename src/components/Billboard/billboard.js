@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
+import { observer, inject } from 'mobx-react';
 import SwipeableViews from 'react-swipeable-views';
 import Tabs, { Tab } from 'material-ui/Tabs';
-import './billboard.scss';
 
-import { observer, inject } from 'mobx-react';
+import './billboard.scss';
+import hjqy from '../../images/index_hjqy.png';
 
 import Header from '../Header/header';
 import Footer from '../Footer/footer';
-
-import hjqy from '../../images/index_hjqy.png';
 
 const styles = {
   slideContainer: {
@@ -27,7 +26,7 @@ const styles = {
 class Billboard extends Component {
   constructor(props){
     super(props);
-    this.state={ 
+    this.state = { 
       index: 0,
       newBoardList: null,
       downBoardList: null,

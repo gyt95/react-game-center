@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+
+import './category.scss';
+
 import Header from '../Header/header';
 import Footer from '../Footer/footer';
-import './category.scss';
 
 let cateData = {
     nav: [
@@ -43,24 +45,6 @@ let cateData = {
 }
 
 class Category extends Component{
-    // constructor(props){
-    //     super(props)
-    //     this.state = {
-    //         num: 0
-    //     }
-    //     this.test = this.test.bind(this)
-    // }
-    // componentDidMount(){
-    //     setInterval(this.test, 2000);
-    // }
-    // test(){
-    //     this.setState({
-    //         num: this.state.num + 1
-    //     });
-    // }
-    // componentWillUnmount() {
-    //     clearInterval(this.timer)
-    // }
     render(){
         let navShow = cateData.nav.map((data, index)=>{
             let id = `icon${data.id}`;
