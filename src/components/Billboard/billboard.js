@@ -8,38 +8,46 @@ import { observer, inject } from 'mobx-react';
 import Header from '../Header/header';
 import Footer from '../Footer/footer';
 
-const styles = {
+import hjqy from '../../images/index_hjqy.png';
 
+const styles = {
   slideContainer: {
-    height: 600,
+    height: 750,
+    paddingBottom: 50,
     WebkitOverflowScrolling: 'touch', // iOS momentum scrolling
   },
   slide: {
-    padding: 15,
-    minHeight: 100,
-    // color: '#fff',
-  },
-  // slide1: {
-  //   backgroundColor: '#FEA900',
-  // },
-  // slide2: {
-  //   backgroundColor: '#B3DC4A',
-  // },
-  // slide3: {
-  //   backgroundColor: '#6AC0FF',
-  // },
-  // slide4: {
-  //   backgroundColor: '#6AC0FF',
-  // },
+    padding: .8+'rem',
+    minHeight: 100
+  }
 };
 
 @inject('billboardStore')
 @observer
 class Billboard extends Component {
+  constructor(props){
+    super(props);
+    this.state={ 
+      index: 0,
+      newBoardList: null,
+      downBoardList: null,
+      singleBoardList: null,
+      hotBoardList: null
+    }
+  }
 
-  state = {
-    index: 0,
-  };
+  componentDidMount(){
+    this.props.billboardStore.loadNewBoardData().then(data=>{
+      this.setState({
+        newBoardList:data
+      })
+    })
+    this.props.billboardStore.loadDownBoardData().then(data=>{
+      this.setState({
+        downBoardList:data
+      })
+    })
+  }
 
   handleChange = (event, value) => {
     this.setState({
@@ -55,9 +63,51 @@ class Billboard extends Component {
 
   render() {
     const { index } = this.state;
-
+    let newBoardList,downBoardList;
+    if(this.state.newBoardList!=null){
+      newBoardList = this.state.newBoardList.subjects.map(data=>{
+          return(
+              <li key={data.id}>
+                <div className="item-pic">
+                  <img src={hjqy} alt=""/>
+                </div>
+                <div className="item-detail">
+                  <p className="item-name">终结者2</p>
+                  <p className="item-type">{data.type}</p>
+                  <span className="item-total">
+                    已有
+                    <span>{data.players}</span>
+                    人预约
+                  </span>
+                </div>
+                <div className="item-btn">
+                  <a href="">下载</a>
+                </div>
+              </li>
+          )
+      })
+    }
+    if(this.state.downBoardList!=null){
+      downBoardList = this.state.downBoardList.subjects.map(data=>{
+          return(
+              <li key={data.id}>
+                <div className="item-pic">
+                  <img src={hjqy} alt=""/>
+                </div>
+                <div className="item-detail">
+                  <p className="item-name">终结者2</p>
+                  <p className="item-type">{data.type} | {data.size}</p>
+                  <span className="item-text">2017年经典手游重磅巨制！</span>
+                </div>
+                <div className="item-btn">
+                  <a href="">下载</a>
+                </div>
+              </li>
+          )
+      })
+    }
     return (
-        <div>
+        <div className="billboard-box">
             <Header/>
             <Tabs value={index} fullWidth onChange={this.handleChange}>
                 <Tab label="新游期待榜" style={{"height":"38px"}}/>
@@ -67,169 +117,78 @@ class Billboard extends Component {
             </Tabs>
             <SwipeableViews index={index} containerStyle={styles.slideContainer} onChangeIndex={this.handleChangeIndex}>
                 <div style={Object.assign({}, styles.slide, styles.slide1)}>
-                    <div className="title">
-                      <img src="" alt=""/>
+                    <div className="board-title">
+                      <div className="title-image">
+                        <img src={hjqy} alt=""/>
+                      </div>
                       <div className="title-text">
-                        <h3>新游期待榜</h3>
+                        <p>新游期待榜</p>
                         <span>根据玩家关注度排行</span>
                       </div>
                     </div>
-                    <div style={{'height':'600px'}}>
+                    <div className="board-list">
                       <ul>
-                        <li>
-                          <div><img src="" alt=""/></div>
-                          <div className="detail">
-                            <p>终结者2</p>
-                            <span>删档封测</span>
-                            <span>已有<span>25.7万</span>人预约</span>
-                          </div>
-                        </li>
-                        <li>
-                          <div><img src="" alt=""/></div>
-                          <div className="detail">
-                            <p>终结者2</p>
-                            <span>删档封测</span>
-                            <span>已有<span>25.7万</span>人预约</span>
-                          </div>
-                        </li>
-                        <li>
-                          <div><img src="" alt=""/></div>
-                          <div className="detail">
-                            <p>终结者2</p>
-                            <span>删档封测</span>
-                            <span>已有<span>25.7万</span>人预约</span>
-                          </div>
-                        </li>
+                        {newBoardList}
                       </ul>
                     </div>
                     <div>111</div>
                 </div>
 
                 <div style={Object.assign({}, styles.slide, styles.slide2)}>
-                  <div className="title">
-                    <img src="" alt=""/>
+                  <div className="board-title">
+                    <div className="title-image">
+                      <img src={hjqy} alt=""/>
+                    </div>
                     <div className="title-text">
-                      <h3>下载榜</h3>
+                      <p>下载榜</p>
                       <span>根据玩家口碑排行</span>
                     </div>
                   </div>
-                  <div style={{'height':'600px'}}>
+                  <div className="board-list">
                     <ul>
-                      <li>
-                        <div><img src="" alt=""/></div>
-                        <div className="detail">
-                          <p>自由之战</p>
-                          <span>角色|运营|92m</span>
-                          <span>风靡全球的游戏</span>
-                        </div>
-                        <div className="down-btn">下载</div>
-                      </li>
-                      <li>
-                        <div><img src="" alt=""/></div>
-                        <div className="detail">
-                          <p>自由之战</p>
-                          <span>角色|运营|92m</span>
-                          <span>风靡全球的游戏</span>
-                        </div>
-                        <div className="down-btn">下载</div>
-                      </li>
-                      <li>
-                        <div><img src="" alt=""/></div>
-                        <div className="detail">
-                          <p>自由之战</p>
-                          <span>角色|运营|92m</span>
-                          <span>风靡全球的游戏</span>
-                        </div>
-                        <div className="down-btn">下载</div>
-                      </li>
+                      {downBoardList}
                     </ul>
                   </div>
-                  <div>111</div>
+
                 </div>
 
 
                 <div style={Object.assign({}, styles.slide, styles.slide3)}>
-                  <div className="title">
-                    <img src="" alt=""/>
+
+                  <div className="board-title">
+                    <div className="title-image">
+                      <img src={hjqy} alt=""/>
+                    </div>
                     <div className="title-text">
-                      <h3>单机榜</h3>
+                      <p>单机榜</p>
                       <span>精选时下热门单机</span>
                     </div>
                   </div>
-                  <div style={{'height':'600px'}}>
+                  <div className="board-list">
                     <ul>
-                      <li>
-                        <div><img src="" alt=""/></div>
-                        <div className="detail">
-                          <p>自由之战</p>
-                          <span>角色|运营|92m</span>
-                          <span>风靡全球的游戏</span>
-                        </div>
-                        <div className="down-btn">下载</div>
-                      </li>
-                      <li>
-                        <div><img src="" alt=""/></div>
-                        <div className="detail">
-                          <p>自由之战</p>
-                          <span>角色|运营|92m</span>
-                          <span>风靡全球的游戏</span>
-                        </div>
-                        <div className="down-btn">下载</div>
-                      </li>
-                      <li>
-                        <div><img src="" alt=""/></div>
-                        <div className="detail">
-                          <p>自由之战</p>
-                          <span>角色|运营|92m</span>
-                          <span>风靡全球的游戏</span>
-                        </div>
-                        <div className="down-btn">下载</div>
-                      </li>
+                      {newBoardList}
                     </ul>
                   </div>
-                  <div>111</div>
+
                 </div>
 
                 <div style={Object.assign({}, styles.slide, styles.slide4)}>
-                  <div className="title">
-                    <img src="" alt=""/>
+
+                  <div className="board-title">
+                    <div className="title-image">
+                      <img src={hjqy} alt=""/>
+                    </div>
                     <div className="title-text">
-                      <h3>单机榜</h3>
-                      <span>精选时下热门单机</span>
+                      <p>本周热搜榜</p>
+                      <span>飙升最快的优质游戏</span>
                     </div>
                   </div>
-                  <div style={{'height':'600px'}}>
+                  <div className="board-list">
                     <ul>
-                      <li>
-                        <div><img src="" alt=""/></div>
-                        <div className="detail">
-                          <p>自由之战</p>
-                          <span>角色|运营|92m</span>
-                          <span>风靡全球的游戏</span>
-                        </div>
-                        <div className="down-btn">下载</div>
-                      </li>
-                      <li>
-                        <div><img src="" alt=""/></div>
-                        <div className="detail">
-                          <p>自由之战</p>
-                          <span>角色|运营|92m</span>
-                          <span>风靡全球的游戏</span>
-                        </div>
-                        <div className="down-btn">下载</div>
-                      </li>
-                      <li>
-                        <div><img src="" alt=""/></div>
-                        <div className="detail">
-                          <p>自由之战</p>
-                          <span>角色|运营|92m</span>
-                          <span>风靡全球的游戏</span>
-                        </div>
-                        <div className="down-btn">下载</div>
-                      </li>
+                      {newBoardList}
                     </ul>
                   </div>
-                  <div>111</div>
+
                 </div>
             </SwipeableViews>
 

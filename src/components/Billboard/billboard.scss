@@ -1,26 +1,102 @@
-[class^="MuiTabs-root-"]{
-    height: 38px;
-    min-height: 38px !important;
-    padding-top: 50px;
-    [class^="MuiTabs-flexContainer-"]{
-        position: fixed;
-        height: 37px;
-        z-index: 99;
-        background: #fff;
-        width: 100%;
-        top: 50px;
-        button[aria-selected=true]{
-            color: coral;
-            font-weight: bold;
+.billboard-box{
+    .board-title{
+        display: flex;
+        justify-content: center;
+        height: 4.5rem;
+        margin-bottom: .8rem;
+        .title-image{
+            padding:.3rem;
+        }
+        .title-text{
+            line-height: 2.3rem;
+            p{
+                font-weight: bold;
+                font-size: 16px;
+            }
+            span{
+                color: grey;
+                font-size: 12px;
+            }
+        }
+
+    }
+    .board-list{
+        li{
+            height: 6rem;
+            min-height: 50px;
+            // padding: .3rem;
+            border: 1px solid #dbdbdb;
+            margin-bottom: 1rem; 
+            display: flex;
+            justify-content: center;
+            position: relative;
+            .item-pic{
+                padding: .5rem;
+                background: cadetblue;
+                img{
+                    width: 5rem;
+                }
+            }
+            .item-detail{
+                flex: 2;
+                line-height: 1.8rem;
+                padding: .3rem;
+                p:nth-child(1){
+                    font-size: 16px;
+                    color: #000;
+                }
+                p:nth-child(2),.item-total span:nth-child(1){
+                    color: orangered
+                }
+                span,p{
+                    font-size: 12px;
+                    color: grey;
+                }
+            }
+            .item-btn{
+                position: absolute;
+                width: 4rem;
+                right: 1.2rem;
+                height: 34px;
+                top: 1.7rem;
+                a{
+                    color: orange;
+                    padding: .5rem;
+                    border: 1px solid orange;
+                    border-radius: 5px;
+                    position: absolute;
+                }
+            }
         }
     }
-    [class^="MuiTabIndicator-root-"]{
-        top: 35px;
-        z-index: 99;
-    }
-    [class^="MuiTabs-scrollingContainer-"]{
-        div:nth-child(2){
-            background-color: coral !important;
+    [class^="MuiTabs-root-"]{
+        height: 38px;
+        min-height: 38px !important;
+        padding-top: 50px;
+        [class^="MuiTabs-flexContainer-"]{
+            position: fixed;
+            height: 37px;
+            z-index: 99;
+            background: #fff;
+            width: 100%;
+            top: 50px;
+            button[aria-selected=true]{
+                color: coral;
+                font-weight: bold;
+            }
         }
+        [class^="MuiTabIndicator-root-"]{
+            top: 35px;
+            z-index: 99;
+        }
+        [class^="MuiTabs-scrollingContainer-"]{
+            div:nth-child(2){
+                background-color: coral !important;
+            }
+        }
+    }
+    img{
+        width: 4rem;
+        vertical-align: middle;
     }
 }
