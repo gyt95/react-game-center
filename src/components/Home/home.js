@@ -71,7 +71,7 @@ class Home extends Component{
         })
     }
     handleScroll(event) {
-        let scrollTop = event.srcElement.body.scrollTop;  
+        let scrollTop = event.srcElement.scrollingElement.scrollTop;  
         let screenHeight = window.screen.height;  
         this._handleScroll(scrollTop,screenHeight);
     }

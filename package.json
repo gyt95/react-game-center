@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.16.2",
-    "material-ui": "^0.19.4",
+    "material-ui": "^1.0.0-beta.19",
     "mockjs": "^1.0.1-beta3",
     "node-sass": "^4.5.3",
     "react": "^15.6.1",

@@ -11,13 +11,15 @@ import App from './App';
 import authStore from './stores/authStore';
 import userStore from './stores/userStore';
 import commonStore from './stores/commonStore';
+import billboardStore from './stores/billboardStore';
 
 import registerServiceWorker from './registerServiceWorker';
 
 const stores = {
     authStore,
     userStore,
-    commonStore
+    commonStore,
+    billboardStore
 }
 
 useStrict(true); //开启严格模式（好处？）
