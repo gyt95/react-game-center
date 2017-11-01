@@ -1,12 +1,26 @@
-.MuiTabs-flexContainer-2{
-    position: fixed;
-    height: 50px;
-    z-index: 99;
-    background: #fff;
-    width: 100%;
-}
-.MuiTabIndicator-root-36{
-    top: 48px;
-    z-index: 99;
-    
+[class^="MuiTabs-root-"]{
+    height: 38px;
+    min-height: 38px !important;
+    padding-top: 50px;
+    [class^="MuiTabs-flexContainer-"]{
+        position: fixed;
+        height: 37px;
+        z-index: 99;
+        background: #fff;
+        width: 100%;
+        top: 50px;
+        button[aria-selected=true]{
+            color: coral;
+            font-weight: bold;
+        }
+    }
+    [class^="MuiTabIndicator-root-"]{
+        top: 35px;
+        z-index: 99;
+    }
+    [class^="MuiTabs-scrollingContainer-"]{
+        div:nth-child(2){
+            background-color: coral !important;
+        }
+    }
 }
