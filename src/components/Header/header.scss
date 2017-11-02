@@ -1,12 +1,21 @@
-.header{
-    width: 100%;
-    height: 2.8125rem;
-    background: #f57d27;
-    position: fixed;
-    padding: 0.5rem 0 0.9rem 0;
+.header-box{
+    height: 50px; 
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
+    background: #f57d27;
     z-index: 99;
+    position: fixed;
+    width: 100%;
+    .header{
+        // width: 100%;
+        // position: fixed;
+        background: #f57d27;
+        // padding: 0.5rem 0 0.9rem 0;
+        display: flex;
+        justify-content: space-around;
+        z-index: 99;
+    }
     .head-left{
         line-height: 3.1rem;
         color: #fff;

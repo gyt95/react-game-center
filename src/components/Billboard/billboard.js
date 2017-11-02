@@ -125,12 +125,14 @@ class Billboard extends Component {
                         <span>根据玩家关注度排行</span>
                       </div>
                     </div>
+                    <div style={{'height':'800px'}}>
                     <div className="board-list">
                       <ul>
                         {newBoardList}
                       </ul>
                     </div>
                     <div>111</div>
+                    </div>
                 </div>
 
                 <div style={Object.assign({}, styles.slide, styles.slide2)}>
@@ -143,12 +145,13 @@ class Billboard extends Component {
                       <span>根据玩家口碑排行</span>
                     </div>
                   </div>
+                  <div style={{'height':'800px'}}>
                   <div className="board-list">
                     <ul>
                       {downBoardList}
                     </ul>
                   </div>
-
+                  </div>
                 </div>
 
 
@@ -163,12 +166,13 @@ class Billboard extends Component {
                       <span>精选时下热门单机</span>
                     </div>
                   </div>
+                  <div style={{'height':'800px'}}>
                   <div className="board-list">
                     <ul>
                       {newBoardList}
                     </ul>
                   </div>
-
+                  </div>
                 </div>
 
                 <div style={Object.assign({}, styles.slide, styles.slide4)}>
@@ -182,12 +186,13 @@ class Billboard extends Component {
                       <span>飙升最快的优质游戏</span>
                     </div>
                   </div>
+                  <div style={{'height':'800px'}}>
                   <div className="board-list">
                     <ul>
                       {newBoardList}
                     </ul>
                   </div>
-
+                  </div>
                 </div>
             </SwipeableViews>
 

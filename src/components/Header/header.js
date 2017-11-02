@@ -12,19 +12,22 @@ class Header extends Component{
     }
     render(){
         return(
-            <div className="header">
-                <Link to="/" className="head-left">雷神{this.props.seconds}</Link>
-                <Link to="/search" className="search-input">
-                    <i className="iconfont icon-sousuo"></i>
-                    <input type="text"/>
-                </Link>
-                <Link to="/download" className="download-btn">
-                    <i className="iconfont icon-xiazai1"></i>
-                </Link>
-                <Link to="/more" className="more-btn">
-                    <i className="iconfont icon-iconfontlttb"></i>
-                </Link>
+            <div className="header-box">
+                <div className="header">
+                    <Link to="/" className="head-left">雷神{this.props.seconds}</Link>
+                    <Link to="/search" className="search-input">
+                        <i className="iconfont icon-sousuo"></i>
+                        <input type="text"/>
+                    </Link>
+                    <Link to="/download" className="download-btn">
+                        <i className="iconfont icon-xiazai1"></i>
+                    </Link>
+                    <Link to="/more" className="more-btn">
+                        <i className="iconfont icon-iconfontlttb"></i>
+                    </Link>
+                </div>
             </div>
+            
         )
     }
 }
