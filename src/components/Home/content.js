@@ -5,6 +5,13 @@ import banner1 from '../../images/banner1.png';
 import card1 from '../../images/index_card1.png';
 import card2 from '../../images/index_card2.png';
 
+let data = {
+    navbar:['新游','网游','每日推荐','单机','开测'],
+    card:{
+        left:{name:'金币中心',text:'赚金币换i7'},
+        right:{name:'新游试玩',text:'与主策论游戏'}
+    }
+}
 
 class Content extends Component {
     
@@ -15,6 +22,15 @@ class Content extends Component {
             // autoplay: 1000,
             speed: 500
         }
+        let { navbar, card: {left, right} } = data;
+        let navbarList = navbar.map((data,index)=>{
+            let name = `nav-icon${index+1}`;
+            return(
+                <li key={index}>
+                    <p className={name}/>{data}
+                </li>
+            )
+        })
         return(
             <div className="home">
                 <Slider {...settings}>
@@ -25,18 +41,14 @@ class Content extends Component {
                 
                 <div className="navbar">
                     <ul>
-                        <li><p className="nav-icon1"/>新游</li>
-                        <li><p className="nav-icon2"/>网游</li>
-                        <li><p className="nav-icon3"/>每日推荐</li>
-                        <li><p className="nav-icon4"/>单机</li>
-                        <li><p className="nav-icon5"/>开测</li>
+                        {navbarList}
                     </ul>
                 </div>
                 <div className="card">
                     <div className="left-card">
-                        <div className="text" onChange={this.test}>
-                            <p>金币中心</p>
-                            <span>赚金币换i7</span>
+                        <div className="text">
+                            <p>{left.name}</p>
+                            <span>{left.text}</span>
                         </div>
                         <div className="pic">
                             <img src={card1} alt=""/>
@@ -44,8 +56,8 @@ class Content extends Component {
                     </div>
                     <div className="right-card">
                         <div className="text">
-                            <p>新游试玩</p>
-                            <span>与主策论游戏</span>
+                            <p>{right.name}</p>
+                            <span>{right.text}</span>
                         </div>
                         <div className="pic">
                             <img src={card2} alt=""/>

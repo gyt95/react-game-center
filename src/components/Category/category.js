@@ -46,31 +46,32 @@ let cateData = {
 
 class Category extends Component{
     render(){
-        let navShow = cateData.nav.map((data, index)=>{
+        let { nav, lists } = cateData;
+        let navShow = nav.map((data, index)=>{
             let id = `icon${data.id}`;
             return(
-                <li className="top-part" key={ index }>
-                    <span className={ id }></span>
+                <li className="top-part" key={index}>
+                    <span className={id}></span>
                     <span>{data.name}</span>
                 </li>      
             )
         });
-        let listShow = cateData.lists.map((data,index)=>{
+        let listShow = lists.map((data,index)=>{
             let name = `icon${data.id}`;
-            let typeList = cateData.lists[index].type.map((item,index2)=>{
+            let typeList = lists[index].type.map((item,index2)=>{
                 return(
                     <li key={index2}>{item}</li>  
                 )
             })
             return(
-                <div className="down-box" key={ index }>
+                <div className="down-box" key={index}>
                     <div className="title">
-                        <span className={ name }></span>
-                        <span>{ data.name }</span>
+                        <span className={name}></span>
+                        <span>{data.name}</span>
                     </div>
                     <div className="type">
                         <ul>
-                            { typeList }
+                            {typeList}
                         </ul>
                     </div>
                 </div>
@@ -81,9 +82,9 @@ class Category extends Component{
                 <Header/>
                 <div className="category-box">
                     <div className="top-box">
-                        <ul>{ navShow }</ul>
+                        <ul>{navShow}</ul>
                     </div>
-                    { listShow }
+                    {listShow}
                 </div>
                 <Footer/>
             </div>

@@ -18,12 +18,10 @@ class Home extends Component{
     constructor(props){
         super(props)
         this.state = {
-            gamesList:{
-                subjects:[]
-            },
+            gamesList: null,  //首页数据列表
             showBack: false,  //回到顶部按钮是否显示
-            isTop: false,  //是否回滚到顶部，手动终止回滚时，通过判断isTop来清空定时器
-            loading: false,
+            isTop: false,    //是否回滚到顶部，手动终止回滚时，通过判断isTop来清空定时器
+            loading: false,  //加载动画是否显示
         }
         this.backClick = this.backClick.bind(this)
     }
@@ -96,21 +94,25 @@ class Home extends Component{
     }
 
     render(){
-        let text = this.state.showBack ? 'block' : 'none';
-        let style = { display: text };
-        let gamesList = this.state.gamesList.subjects.map(data =>{
-            return(
-                <li key={data.id}>
-                    <div><img src={hjqy} alt=""/></div>
-                    <div className="item-detail">
-                        <p className="item-name">{data.title}</p>
-                        <span className="item-size">{data.type} | {data.size}</span>
-                        <span className="item-text">2017年经典手游重磅巨制！</span>
-                    </div>
-                    <div className="item-btn"><button>下载</button></div>
-                </li>
-            )
-        })
+        let gamesList,
+            text = this.state.showBack ? 'block' : 'none',
+            style = { display: text };
+        if(this.state.gamesList!=null){
+            gamesList = this.state.gamesList.subjects.map(data =>{
+                return(
+                    <li key={data.id}>
+                        <div><img src={hjqy} alt=""/></div>
+                        <div className="item-detail">
+                            <p className="item-name">{data.title}</p>
+                            <span className="item-size">{data.type} | {data.size}</span>
+                            <span className="item-text">2017年经典手游重磅巨制！</span>
+                        </div>
+                        <div className="item-btn"><button>下载</button></div>
+                    </li>
+                )
+            })
+        }
+        
         return(
             <div className="main">
                 <Header/>
