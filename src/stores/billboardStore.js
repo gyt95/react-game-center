@@ -1,29 +1,41 @@
-import { observable, action, toJS } from 'mobx';
+import { observable, action } from 'mobx';
 import axios from 'axios';
 import '../mock/mockdata.js';
+import commonStore from './commonStore';
 
 class BillboardStore {
     @observable newBoard;
-    @observable downBoard;
-    @observable singleBoard;
-    @observable hotBoard;
+    @observable data = [
+        {
+            type:'new',
+            list:''
+        },
+        {
+            type:'down',
+            list:''
+        },
+        {
+            type:'single',
+            list:''
+        }
+    ];
+    @observable type;
 
-    @action loadNewBoardData(){
-        return axios
-        .get('/billboard/new', {dataType: 'json'})
-        .then(res=>{
-            this.newBoard = res.data;
-            return toJS(this.newBoard);
-        })
-    }
+    @action loadBoardData(index){
+        if(index===undefined){
+            index = 0;
+        }
 
-    @action loadDownBoardData(){
-        return axios
-        .get('/billboard/down', {dataType: 'json'})
-        .then(res=>{
-            this.downBoard = res.data;
-            return toJS(this.downBoard);
-        })
+        if(!this.data[index].list){
+            commonStore.updateLoading();
+            axios
+            .get(`/billboard/${this.data[index].type}`, {dataType: 'json'})
+            .then(action(res=>{
+                this.data[index].list = res.data;
+                commonStore.updateLoading();
+                console.log(commonStore.loading)
+            }))
+        }
     }
 }
 

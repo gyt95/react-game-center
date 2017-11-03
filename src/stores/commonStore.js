@@ -13,6 +13,10 @@ class CommonStore {
         this.online = true; //用户已登录
     }
 
+    @action updateLoading(){
+        this.loading = !this.loading;
+    }
+
     @action loadHomeData(){
         if(!this.homeData){
             this.loading = true;

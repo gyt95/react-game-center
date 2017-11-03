@@ -68,25 +68,11 @@ Mock.mock('/billboard/single', {
     "start":0,
     "subjects|10":[
         {
-            "id|+1": 20171101,
+            "id|+1": 20171141,
             title: ()=>Random.game_title(),
             "content": "2017年经典手游重磅巨制！",
-            "players": "@float(100, 400, 0, 1)m",
-            type: ()=>Random.board_type()
-        }
-    ]
-})
-
-Mock.mock('/billboard/hot', {
-    "count":10,
-    "start":0,
-    "subjects|10":[
-        {
-            "id|+1": 20171101,
-            title: ()=>Random.game_title(),
-            "content": "2017年经典手游重磅巨制！",
-            "players": "@float(100, 400, 0, 1)m",
-            type: ()=>Random.board_type()
+            "size": "@float(100, 400, 0, 1)m",
+            type: ()=>Random.constellation()
         }
     ]
 })
