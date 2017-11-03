@@ -29,19 +29,20 @@ let setting = [
 
 class SettingView extends Component{
     render(){
-        const list = setting.map((data,index)=>{
-            return(
-                <li key={data.id}>
-                    <img className="func-img" src={data.url} alt=""/>
-                    <span className="title">{data.text}</span>
-                    <button>></button>
-                </li>
-            )
-        })
         return(
             <div className="basic-func">
                 <ul>
-                    {list}
+                {
+                    setting.map( (data,index)=>
+                        (
+                            <li key={data.id}>
+                                <img className="func-img" src={data.url} alt=""/>
+                                <span className="title">{data.text}</span>
+                                <button>></button>
+                            </li>
+                        )
+                    )
+                }
                 </ul>
             </div>
         )

@@ -67,7 +67,6 @@ class Login extends Component {
     };
 
     render(){
-
         const { values } = this.props.authStore;
         return(
             <div className="login-box">
