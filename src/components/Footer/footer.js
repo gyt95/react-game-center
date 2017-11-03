@@ -3,6 +3,28 @@ import { NavLink } from 'react-router-dom';
 
 import './footer.scss';
 
+const data = [
+    {
+        title:'首页',
+        url:'',
+        className:'icon-shouye',
+    },
+    {
+        title:'分类',
+        url:'category',
+        className:'icon-wendashoujibanICON-',
+    },
+    {
+        title:'榜单',
+        url:'billboard',
+        className:'icon-bangdanpaihangon',
+    },
+    {
+        title:'我',
+        url:'my',
+        className:'icon-wo',
+    }
+]
 class Footer extends Component{
     constructor(props) {
         super(props);
@@ -12,30 +34,16 @@ class Footer extends Component{
         return(
             <div className="footer">
                 <ul>
-                    <li>
-                        <NavLink exact activeClassName="active" to="/">
-                            <i className="iconfont icon-shouye"></i>
-                            <p>首页</p>
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink activeClassName="active" to="/category">
-                            <i className="iconfont icon-wendashoujibanICON-"></i>
-                            <p>分类</p>
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink activeClassName="active" to="/billboard">
-                            <i className="iconfont icon-bangdanpaihangon"></i>
-                            <p>榜单</p>
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink activeClassName="active" to="/my">
-                            <i className="iconfont icon-wo"></i>
-                            <p>我</p>
-                        </NavLink>
-                    </li>
+                    {
+                        data.map((data,index)=>
+                            <li key={index}>
+                                <NavLink exact={index===0?true:false} activeClassName="active" to={`/${data.url}`}>
+                                    <i className={`iconfont ${data.className}`}></i>
+                                    <p>{data.title}</p>
+                                </NavLink>
+                            </li>
+                        )
+                    }
                 </ul>
             </div>
         )

@@ -4,7 +4,6 @@ import '../mock/mockdata.js';
 import commonStore from './commonStore';
 
 class BillboardStore {
-    @observable newBoard;
     @observable data = [
         {
             type:'new',
@@ -19,7 +18,6 @@ class BillboardStore {
             list:''
         }
     ];
-    @observable type;
 
     @action loadBoardData(index){
         if(index===undefined){
