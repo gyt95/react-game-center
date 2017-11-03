@@ -4,6 +4,9 @@ import Slider from 'react-slick';
 import banner1 from '../../images/banner1.png';
 import card1 from '../../images/index_card1.png';
 import card2 from '../../images/index_card2.png';
+import hjqy from '../../images/index_hjqy.png';
+
+import { toJS } from 'mobx';
 
 let data = {
     navbar:['新游','网游','每日推荐','单机','开测'],
@@ -16,13 +19,15 @@ let data = {
 class Content extends Component {
     
     render(){
+        let list,
+            homeData = toJS(this.props.homeData),
+            { navbar, card: {left, right} } = data;
         const settings = {
             arrows: false,
             infinite: true,
             // autoplay: 1000,
             speed: 500
         }
-        let { navbar, card: {left, right} } = data;
         let navbarList = navbar.map((data,index)=>{
             let name = `nav-icon${index+1}`;
             return(
@@ -31,6 +36,22 @@ class Content extends Component {
                 </li>
             )
         })
+        if(homeData!=null){
+            list = homeData.subjects.map(data =>{
+                return(
+                    <li key={data.id}>
+                        <div><img src={hjqy} alt=""/></div>
+                        <div className="item-detail">
+                            <p className="item-name">{data.title}</p>
+                            <span className="item-size">{data.type} | {data.size}</span>
+                            <span className="item-text">2017年经典手游重磅巨制！</span>
+                        </div>
+                        <div className="item-btn"><button>下载</button></div>
+                    </li>
+                )
+            })
+        }
+        
         return(
             <div className="home">
                 <Slider {...settings}>
@@ -70,7 +91,7 @@ class Content extends Component {
                         <span>更多 > </span>
                     </div>
                     <ul className="list-details">
-                        {this.props.list}
+                        {list}
                     </ul>
                 </div>
                 <div className="back-top" style = {this.props.style} onClick = {this.props.backClick}>
