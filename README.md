@@ -2,7 +2,7 @@
 基于React构建一个实用游戏资讯App
 
 ## 技术栈
-react + react-router + redux(目前暂时用Mobx代替) + scss + ES6
+react + react-router + redux(暂用Mobx代替) + scss + ES6
 
 ## 项目运行
 ```
@@ -18,14 +18,15 @@ npm run build //发布环境
 ```
 
 ## 说明
-> 希望通过项目实践加深对React编程思想的理解，以及对React&Redux工作原理有更好的认识。因此，如果单纯停留在“如何运用React全家桶进行开发”层面上，本项目就失去了意义
+> 希望通过项目实践加深对React编程思想的理解，以及对React&Redux工作原理有更好的认识。如单纯停留在“会用React全家桶”层面上，本项目失去了意义
 
 > 开发环境 [nodejs](https://nodejs.org/zh-cn/) 8.4.0
 
 > 使用了Facebook官方推出的 [Create React App](https://github.com/facebookincubator/create-react-app) 脚手架来快速构建React应用
 
-> 附上一个vue2.0构建的目前做得比较完善的个人开源项目—— [地址](https://github.com/gyt95/vue2.0-douban-movie)
+> 使用了[react-app-rewired](https://github.com/timarney/react-app-rewired)对脚手架进行重写（增加sass预编译等）
 
+> 目前先用[Mobx](https://github.com/mobxjs/mobx)实现状态管理，确实理解了，后续才改用[Redux](https://github.com/reactjs/redux)
 
 ### 计划开发流程：
 ```
@@ -44,9 +45,3 @@ npm run build //发布环境
 搞清楚react和redux思想、工作基本原理，才弄后台部分
 
 对react和redux的理解要记录成文
-
-### 目前进度
-
-> 先用[Mobx](https://github.com/mobxjs/mobx)实现状态管理，后续再改用[Redux](https://github.com/reactjs/redux)
-
-> 由于create-react-app不支持sass，所以原本是本地开发用sass进行预编译，导入的是编译后的.css文件。后来找到了解决方案，利用[react-app-rewired](https://github.com/timarney/react-app-rewired)对create-react-app脚手架进行重写
