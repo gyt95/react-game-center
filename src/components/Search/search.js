@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import './search.scss';
 import '../Header/header.scss';
 
+const tag = ['王者荣耀','口袋妖怪','梦幻西游','阴阳师','火影忍者','部落冲突']
+
 class Search extends Component{
     constructor(props){
         super(props);
@@ -25,24 +27,26 @@ class Search extends Component{
     render(){
         return(
             <div>
-                <div className="search-header">
-                    <Link to="/" className="head-left">&lt;</Link>
-                    <Link to="/search" className="search-input">
-                        <input type="text" placeholder="我的世界"/>
-                    </Link>
-                    <i className="iconfont icon-sousuo"></i>
+                <div className="search-header-box">
+                    <div className="search-header">
+                        <Link to="/" className="head-left">&lt;</Link>
+                        <Link to="/search" className="search-input">
+                            <input type="text" placeholder="我的世界"/>
+                        </Link>
+                        <i className="iconfont icon-sousuo"></i>
+                    </div>
                 </div>
+                
                 <div className="search-box">
                     
                     <div className="hot-search">
                         <span>热门搜索</span>
                         <ul>
-                            <li>王者荣耀</li>
-                            <li>口袋妖怪</li>
-                            <li>梦幻西游</li>
-                            <li>阴阳师</li>
-                            <li>火影忍者</li>
-                            <li>部落冲突</li>
+                            {
+                                tag.map((data,index)=>
+                                    <li key={index}>{data}</li>
+                                )
+                            }
                         </ul>
                     </div>
                     <div className="history-search" ref="history">

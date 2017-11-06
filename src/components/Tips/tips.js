@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 class Tips extends Component{
     render(){
         const tips = this.props.tips;
-        console.log(tips)
         if(tips==='error'){
             return (
                 <div className="error">

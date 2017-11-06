@@ -7,7 +7,6 @@ import avatar2 from '../../images/hongbao.png';
 
 class LoggedView extends Component {
     render(){
-        console.log(this.props)
         let loggedPath = '/login',
             img = avatar;
         if(this.props.currentUser){
