@@ -10,7 +10,7 @@ class LoggedView extends Component {
         let loggedPath = '/login',
             img = avatar;
         if(this.props.currentUser){
-            loggedPath = '/userInfo';
+            loggedPath = '/profile';
             img = avatar2;
         }
         return(
