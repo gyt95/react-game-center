@@ -51,5 +51,89 @@ npm run build //发布环境
 -> 改写MobX为Redux
 
 ### 目前开发状态
-   
+
 无限优化组件代码、不断熟悉MobX
+
+## 项目结构
+
+```
+
+.
+├─ public                             //存放入口html文件等
+│    ...
+├─ screenshots                        //项目截图
+│    ...
+│
+├─ server                             //后台部分
+│    ...
+│
+├─ src
+│  ├─ assets                          //静态资源文件
+│  │    ...
+│  │
+│  ├─ components
+│  │  ├─ Billboard                    //榜单页
+│  │  │    ...
+│  │  |
+│  │  ├─ Category                     //种类页
+│  │  │    ...
+│  │  |
+│  │  ├─ Enhance                      //高阶组件
+│  │  │    ...
+│  │  |
+│  │  ├─ Footer                       //底部组件
+│  │  │    ...
+│  │  |
+│  │  ├─ Header                       //顶部组件
+│  │  │    ...
+│  │  |
+│  │  ├─ Home                         //首页
+│  │  │    ...
+│  │  |
+│  │  ├─ Loading                      //加载组件
+│  │  │    ...
+│  │  |
+│  │  ├─ Login                        //登录页
+│  │  │    ...
+│  │  |
+│  │  ├─ My                           //个人中心页
+│  │  │    ...
+│  │  |
+│  │  ├─ Profile                      //个人详情页
+│  │  │    ...
+│  │  |
+│  │  ├─ Search                       //搜索页
+│  │  │    ...
+│  │  |
+│  │  └─ Tips                         //文字提示组件
+│  │
+│  ├─ config
+│  │  └─ config.js                    //工具函数
+│  │
+│  ├─ images                          //图片
+│  │    ...
+│  │
+│  ├─ mock                            //Mock数据
+│  │    ...
+│  │
+│  ├─ stores                          //状态管理
+│  │    ...
+│  ├─ style                           //公共样式
+│  │    ...
+│  │
+│  ├─ App.js                          //入口组件
+│  ├─ App.test.js                     //
+│  ├─ index.js                        //入口js文件
+│  ├─ logo.svg                        //
+│  └─ registerServiceWorker.js        //
+
+├─ .gitignore
+├─ README.md
+├─ config-overrides.js
+├─ jsconfig.json
+├─ package.json
+├─ package-lock.json
+└─ yarn.lock
+
+
+```
