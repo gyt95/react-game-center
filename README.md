@@ -51,7 +51,12 @@ npm run build //发布环境
 -> 改写MobX为Redux
 
 ### 目前开发状态
+  
+> 暂时用[json-server](https://github.com/typicode/json-server)作为RESTful API，方便进行注册登录等操作  
+> 步骤：npm install json-server -g
 
+> 运行：json-server --watch db.json --port 4500
+  
 无限优化组件代码、不断熟悉MobX
 
 ## 项目结构

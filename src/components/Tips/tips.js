@@ -5,13 +5,13 @@ class Tips extends Component{
         const tips = this.props.tips;
         if(tips==='error'){
             return (
-                <div className="error">
+                <div className="login-tips">
                     <span>帐号或密码错误</span>
                 </div> 
             )
         }else if(tips==='success'){
             return (
-                <div className="error">
+                <div className="login-tips">
                     <span>登录成功！</span>
                 </div> 
             )

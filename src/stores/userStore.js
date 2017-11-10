@@ -8,12 +8,4 @@ class UserStore {
     }
 }
 
-// class UserStore {
-//     @observable currentUser = null;
-
-//     @action pullUser({user}){
-//         this.currentUser = user;
-//     }
-// }
-
 export default new UserStore();

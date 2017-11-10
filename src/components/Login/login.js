@@ -10,15 +10,15 @@ import Tips from '../Tips/tips'
  * 注意了，这里引入的是mobx-react
  */
 
-@inject('authStore')
+@inject('authStore','userStore')
 @observer
 
 class Login extends Component {
     constructor(props){
         super(props);
         this.state = {
-            inProgress: false, //登录按钮是否被禁用
-            tips: ''  //登录验证提示语
+            // inProgress: false, //登录按钮是否被禁用
+            // tips: ''  //登录验证提示语
         }
     }
     componentWillUnmount(){
@@ -32,42 +32,18 @@ class Login extends Component {
     }
     handleSubmitForm = (e) => {
         e.preventDefault();//避免事件冒泡，执行父元素同类型事件。（例如这里触发了click事件，父元素也有个click事件。假如没有阻止冒泡，就会被触发）
-
-        this.setState({  //登录按钮先禁用
-            inProgress: true
-        })
-
-        setTimeout(()=>{
-            this.props.authStore.login()
-
-            if(this.props.authStore.values.username === 'aaa' 
-            && this.props.authStore.values.password === 'bbb' ){
-                this.setState({  //登录成功提示
-                    tips: 'success'
-                })
-                setTimeout(()=>{  //1.5s后页面跳转
+        this.props.authStore.login().then(()=>{
+            if(this.props.authStore.tips==='success'){
+                setTimeout(()=>{
                     this.props.history.replace('/my')
-                }, 1500)
-                
-            }else{
-                this.setState({  //输入错误，出现错误提示
-                    tips: 'error'
-                })
-                setTimeout(()=>{  //2s后错误提示消失
-                    this.setState({
-                        tips: ''
-                    })
-                }, 2000)
-                this.setState({  //登录按钮恢复点击
-                    inProgress: false
-                })
+                },1500)
             }
-        },1000)
-        
+        })
     };
 
     render(){
-        const { values } = this.props.authStore;
+        const { values,tips,inProgress } = this.props.authStore;
+        const { currentUser } = this.props.userStore;
         return(
             <div className="login-box">
                 <div className="login-header">
@@ -93,17 +69,17 @@ class Login extends Component {
                                     onChange = { this.handlePasswordChange }    
                                 />
                             </fieldset>
-
+                            <Link to="/register">立即注册</Link>
                             <button
                                 type = "submit"
-                                disabled = { this.state.inProgress }
+                                disabled = { inProgress }
                             >
                                 Sign in
                             </button>
                         </fieldset>
                     </form>
                 </div>
-                <Tips tips={this.state.tips}/>
+                <Tips tips={tips}/>
             </div>
         )
     }
