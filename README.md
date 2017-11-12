@@ -43,16 +43,17 @@ npm run build //发布环境
 
 ### 学习流程：
 
--> 深入理解React思想及特点
--> 学习MobX，搞懂工作原理
--> 大致了解一下Redux
--> 关于Nodejs开发，先学会Koa2框架的使用
--> 学习RESTful API，理解设计思路，实现前后端分离开发
--> 改写MobX为Redux
+-> 深入理解React思想及特点  
+-> 学习MobX，搞懂工作原理  
+-> 大致了解一下Redux  
+-> 关于Nodejs开发，先学会Koa2框架的使用  
+-> 学习RESTful API，理解设计思路，实现前后端分离开发  
+-> 改写MobX为Redux  
 
 ### 目前开发状态
   
 > 暂时用[json-server](https://github.com/typicode/json-server)作为RESTful API，方便进行注册登录等操作  
+
 > 步骤：npm install json-server -g
 
 > 运行：json-server --watch db.json --port 4500
@@ -66,6 +67,7 @@ npm run build //发布环境
 .
 ├─ public                             //存放入口html文件等
 │    ...
+│
 ├─ screenshots                        //项目截图
 │    ...
 │
@@ -112,26 +114,23 @@ npm run build //发布环境
 │  │  |
 │  │  └─ Tips                         //文字提示组件
 │  │
-│  ├─ config
-│  │  └─ config.js                    //工具函数
-│  │
+│  ├─ config                          //工具函数
+│  │    ...
 │  ├─ images                          //图片
 │  │    ...
-│  │
 │  ├─ mock                            //Mock数据
 │  │    ...
-│  │
 │  ├─ stores                          //状态管理
 │  │    ...
 │  ├─ style                           //公共样式
 │  │    ...
 │  │
 │  ├─ App.js                          //入口组件
-│  ├─ App.test.js                     //
+│  ├─ App.test.js                     
 │  ├─ index.js                        //入口js文件
-│  ├─ logo.svg                        //
-│  └─ registerServiceWorker.js        //
-
+│  ├─ logo.svg                        
+│  └─ registerServiceWorker.js        
+│
 ├─ .gitignore
 ├─ README.md
 ├─ config-overrides.js
