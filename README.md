@@ -54,8 +54,7 @@ npm run build //发布环境
   
 > 暂时用[json-server](https://github.com/typicode/json-server)作为RESTful API，方便进行注册登录等操作  
 > 步骤：npm install json-server -g
-
-> 运行：json-server --watch db.json --port 4500
+> 运行：npm run mock
   
 无限优化组件代码、不断熟悉MobX
 

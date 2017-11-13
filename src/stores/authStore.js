@@ -88,6 +88,9 @@ class AuthStore {
                 this.changeInProgress(false)
             }
         })
+        .catch(err=>{
+            alert("可能你还没有开启json-server")
+        })
     }
 
     // 注册
@@ -99,6 +102,9 @@ class AuthStore {
         }).then(()=>{
             userStore.pullUser(values) //通过toJS方法将对象转换为json
             commonStore.changeStatus();
+        })
+        .catch(err=>{
+            alert("可能你还没有开启json-server")
         })
     }
 }
