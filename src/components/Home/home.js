@@ -21,7 +21,9 @@ class Home extends Component{
         }
         this.backClick = this.backClick.bind(this)
     }
-
+    componentWillMount(){
+        document.title = '首页'
+    }
     /**监听滚动条事件 */
     scrollHandler = this.handleScroll.bind(this);
     componentDidMount() {

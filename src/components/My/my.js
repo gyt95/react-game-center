@@ -12,6 +12,9 @@ import LoggedView from './loggedView';
 @observer
 
 class My extends Component{
+    componentWillMount(){
+        document.title = '我的'
+    }
     render(){
         return(
             <div>

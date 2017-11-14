@@ -13,6 +13,9 @@ class Search extends Component{
         this.modalHide = this.modalHide.bind(this);
         this.historyDel = this.historyDel.bind(this);
     }
+    componentWillMount(){
+        document.title = '搜索游戏'
+    }
     modalShow(){
         this.refs.mask.style = 'display:block;'
         this.refs.modal.style = 'display:block;'

@@ -33,7 +33,9 @@ class Billboard extends Component {
       index: 0,
     }
   }
-
+  componentWillMount(){
+    document.title = '榜单'
+  } 
   componentDidMount(){
     this.props.billboardStore.loadBoardData()
   }

@@ -17,9 +17,11 @@ class Login extends Component {
     constructor(props){
         super(props);
         this.state = {
-            // inProgress: false, //登录按钮是否被禁用
-            // tips: ''  //登录验证提示语
+            
         }
+    }
+    componentWillMount(){
+        document.title = '登录'
     }
     componentWillUnmount(){
         this.props.authStore.reset();
@@ -43,7 +45,6 @@ class Login extends Component {
 
     render(){
         const { values,tips,inProgress } = this.props.authStore;
-        const { currentUser } = this.props.userStore;
         return(
             <div className="login-box">
                 <div className="login-header">
@@ -69,7 +70,6 @@ class Login extends Component {
                                     onChange = { this.handlePasswordChange }    
                                 />
                             </fieldset>
-                            <Link to="/register">立即注册</Link>
                             <button
                                 type = "submit"
                                 disabled = { inProgress }

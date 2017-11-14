@@ -4,6 +4,9 @@ import Footer from '../Footer/footer';
 import './profile.scss';
 
 class Profile extends Component {
+    componentWillMount(){
+        document.title = '个人信息'
+    }
     render(){
         return(
             <div>

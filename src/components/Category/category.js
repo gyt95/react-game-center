@@ -45,6 +45,9 @@ let cateData = {
 }
 
 class Category extends Component{
+    componentWillMount(){
+        document.title = '分类'
+    }
     render(){
         const { nav, lists } = cateData;
         return(
