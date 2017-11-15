@@ -78,6 +78,9 @@ npm run build //发布环境
 │  │    ...
 │  │
 │  ├─ components
+│  │  ├─ 404                        //404组件
+│  │  │    ...
+│  │  |
 │  │  ├─ Billboard                    //榜单页
 │  │  │    ...
 │  │  |
@@ -125,10 +128,10 @@ npm run build //发布环境
 │  │    ...
 │  │
 │  ├─ App.js                          //入口组件
-│  ├─ App.test.js                     
+│  ├─ App.test.js
 │  ├─ index.js                        //入口js文件
-│  ├─ logo.svg                        
-│  └─ registerServiceWorker.js        
+│  ├─ logo.svg
+│  └─ registerServiceWorker.js
 │
 ├─ .gitignore
 ├─ README.md
