@@ -32,13 +32,15 @@ class Login extends Component {
     handlePasswordChange = e =>{
         this.props.authStore.setPassword(e.target.value.trim());
     }
-    handleSubmitForm = (e) => {
+    handleSubmitForm = e => {
         e.preventDefault();//避免事件冒泡，执行父元素同类型事件。（例如这里触发了click事件，父元素也有个click事件。假如没有阻止冒泡，就会被触发）
         this.props.authStore.login().then(()=>{
-            if(this.props.authStore.tips==='success'){
+            if(this.props.authStore.tips==='登录成功！'){
                 setTimeout(()=>{
                     this.props.history.replace('/my')
                 },1500)
+                console.log('OK');
+                // this.props.authStore.reset();
             }
         })
     };
@@ -49,6 +51,7 @@ class Login extends Component {
             <div className="login-box">
                 <div className="login-header">
                     <Link to="/">&lt;</Link>
+                    <span>登录页面</span>
                 </div>
                 <div className="form-table">
                     <form onSubmit = { this.handleSubmitForm }>
@@ -61,7 +64,6 @@ class Login extends Component {
                                     onChange = { this.handleUsernameChange } 
                                 />
                             </fieldset>
-
                             <fieldset>
                                 <input 
                                     type = "password"
@@ -70,11 +72,12 @@ class Login extends Component {
                                     onChange = { this.handlePasswordChange }    
                                 />
                             </fieldset>
+                            <Link to="/register">立即注册</Link>
                             <button
                                 type = "submit"
                                 disabled = { inProgress }
                             >
-                                Sign in
+                                登录
                             </button>
                         </fieldset>
                     </form>

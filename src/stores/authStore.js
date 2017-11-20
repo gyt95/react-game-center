@@ -19,6 +19,8 @@ class AuthStore {
         password: '',
     };
 
+    @observable repeatpass = '';
+
     @observable tips = ''; //登录验证提示语
 
     @action setUsername(username){
@@ -29,9 +31,15 @@ class AuthStore {
         this.values.password = password;
     }
 
+    @action setRepeatpass(repeatpass){
+        this.repeatpass = repeatpass;
+    }
+
     @action reset(){  //重置输入框操作
         this.values.username = '';
         this.values.password = '';
+
+        this.repeatpass = '';
     }
 
     @action changeInProgress(flag){
@@ -42,70 +50,79 @@ class AuthStore {
         this.tips = value
     }
 
+    @action changeTwoStaus(){
+        setTimeout(()=>{
+            this.changeInProgress(false)
+            this.changeTips('')
+        }, 1500)
+    }
+
+    // 登录
     @action login(){
         this.changeInProgress(true)
         this.errors = undefined;
 
-        let name = this.values.username;
-        let pswd = this.values.password;
+        let name = this.values.username,
+            pswd = this.values.password;
 
-        let flag = 0;
-
-        return axios.get('http://localhost:4500/users')
+        return axios.post('/api/users/signin',{
+            name: name,
+            pswd: pswd,
+        })
         .then(res=>{
-            res.data.map((data,index)=>{   
-                if(data.name===name){
-                    if(data.pswd===pswd){
-                        this.changeTips('success');
-                        console.log("找到了该用户")
-                        userStore.pullUser(toJS(this.values)) //通过toJS方法将对象转换为json
-                        // 另一种方法，利用解构赋值
-                        // userStore.pullUser({ user:{ name, pswd } })
-                        commonStore.changeStatus();
-                        setTimeout(()=>{
-                            this.changeInProgress(false)
-                            this.changeTips('')
-                        }, 1500)
-                    }else{
-                        this.changeTips('error');
-                        setTimeout(()=>{
-                            this.changeInProgress(false)
-                            this.changeTips('')
-                        }, 1500)
-                    }
-                    
-                }else if(data.name!==name){
-                    flag++;
-                }
-                return null;
-            })
-            console.log(flag)
-            if(flag === res.data.length){
-
-                console.log("无法找到对应的账号密码，系统将自动为你创建")
-                this.register(toJS(this.values));
-
-                this.changeInProgress(false)
+            console.log(res);
+            if(res.data.data === 1){
+                this.changeTips('登录成功！');
+                userStore.pullUser(toJS(this.values)) //通过toJS方法将对象转换为json
+                // 另一种方法，利用解构赋值
+                // userStore.pullUser({ user:{ name, pswd } })
+                commonStore.changeStatus(true);  //表示登录成功
+                this.changeTwoStaus();
+            }else if(res.data.data === 2){
+                this.changeTips('用户名或密码错误');
+                this.changeTwoStaus();
             }
         })
-        .catch(err=>{
-            alert("可能你还没有开启json-server")
-        })
+        .catch(err => console.log(err))
     }
 
     // 注册
-    @action register(values){
-        console.log(values)
-        return axios.post('http://localhost:4500/users',{ 
-            name: values.username,
-            pswd: values.password
-        }).then(()=>{
-            userStore.pullUser(values) //通过toJS方法将对象转换为json
-            commonStore.changeStatus();
+    @action register(){
+        this.changeInProgress(true)
+
+        console.log("开始帮你创建...")
+
+        return axios.post('/api/users/signup',{ 
+            name: this.values.username,
+            pswd: this.values.password,
+            repeatpass: this.repeatpass
         })
-        .catch(err=>{
-            alert("可能你还没有开启json-server")
+        .then(res => {
+            // console.log(res)
+            if(res.data.data===1){
+                this.changeTips('用户已存在');
+                this.changeTwoStaus();
+            }else if(res.data.data===2){
+                this.changeTips('密码不一致！');
+                this.changeTwoStaus();
+            }else if(res.data.data===3){
+                this.changeTips('注册成功！');
+                userStore.pullUser(this.values) //通过toJS方法将对象转换为json
+                this.changeTwoStaus();
+            }
         })
+        .catch(err => console.log(err))
+    }
+
+    // 登出
+    @action logout(){
+        return axios.get('/api/users/signout')
+        .then(res=>{
+            // console.log(res)
+            userStore.pullUser("")
+            commonStore.changeStatus(false);
+        })
+        .catch(err => console.log(err))
     }
 }
 

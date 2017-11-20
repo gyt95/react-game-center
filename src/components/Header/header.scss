@@ -47,6 +47,15 @@
         }
     }
 
+    .profile{
+        display: flex;
+        justify-content: space-between;   
+        a{
+            display: inline-block;
+            margin: 0 5px;
+        }
+    }
+
     i{
         font-size: 20px;
         color: #fff;

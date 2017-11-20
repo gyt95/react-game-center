@@ -1,0 +1,76 @@
+.profile-box{
+    font-size: 16px;
+    // min-height: 100vh;
+    .avatar-area{
+        height: 100px;
+        background: darkorange;
+        position: relative;
+        button{
+            background: #fff;
+            border: 1px solid #ccc;
+            outline: 0;
+            border-radius: 20px;
+            padding: 5px 20px;
+            position: absolute;
+            bottom: -30%;
+            left: 50%;
+            height: 30px;
+            margin: auto;
+            transform: translate(-50%,-50%);
+        }
+    }
+    .my-identity{
+        margin-top: 2rem;
+        .name{
+            padding: 1rem;
+            p:nth-child(2){
+                color: grey;
+            }
+        }
+    }
+    .my-info{
+        background: #f2f2f2;
+        padding: 1rem;
+        .info-box{
+            background: #fff;
+            // height: 5rem; //外层能跟随内层div自适应高度，需要内外都不设height
+            line-height: 5rem;
+            color: grey;
+            margin-bottom: 1rem;
+            p{
+                color: #000;
+                margin-left: .5rem;
+            }
+        }
+        .info-layout{
+            display: flex;
+            justify-content: center;
+            span:nth-child(1){
+                margin-left: .5rem;
+            }
+            span:nth-child(2){
+                flex: 2;
+                margin-left: 1rem;
+            }
+            span:nth-child(3){
+                margin-right: .5rem;
+            }
+        }
+        ul{
+            color: grey;
+            background: #fff;
+            // height: 3rem; //外层能跟随内层div自适应高度，需要内外都不设height
+            line-height: 3rem;
+        }
+    }
+    .my-footer{
+        position: fixed;
+        bottom: 1rem;
+        left: 0;
+        right: 0;
+        span{
+            text-align: center;
+            display: block;
+        }
+    }
+}

@@ -7,6 +7,7 @@ import Category from './components/Category/category';
 import My from './components/My/my';
 import Search from './components/Search/search';
 import Login from './components/Login/login';
+import Register from './components/Register/register';
 import Profile from './components/Profile/profile';
 import Error from './components/404/error';
 
@@ -18,19 +19,23 @@ class App extends Component {
     return (
       <div>
         <Router history = {history}>
-          <div>
-            <div className="container" ref="body"> 
-              <Switch>
+          <div className="container" ref="body"> 
+            {/*
+              关于Switch
+              1.<Switch> 下的子节点只能是 <Route> 或 <Redirect> 元素
+              2.每次只匹配一个路由，只有与当前访问地址匹配的第一个子节点才会被渲染
+            */}
+            <Switch>
               <Route exact path="/" component = { Home }/>
               <Route path="/category" component = { Category }/>
               <Route path="/billboard" component = { Billboard }/>
               <Route path="/my" component = { My }/>
               <Route path="/search" component = { Search }/>
               <Route path="/login" component = { Login }/>
+              <Route path="/register" component = { Register }/>
               <Route path="/profile" component = { Profile }/>
               <Route component={ Error }/>
-              </Switch>
-            </div>
+            </Switch>
           </div>
         </Router>
       </div>

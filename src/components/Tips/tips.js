@@ -1,18 +1,13 @@
 import React, { Component } from 'react';
+import './tips.scss';
 
 class Tips extends Component{
     render(){
         const tips = this.props.tips;
-        if(tips==='error'){
-            return (
-                <div className="login-tips">
-                    <span>帐号或密码错误</span>
-                </div> 
-            )
-        }else if(tips==='success'){
-            return (
-                <div className="login-tips">
-                    <span>登录成功！</span>
+        if(tips!==''){
+            return(
+                <div className="tips">
+                    <span>{tips}</span>
                 </div> 
             )
         }else{

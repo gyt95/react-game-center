@@ -9,8 +9,8 @@ class CommonStore {
 
     @observable loading = false; //加载动画是否显示
     
-    @action changeStatus(){
-        this.online = true; //用户已登录
+    @action changeStatus(flag){
+        this.online = flag; //用户是否登录
     }
 
     @action updateLoading(){

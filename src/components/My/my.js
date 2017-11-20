@@ -8,14 +8,21 @@ import Footer from '../Footer/footer';
 import SettingView from './settingView';
 import LoggedView from './loggedView';
 
-@inject('userStore', 'commonStore')
+@inject('userStore', 'commonStore', 'authStore')
 @observer
 
 class My extends Component{
     componentWillMount(){
         document.title = '我的'
     }
+    handleSignout = e =>{
+        e.preventDefault();
+        this.props.authStore.logout().then(()=>{
+            console.log('登出成功')
+        })
+    }
     render(){
+        const { online } = this.props.commonStore;
         return(
             <div>
                 <Header/>
@@ -23,8 +30,13 @@ class My extends Component{
                     <LoggedView currentUser={this.props.userStore.currentUser} />
                     
                     <SettingView />
-
-                    <button className="logout-btn">退出登录</button>
+                    
+                    {
+                        online
+                        ? <button className="logout-btn" onClick={this.handleSignout}>退出登录</button>
+                        : <br/>
+                    }
+                    
                 </div>
                 <Footer/>
             </div>
