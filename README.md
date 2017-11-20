@@ -51,13 +51,15 @@ npm run build //发布环境
 -> 改写MobX为Redux  
 
 ### 目前开发状态
-  
+> 无限优化组件代码、不断熟悉MobX
+
 > 暂时用[json-server](https://github.com/typicode/json-server)作为RESTful API，方便进行注册登录等操作  
 
 > 步骤：npm install json-server -g
-> 运行：npm run mock
-  
-无限优化组件代码、不断熟悉MobX
+> 运行：npm run server
+
+> 11.16初步实现前后端分离开发
+> 11.17开始本项目改为请求后台编写的RESTful API接口来获取后台数据(弃用json-server)
 
 ## 项目结构
 
