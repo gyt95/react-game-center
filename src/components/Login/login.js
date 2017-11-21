@@ -62,6 +62,7 @@ class Login extends Component {
                                     placeholder = "Username"
                                     value = { values.username }
                                     onChange = { this.handleUsernameChange } 
+                                    required
                                 />
                             </fieldset>
                             <fieldset>
@@ -70,7 +71,8 @@ class Login extends Component {
                                     placeholder = "Password"
                                     value = { values.password }
                                     onChange = { this.handlePasswordChange }    
-                                />
+                                    required
+                                    />
                             </fieldset>
                             <Link to="/register">立即注册</Link>
                             <button

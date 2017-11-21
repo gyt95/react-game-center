@@ -14,14 +14,14 @@ class AuthStore {
 
     @observable errors = undefined; //判断是否登录失败，失败内容
 
-    @observable values = {  //登录时需要输入的内容
+    @observable values = {          //登录时需要输入的内容
         username: '',
         password: '',
     };
 
-    @observable repeatpass = '';
+    @observable repeatpass = '';    //注册时需要重复密码
 
-    @observable tips = ''; //登录验证提示语
+    @observable tips = '';          //登录验证提示语
 
     @action setUsername(username){
         this.values.username = username;
@@ -35,14 +35,14 @@ class AuthStore {
         this.repeatpass = repeatpass;
     }
 
-    @action reset(){  //重置输入框操作
+    @action reset(){                //重置输入框操作
         this.values.username = '';
         this.values.password = '';
 
         this.repeatpass = '';
     }
 
-    @action changeInProgress(flag){
+    @action changeInProgress(flag){  
         this.inProgress = flag
     }
 
@@ -50,7 +50,7 @@ class AuthStore {
         this.tips = value
     }
 
-    @action changeTwoStaus(){
+    @action changeTwoStaus(){       //用于取消登录按钮禁用及隐藏登录提示弹窗
         setTimeout(()=>{
             this.changeInProgress(false)
             this.changeTips('')
