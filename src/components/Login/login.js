@@ -34,11 +34,14 @@ class Login extends Component {
     }
     handleSubmitForm = e => {
         e.preventDefault();//避免事件冒泡，执行父元素同类型事件。（例如这里触发了click事件，父元素也有个click事件。假如没有阻止冒泡，就会被触发）
-        this.props.authStore.login().then(()=>{
+        this.props.authStore.login().then(res => {
+            console.log(res)
             if(this.props.authStore.tips==='登录成功！'){
                 setTimeout(()=>{
                     this.props.history.replace('/my')
                 },1500)
+                // sessionStorage.setItem('token',res.data.token)
+                document.cookie = "token="+res.data.token;
                 console.log('OK');
                 // this.props.authStore.reset();
             }

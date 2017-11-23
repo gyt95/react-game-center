@@ -70,7 +70,7 @@ class AuthStore {
             pswd: pswd,
         })
         .then(res=>{
-            console.log(res);
+            // console.log(res);
             if(res.data.data === 1){
                 this.changeTips('登录成功！');
                 userStore.pullUser(toJS(this.values)) //通过toJS方法将对象转换为json
@@ -82,6 +82,7 @@ class AuthStore {
                 this.changeTips('用户名或密码错误');
                 this.changeTwoStaus();
             }
+            return res;
         })
         .catch(err => console.log(err))
     }
