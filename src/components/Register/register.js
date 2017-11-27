@@ -60,6 +60,7 @@ class Register extends Component{
                                 type="text" 
                                 name="username"
                                 value={values.username}
+                                required
                                 onChange={ this.handleUsernameChange } 
                             />
                         </div>
@@ -69,6 +70,7 @@ class Register extends Component{
                                 type="password"
                                 name="password"
                                 value = { values.password }
+                                required
                                 onChange={ this.handlePasswordChange } 
                             />
                         </div>
@@ -78,6 +80,7 @@ class Register extends Component{
                                 type="password"
                                 name="repeatpass"
                                 value= { repeatpass}
+                                required
                                 onChange={ this.handleRepeatpassChange } 
                             />
                         </div>

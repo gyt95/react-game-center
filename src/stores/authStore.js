@@ -116,14 +116,37 @@ class AuthStore {
     }
 
     // 登出
-    @action logout(){
-        return axios.get('/api/users/signout')
+    @action logout(token){
+        return axios({
+            method: 'GET',
+            url: '/api/users/signout',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Authorization':'Bearer '+ token,
+            }
+        })
         .then(res=>{
             // console.log(res)
+            token = null
             userStore.pullUser("")
             commonStore.changeStatus(false);
         })
         .catch(err => console.log(err))
+    }
+    
+    @action show(token){
+        return axios({
+            method: 'GET',
+            url: '/api/users',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Authorization':'Bearer '+ token,
+            }
+        }).then(res=>{
+            console.log(res)
+            this.setUsername(res.data[0].name)
+            userStore.pullUser(toJS(this.values))
+        })
     }
 }
 
