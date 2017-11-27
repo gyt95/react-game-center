@@ -9,6 +9,7 @@ import Search from './components/Search/search';
 import Login from './components/Login/login';
 import Register from './components/Register/register';
 import Profile from './components/Profile/profile';
+import Editor from './components/Editor/editor';
 import Error from './components/404/error';
 
 import createHistory from 'history/createBrowserHistory';
@@ -34,6 +35,7 @@ class App extends Component {
               <Route path="/login" component = { Login }/>
               <Route path="/register" component = { Register }/>
               <Route path="/profile" component = { Profile }/>
+              <Route path="/editor" component = { Editor }/>              
               <Route component={ Error }/>
             </Switch>
           </div>

@@ -21,6 +21,7 @@ class Login extends Component {
         }
     }
     componentWillMount(){
+        this.props.authStore.reset();
         document.title = '登录'
     }
     componentWillUnmount(){
