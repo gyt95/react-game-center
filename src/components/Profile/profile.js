@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { inject, observer } from 'mobx-react';
+
 import Header from '../Header/header';
 import './profile.scss';
 
@@ -19,9 +21,12 @@ let profileData = {
     ]
 }
 
+@inject('userStore', 'commonStore', 'authStore')
+@observer
 class Profile extends Component {
     componentWillMount(){
-        document.title = '个人信息'
+        document.title = '个人资料'
+        
     }
     render(){
         const { hoby } = profileData;

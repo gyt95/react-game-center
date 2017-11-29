@@ -17,18 +17,18 @@ class My extends Component{
         if(!this.props.userStore.tokenInCookie){  //这一层防止每次到该组件都发送一次请求来判断缓存是否带token
             const token = this.getCookie('token');
             if(token){
-                this.props.authStore.show(token).then(()=>{
+                this.props.authStore.show(token).then(res => {
                     console.log('请求结束')
+                    console.log(res)
                     this.props.userStore.check(true);
-                })
+                }).catch(err => console.log(err))
             }
         }
-        
     }
-    handleSignout = e =>{
+    handleSignout = e => {
         e.preventDefault();
         const token = this.getCookie('token');
-        this.props.authStore.logout(token).then(()=>{
+        this.props.authStore.logout(token).then(() => {
             console.log('~')
             this.clearCookie('token')
         })

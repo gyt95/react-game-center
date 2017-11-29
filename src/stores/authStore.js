@@ -47,19 +47,19 @@ class AuthStore {
     }
 
     @action changeTips(value){
-        this.tips = value
+        this.tips = value;
     }
 
     @action changeTwoStaus(){       //用于取消登录按钮禁用及隐藏登录提示弹窗
         setTimeout(()=>{
-            this.changeInProgress(false)
-            this.changeTips('')
+            this.changeInProgress(false);
+            this.changeTips('');
         }, 1500)
     }
 
     // 登录
     @action login(){
-        this.changeInProgress(true)
+        this.changeInProgress(true);
         this.errors = undefined;
 
         let name = this.values.username,
@@ -70,7 +70,7 @@ class AuthStore {
             pswd: pswd,
         })
         .then(res=>{
-            // console.log(res);
+            console.log(res);
             if(res.data.data === 1){
                 this.changeTips('登录成功！');
                 userStore.pullUser(toJS(this.values)) //通过toJS方法将对象转换为json
@@ -80,6 +80,9 @@ class AuthStore {
                 this.changeTwoStaus();
             }else if(res.data.data === 2){
                 this.changeTips('用户名或密码错误');
+                this.changeTwoStaus();
+            }else{
+                this.changeTips('用户名不存在');
                 this.changeTwoStaus();
             }
             return res;
@@ -125,9 +128,8 @@ class AuthStore {
                 'Authorization':'Bearer '+ token,
             }
         })
-        .then(res=>{
+        .then(res => {
             // console.log(res)
-            token = null
             userStore.pullUser("")
             commonStore.changeStatus(false);
         })
@@ -142,11 +144,12 @@ class AuthStore {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Authorization':'Bearer '+ token,
             }
-        }).then(res=>{
+        }).then(res => {
             console.log(res)
             this.setUsername(res.data[0].name)
             userStore.pullUser(toJS(this.values))
-        })
+            return res;
+        }).catch(err => console.log(err))
     }
 }
 
