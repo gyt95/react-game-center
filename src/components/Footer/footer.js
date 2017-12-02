@@ -1,4 +1,4 @@
-import React, { Component }  from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import './footer.scss';
@@ -25,29 +25,22 @@ const data = [
         className:'icon-wo',
     }
 ]
-class Footer extends Component{
-    constructor(props) {
-        super(props);
-        this.locations = window.location.pathname;
-    }
-    render(){
-        return(
-            <div className="footer">
-                <ul>
-                    {
-                        data.map((data,index)=>
-                            <li key={index}>
-                                <NavLink exact={index===0?true:false} activeClassName="active" to={`/${data.url}`}>
-                                    <i className={`iconfont ${data.className}`}></i>
-                                    <p>{data.title}</p>
-                                </NavLink>
-                            </li>
-                        )
-                    }
-                </ul>
-            </div>
-        )
-    }
-}
+
+const Footer = () =>(
+    <div className="footer">
+        <ul>
+            {
+                data.map((data,index)=>
+                    <li key={index}>
+                        <NavLink exact={index===0?true:false} activeClassName="active" to={`/${data.url}`}>
+                            <i className={`iconfont ${data.className}`}></i>
+                            <p>{data.title}</p>
+                        </NavLink>
+                    </li>
+                )
+            }
+        </ul>
+    </div>
+)
 
 export default Footer;

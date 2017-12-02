@@ -7,9 +7,28 @@ import hjqy from '../../images/index_hjqy.png';
 
 import { toJS } from 'mobx';
 
+import index_card1 from '../../images/index_card1.png';
+import index_card2 from '../../images/index_card2.png';
 import NavCard from './navCard';
 
 
+let data = {
+    navbar:['新游','网游','每日推荐','单机','开测'],
+    card:[
+        {
+            type: 'left',
+            name: '金币中心',
+            text: '赚金币换i7',
+            url: index_card1
+        },
+        {
+            type: 'right',
+            name: '新游试玩',
+            text: '与主策论游戏',
+            url: index_card2
+        }
+    ]
+}
 class Content extends Component {
     
     render(){
@@ -20,7 +39,7 @@ class Content extends Component {
             // autoplay: 1000,
             speed: 500
         }
-        
+        const {navbar, card} = data;
         return(
             <div className="home">
                 <Slider {...settings}>
@@ -29,7 +48,7 @@ class Content extends Component {
                     <img src={banner1} alt=""/>
                 </Slider>
                 
-                <NavCard />
+                <NavCard navbar={navbar} card={card}/>
 
                 <div className="game-list">
                     <div className="list-title">
