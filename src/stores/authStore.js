@@ -148,8 +148,10 @@ class AuthStore {
             console.log(res)
             this.setUsername(res.data[0].name)
             userStore.pullUser(toJS(this.values))
+            userStore.getUserInfo(res.data[0])
             return res;
-        }).catch(err => console.log(err))
+        })
+        .catch(err => console.log(err))
     }
 }
 

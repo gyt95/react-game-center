@@ -45,10 +45,22 @@
         .info-layout{
             display: flex;
             justify-content: center;
+            &:nth-child(1){
+                span:nth-child(1){
+                    margin-left: .5rem;
+                }
+                span:nth-child(2){
+                    flex: 2;
+                    margin-left: 1rem;
+                }
+                span:nth-child(3){
+                    margin-right: .5rem;
+                }
+            }
             span:nth-child(1){
                 margin-left: .5rem;
             }
-            span:nth-child(2){
+            a:nth-child(2){
                 flex: 2;
                 margin-left: 1rem;
             }
@@ -72,5 +84,8 @@
             text-align: center;
             display: block;
         }
+    }
+    a{
+        color: grey;
     }
 }

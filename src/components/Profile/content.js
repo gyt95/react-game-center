@@ -1,9 +1,10 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
 
+import { Link } from 'react-router-dom';
 import './profile.scss';
 
-const Content = ({hoby}) => (
+const Content = ({hoby, info}) => (
     <div>
         <div className="profile-box">
             <div className="avatar-area">
@@ -11,18 +12,42 @@ const Content = ({hoby}) => (
             </div>
             <div className="main">
                 <div className="my-identity">
-                    <div className="name">
-                        <p>玩家名</p>
-                        <p>所在城市名</p>
-                    </div>
+                    {
+                        info===null
+                        ?
+                        <div className="name"></div>
+                        :
+                        <div className="name">
+                            <p>{info.name}</p>
+                            {
+                                info.birthplace===null
+                                ?<p>还没填写城市</p>
+                                :<p>{info.birthplace}</p>
+                            }
+                        </div>
+                    }
                 </div>
                 <div className="my-info">
                     <div id="sign" className="info-box">
-                        <div className="info-layout">
-                            <span>个性签名</span>
-                            <span>什么都没写</span>
-                            <span>></span>
-                        </div>
+                        {
+                            info===null||info.signature===null
+                            ?
+                            <Link to="/editor/signature">
+                                <div className="info-layout">
+                                    <span>个性签名</span>
+                                    <span>什么都没写</span>
+                                    <span>></span>
+                                </div>
+                            </Link>
+                            :
+                            <Link to="/editor/signature">
+                                <div className="info-layout">
+                                    <span>个性签名</span>
+                                    <span className="signature">{info.signature}</span>
+                                    <span>></span>
+                                </div>
+                            </Link>
+                        }
                     </div>
 
                     <div id="hoby" className="info-box hoby">
@@ -32,7 +57,9 @@ const Content = ({hoby}) => (
                                 hoby.map((data,index)=>
                                     <li key={index} className="info-layout">
                                         <span>A</span>
-                                        <span>{data.title}</span>
+                                        <Link to={`/editor/hoby/${hoby[index].type}`}>
+                                            <span>{data.title}</span>
+                                        </Link>
                                         <span>></span>
                                     </li>
                                 )
@@ -42,7 +69,12 @@ const Content = ({hoby}) => (
                 </div>
                 
                 <div className="my-footer">
-                    <span>2017-11-17注册</span>
+                    {
+                        info===null
+                        ?<span>2017-11-17注册</span>
+                        :<span>{info.create_at}注册</span>
+                    }
+                    
                 </div>
             </div>
         </div>

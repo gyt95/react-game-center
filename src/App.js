@@ -35,7 +35,7 @@ class App extends Component {
               <Route path="/login" component = { Login }/>
               <Route path="/register" component = { Register }/>
               <Route path="/profile" component = { Profile }/>
-              <Route path="/editor" component = { Editor }/>              
+              <Route path="/editor/:name" component = { Editor }/>              
               <Route component={ Error }/>
             </Switch>
           </div>

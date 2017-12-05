@@ -1,0 +1,48 @@
+.edit-box{
+    a{
+        color: #fff;
+    }
+    .header-box{
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: #f57d27;
+        z-index: 99;
+        position: static;
+        width: 100%;
+        .header{
+            background: #f57d27;
+            display: flex;
+            -ms-flex-pack: distribute;
+            justify-content: space-between;
+            z-index: 99;
+        }
+        .header-font{
+            line-height: 3.1rem;
+            color: #fff;
+            font-size: 16px;
+        }
+        .back-btn{
+            margin-left: 0.5rem;
+            span:nth-child(2){
+                margin-left: 1rem;
+            }
+        }
+        .save-btn{
+            margin-right: 1rem;
+        }
+    }
+    .main{
+        position: absolute;
+        top: 50px;
+        width: 100%;
+        .edit-textarea{
+            height: 100px;
+            background: #fff;
+            margin: 10px;
+            overflow: auto;
+            outline: none;
+        }
+    }
+}

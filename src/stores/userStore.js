@@ -5,12 +5,18 @@ class UserStore {
 
     @observable tokenInCookie = false;
 
+    @observable userInfo = null;
+
     @action pullUser(values){
         this.currentUser = values;
     }
 
     @action check(){
         this.tokenInCookie = true;
+    }
+
+    @action getUserInfo(info){
+        this.userInfo = info;
     }
 }
 
