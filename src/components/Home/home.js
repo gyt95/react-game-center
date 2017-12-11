@@ -12,9 +12,9 @@ let timer = null; //定时器
 
 @inject('userStore', 'commonStore')
 @observer
-class Home extends Component{
+class Home extends Component{ //定义一个继承于react顶层Component的新组件
     constructor(props){
-        super(props)
+        super(props);    //调用super父类构造函数改变this指向
         this.state = {
             showBack: false,  //回到顶部按钮是否显示
             isTop: false,    //是否回滚到顶部，手动终止回滚时，通过判断isTop来清空定时器

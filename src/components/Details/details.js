@@ -3,16 +3,20 @@ import Content from './content';
 import './details.scss';
 import hjqy from '../../images/index_hjqy.png';
 
-
 class Details extends Component {
     constructor(props){
         super(props);
         this.state = {
-            text: `${document.body.clientWidth}px solid #fff`
+            text: `${document.body.clientWidth}px solid #fff`,
+            className: 'game-introduce fold'
         }
+        this.removeClass = this.removeClass.bind(this)
     }
     componentDidMount(){
         console.log(document.body.clientWidth)
+    }
+    removeClass(){
+        this.setState({ className: 'game-introduce' })
     }
     render(){
         return(
@@ -24,7 +28,7 @@ class Details extends Component {
                         <img src={hjqy} alt=""/>
                     </div>
                     <div className="title">
-                        <p>荒野行动</p>
+                        <p>小游戏</p>
                         <span>不删档</span>
                     </div>
                     <div className="score">
@@ -35,8 +39,9 @@ class Details extends Component {
                         <p>3000点评</p>
                     </div>
                 </div>
-
-                <Content/>
+                
+                
+                <Content className={this.state.className} removeClass={this.removeClass}/>
             </div>
         )
     }

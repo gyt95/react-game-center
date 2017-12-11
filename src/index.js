@@ -22,9 +22,9 @@ const stores = {
     billboardStore
 }
 
-useStrict(true); //开启严格模式（好处？）
+useStrict(true); //开启严格模式（好处：mobx中必须用@action声明方法，否则报错）
 
-ReactDOM.render((
+ReactDOM.render((   //Provider传递mobx存储集合
     <Provider {...stores}>
         <App />
     </Provider>
