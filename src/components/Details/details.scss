@@ -1,0 +1,64 @@
+.top-box{
+    // background:#f2f2f2;
+    background: url('../../images/detail01-1.jpg') no-repeat 0 -160px;
+    height:190px;
+    .show{
+        // padding-top:110px;
+        position: absolute;
+        top: 95px;
+        border-top: 65px solid transparent;  /*控制梯形高度*/
+        border-left: 0px solid transparent; /*控制梯形与左边距离*/
+        border-bottom: 20px solid #fff; 
+        border-right: 320px solid #fff; /*控制梯形宽度*/
+        width: 0;
+        height: 0;
+        content: '';
+    }
+        .images{
+            position: absolute;
+            top: 120px;
+            left: 20px;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            img{
+                display: block;
+                width: 50px;
+                height: 50px;
+            }
+        }
+        .title{
+            position: absolute;
+            top: 140px;
+            left: 90px;
+        }
+        .score{
+            position: absolute;
+            right: 0;
+            top: 110px;
+        }
+    
+    p{
+        font-size: 16px;
+    }
+    span{
+        font-size: 12px;
+    }
+}
+
+.fixed-bottom{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 5px 0;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    button{
+        color: #fff;
+        border: 0;
+        outline: 0;
+        background: orangered;
+        padding: .5rem 5.8rem;
+        border-radius: 5px;
+    }
+}

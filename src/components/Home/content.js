@@ -6,6 +6,7 @@ import card2 from '../../images/index_card2.png';
 import hjqy from '../../images/index_hjqy.png';
 
 import { toJS } from 'mobx';
+import { Link } from 'react-router-dom';
 
 import index_card1 from '../../images/index_card1.png';
 import index_card2 from '../../images/index_card2.png';
@@ -60,15 +61,17 @@ class Content extends Component {
                             homeData
                             ?
                             homeData.subjects.map((data =>
-                                <li key={data.id}>
-                                    <div><img src={hjqy} alt=""/></div>
-                                    <div className="item-detail">
-                                        <p className="item-name">{data.title}</p>
-                                        <span className="item-size">{data.type} | {data.size}</span>
-                                        <span className="item-text">2017年经典手游重磅巨制！</span>
-                                    </div>
-                                    <div className="item-btn"><button>下载</button></div>
-                                </li>
+                                <Link key={data.id} to={data.href}>
+                                    <li>
+                                        <div><img src={hjqy} alt=""/></div>
+                                        <div className="item-detail">
+                                            <p className="item-name">{data.title}</p>
+                                            <span className="item-size">{data.type} | {data.size}</span>
+                                            <span className="item-text">2017年经典手游重磅巨制！</span>
+                                        </div>
+                                        <div className="item-btn"><button>下载</button></div>
+                                    </li>
+                                </Link>
                                 )
                             )
                             : <div></div>

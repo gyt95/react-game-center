@@ -30,7 +30,8 @@ Mock.mock('/data', {
             title: ()=>Random.game_title(),
             "content": "2017年经典手游重磅巨制！",
             "size": "@float(100, 400, 0, 1)m",
-            type: ()=>Random.constellation()
+            type: ()=>Random.constellation(),
+            href:'/details/jpjd'
         }
     ]
 })
