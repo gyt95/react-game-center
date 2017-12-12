@@ -5,10 +5,9 @@
         let clientWidth = docEl.clientWidth; 
         if (!clientWidth) return;
         if(clientWidth>=640){
-            // docEl.style.fontSize = '100px';
-            docEl.style.fontSize = '16px';            
+            docEl.style.fontSize = '100px';          
         }else{
-            docEl.style.fontSize = 20 * (clientWidth / 750) + 'px';
+            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
         }
         // docEl.style.fontSize = 20 * (clientWidth / 750) + 'px';
         // clientWidth为手机的分辨率，后面的值为设计图大小

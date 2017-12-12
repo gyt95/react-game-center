@@ -1,33 +1,30 @@
 .home{
-    ul{
-        display: inline-block;
-    }
     img{
         width: 100%;
     }
     .navbar{
-        padding: 0.8rem 0;
+        padding: 0.3rem 0;
         ul{
             display: flex;
             justify-content: space-around;
-            padding: 0.8rem 0;
+            padding: 0;
             li{
                 text-align: center;
             }
             p{
                 background-image: url('../../images/index_sprite.png');
                 background-repeat: no-repeat;
-                width: 3.1rem;
-                height: 3.1rem;
+                width: 1rem;
+                height: 1rem;
                 margin: auto;
-                background-size: 10rem;//雪碧图要加上这个
-                margin-bottom: 0.5rem;
+                background-size: 3rem;//雪碧图要加上这个
+                margin-bottom: 0.1rem;
             }
             .nav-icon1{background-position: 0 0;}
-            .nav-icon2{background-position: -3.3rem 0;}
-            .nav-icon3{background-position: 0 -3.3rem;}
-            .nav-icon4{background-position: -6.9rem 0;}
-            .nav-icon5{background-position: -3.4rem -3.3rem;}
+            .nav-icon2{background-position: -1rem 0;}
+            .nav-icon3{background-position: 0 -1rem;}
+            .nav-icon4{background-position: -2rem 0;}
+            .nav-icon5{background-position: -1rem -1rem;}
         }
     }
     .card{
@@ -36,56 +33,62 @@
         border-bottom: 10px solid #f2f2f2;
         .left-card{
             border-bottom: 1px solid green;
-            margin-right: 0.5rem;
+            margin-right: 0.2rem;
         }
         .right-card{
-            margin-left: 0.5rem;
+            margin-left: 0.2rem;
             border-bottom: 1px solid orangered;
         }
         .left-card,.right-card{
             width: 100%;
             display: flex;
-            justify-content: space-around;
-            padding-bottom: 1rem;
+            justify-content: center;
             .text{
+                padding-bottom: 10px;//新增
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
                 p{
                     font-size: 14px;
                 }
                 span{
                     color: grey;
                     font-size: 12px;
-                    margin-top: 0.8rem;
+                    margin-top: 0.2rem;
                     display: block;
                 }
             }
             .pic{
-                width: 5rem;
+                width: 1.6rem;
+                vertical-align: middle;
             }
         }
     }
     .game-list{
-        padding-bottom: 4.5rem;
+        padding-bottom: 1.5rem;
         img{
-            width: 4.5rem;
-            height: 4.5rem;
+            width: 1.5rem;
+            height: 1.5rem;
         }
         .list-title{
             display: flex;
             justify-content: space-between;
-            padding: 0.8rem 0.5rem;
-            span:first-child{margin-left:0.5rem;}
-            span:last-child{margin-right:1rem;}
+            padding: 0.3rem 0.1rem;
+            span:first-child{margin-left:0.3rem;}
+            span:last-child{margin-right:0.3rem;}
         }
         .list-details{
             width: 100%;
             li{
                 display: flex;
                 justify-content: space-around;
-                padding: 0.8rem 1rem;
+                padding: 0.3rem;
+                height: 1.5rem;
                 .item-detail{
                     flex: 1;
-                    padding: 0 0.6rem;
-                    line-height: 1.5rem;
+                    padding: 0 0.2rem;
+                    line-height: 0.5rem;
                     span{
                         display: block;
                         color: grey;
@@ -93,11 +96,11 @@
                     }
                 }
                 .item-btn{
-                    line-height: 4rem;
+                    line-height: 1.5rem;
                     button{
                         border: 1px solid #f27d2e;
                         color: #f27d2e;
-                        padding: 0.5rem 1.2rem;
+                        padding: 0.2rem 0.4rem;
                         background: #fff;
                         border-radius: 5px;
                     }
@@ -109,9 +112,9 @@
     }
     .back-top{
         position: fixed;
-        right: 1rem;
-        bottom: 5rem;
-        width: 5rem;
+        right: 0.3rem;
+        bottom: 1.2rem;
+        width: 1.5rem;
         display: none;
     }
     .showBack{

@@ -17,18 +17,17 @@
         z-index: 99;
     }
     .head-left{
-        line-height: 3.1rem;
+        line-height: 50px;
         color: #fff;
-        font-size: 16px;
-        margin-left: 0.5rem;
+        font-size: 18px;
+        margin: 0 15px;
     }
     .search-input{
         border-radius: 25px;
         background: #f8a468;
-        width: 14rem;
-        padding: 0 1rem;
-        height: 2.4rem;
-        margin-top: 0.4rem;
+        padding: 0 0.3rem;
+        height: 30px;
+        margin-top: 10px;
         
         display: flex;
         justify-content: center; 
@@ -43,7 +42,7 @@
             color: #fff;
         }
         i{
-            line-height: 2.8rem;
+            line-height: 35px;
         }
     }
 
@@ -59,7 +58,8 @@
     i{
         font-size: 20px;
         color: #fff;
-        line-height: 3.3rem;
+        line-height: 50px;
         vertical-align: middle;
+        margin: 0 5px;
     }
 }

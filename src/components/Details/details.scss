@@ -1,115 +1,117 @@
-.top-box{
-    // background:#f2f2f2;
-    // background: url('../../images/detail01-1.jpg') no-repeat 0 -160px;
-    height:190px;
-    //filter:blur(5px); //毛玻璃效果，但会让文字也模糊掉，不适合
+.details-box{
+    .top-box{
+        // background:#f2f2f2;
+        // background: url('../../images/detail01-1.jpg') no-repeat 0 -160px;
+        height:190px;
+        //filter:blur(5px); //毛玻璃效果，但会让文字也模糊掉，不适合
 
-    //毛玻璃效果：&::before添加遮罩层，溢出部分隐藏即可。主要还是用filter:blur()
-    position: relative; 
-    overflow: hidden; //以上两句限制图片显示区域，溢出部分隐藏
-    &::before{
-        content: '';
-        position: absolute;
-        top: 0; right: 0; bottom: 0; left: 0;
-        z-index: 0; //由于其余兄弟元素没有设置z-index，因此这里只能z-index:0
-        filter: blur(20px);
-        background: url('../../images/detail01-1.jpg') no-repeat 0 -160px;
-        margin: -20px; //去掉blur出现的外阴影
-    }
-    .show{
-        // padding-top:110px;
-        position: absolute;
-        top: 95px;
-        //一个矩形，左边不动，向上延伸65，向下延伸20，向右延伸320
-        border-top: 65px solid transparent;  /*控制梯形高度*/
-        border-left: 0px solid transparent; /*控制梯形与左边距离*/
-        border-bottom: 20px solid #fff; 
-        border-right: 320px solid #fff; /*控制梯形宽度*/
-        width: 0;
-        height: 0;
-        content: '';
-    }
-    .images{
-        position: absolute;
-        top: 120px;
-        left: 20px;
-        border: 2px solid #fff;
-        border-radius: 5px;
-        img{
-            display: block;
-            width: 50px;
-            height: 50px;
+        //毛玻璃效果：&::before添加遮罩层，溢出部分隐藏即可。主要还是用filter:blur()
+        position: relative; 
+        overflow: hidden; //以上两句限制图片显示区域，溢出部分隐藏
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            z-index: 0; //由于其余兄弟元素没有设置z-index，因此这里只能z-index:0
+            filter: blur(20px);
+            background: url('../../images/detail01-1.jpg') no-repeat 0 -160px;
+            margin: -20px; //去掉blur出现的外阴影
+        }
+        .show{
+            // padding-top:110px;
+            position: absolute;
+            top: 95px;
+            //一个矩形，左边不动，向上延伸65，向下延伸20，向右延伸320
+            border-top: 65px solid transparent;  /*控制梯形高度*/
+            border-left: 0px solid transparent; /*控制梯形与左边距离*/
+            border-bottom: 20px solid #fff; 
+            border-right: 320px solid #fff; /*控制梯形宽度*/
+            width: 0;
+            height: 0;
+            content: '';
+        }
+        .images{
+            position: absolute;
+            top: 120px;
+            left: 20px;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            img{
+                display: block;
+                width: 50px;
+                height: 50px;
+            }
+        }
+        .title{
+            position: absolute;
+            top: 140px;
+            left: 90px;
+        }
+        .score{
+            position: absolute;
+            right: 0;
+            top: 118px;
+        }
+        
+        p{
+            font-size: 16px;
+        }
+        span{
+            font-size: 12px;
         }
     }
-    .title{
-        position: absolute;
-        top: 140px;
-        left: 90px;
-    }
-    .score{
-        position: absolute;
-        right: 0;
-        top: 118px;
-    }
-    
-    p{
-        font-size: 16px;
-    }
-    span{
-        font-size: 12px;
-    }
-}
 
-ul{  //通过ul和li的简单设置实现横向滚动图片画廊
-    width: 100%;
-    overflow: scroll;
-    display: flex;
-    li{
-        display: inline-block;
-        padding: .5rem;
+    ul{  //通过ul和li的简单设置实现横向滚动图片画廊
+        width: 100%;
+        overflow: scroll;
+        display: flex;
+        li{
+            display: inline-block;
+            padding: .5rem;
+        }
+        img{
+            width: 108px;
+            height: 162px;
+        }
     }
-    img{
-        width: 108px;
-        height: 162px;
+
+    .game-introduce{
+        position: relative;
+        
+        .game-introduce-more{
+            position: absolute;
+            color: orange;
+            right: 15px;
+            bottom: 10px;
+        }
     }
-}
+    .fold{
+        display: -webkit-box;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        -webkit-line-clamp: 3;
 
-.game-introduce{
-    position: relative;
-    
-    .game-introduce-more{
-        position: absolute;
-        color: orange;
-        right: 15px;
-        bottom: 10px;
+        // 难以置信，这个渣渣属性要用注释包住
+        /* autoprefixer: off*/
+        -webkit-box-orient: vertical;
+        /* autoprefixer: on*/
     }
-}
-.fold{
-    display: -webkit-box;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    -webkit-line-clamp: 3;
 
-    // 难以置信，这个渣渣属性要用注释包住
-    /* autoprefixer: off*/
-    -webkit-box-orient: vertical;
-    /* autoprefixer: on*/
-}
-
-.fixed-bottom{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    padding: 5px 0;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    button{
-        color: #fff;
-        border: 0;
-        outline: 0;
-        background: orangered;
-        padding: .5rem 5.8rem;
-        border-radius: 5px;
+    .fixed-bottom{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        padding: 5px 0;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        button{
+            color: #fff;
+            border: 0;
+            outline: 0;
+            background: orangered;
+            padding: .5rem 5.8rem;
+            border-radius: 5px;
+        }
     }
 }

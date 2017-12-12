@@ -3,7 +3,7 @@
     bottom: 0;
     width: 100%;
     background: #fff;
-    padding: 0.5rem 0;
+    padding: 0.1rem 0;
     border-top: 1px solid #ccc;
     p{
         margin: 0;
@@ -15,12 +15,12 @@
         display: flex;
         justify-content: space-around;
         li{
-            padding: 0 0.8rem;
+            padding: 0 0.2rem;
         }
         p{
             text-align: center;
             color: grey;
-            font-size: 12px;
+            font-size: 14px;
         }
         .active{
             background-image: -webkit-gradient(linear, 0 0, right 0, from(#f78223), to(#f99f27));

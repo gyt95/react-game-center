@@ -20,7 +20,7 @@ class Details extends Component {
     }
     render(){
         return(
-            <div>
+            <div className="details-box">
                 <div className="top-box">
                     <div className="show" style={{borderRight:this.state.text}}>
                     </div>

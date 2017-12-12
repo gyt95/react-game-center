@@ -65,7 +65,7 @@ class Home extends Component{ //定义一个继承于react顶层Component的新�
         timer = setInterval(()=>{
             let osTop = document.body.scrollTop;
             let speed = Math.floor(-osTop/6);
-            document.body.scrollTop = osTop + speed;
+            document.documentElement.scrollTop = document.body.scrollTop = osTop + speed;
             this.setState({
                 isTop: true
             })
@@ -88,7 +88,7 @@ class Home extends Component{ //定义一个继承于react顶层Component的新�
                 {
                     loading
                     ? <Loading />
-                    : <Content homeData = {homeData} style = {style} onClick = {this.backClick}/> 
+                    : <Content homeData = {homeData} style = {style} backClick = {this.backClick}/> 
                 }
                 
                 <Footer/>
