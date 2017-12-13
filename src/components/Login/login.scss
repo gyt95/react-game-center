@@ -5,10 +5,9 @@
     background:#fff;
     .login-header{
         width: 100%;
-        height: 2.8rem;
+        height: 50px;
         background: #f57d27;
         position: fixed;
-        padding: 0.5rem 0 0.9rem 0;
         display: -ms-flexbox;
         display: flex;
         -ms-flex-pack: distribute;
@@ -16,14 +15,14 @@
         a{
             font-size: 24px;
             color: #fff;
-            left: 0.5rem;
+            left: .5rem;
             position: absolute;
-            line-height: 3rem;
+            line-height: 1.2rem;
         }
         span{
             color: #fff;
-            line-height: 2.8rem;
-            font-size: 16px;
+            line-height: 1.2rem;
+            font-size: 18px;
         }
     }
     .form-table{
@@ -35,10 +34,9 @@
         fieldset{
             border: 1px solid #c0c0c0;
             margin: 0 2px;
-            padding: 0.35em 0.625em 0.75em;
             border-radius: 5px;
             &:nth-child(1),&:nth-child(2){
-                padding: 1rem;
+                padding: .2rem;
                 margin-bottom: 10px;
             }
             input{
@@ -50,16 +48,16 @@
         }
         button{
             font-weight: normal;
-            line-height: 1.25;
+            line-height: .3rem;
             text-align: center;
             white-space: nowrap;
             vertical-align: middle;
             cursor: pointer;
             user-select: none;
             border: 1px solid transparent;
-            padding: 0.5rem 1rem;
-            font-size: 1rem;
-            border-radius: 0.25rem;
+            padding: .2rem;
+            font-size: 14px;
+            border-radius: 5px;
             color: #fff;
             background-color: darkorange;
             border-color: darkorange;
@@ -70,9 +68,8 @@
             }
         }
         a{
-            color: #000;
-            margin-left: 1rem;
-            line-height: 2.2rem;
+            margin-left: .3rem;
+            line-height: .75rem;
         }
     }
 }

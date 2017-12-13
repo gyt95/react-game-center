@@ -63,7 +63,9 @@ class Content extends Component {
                             homeData.subjects.map((data =>
                                 <Link key={data.id} to={data.href}>
                                     <li>
-                                        <div><img src={hjqy} alt=""/></div>
+                                        <div className="item-photo">
+                                            <img src={hjqy} alt=""/>
+                                        </div>
                                         <div className="item-detail">
                                             <p className="item-name">{data.title}</p>
                                             <span className="item-size">{data.type} | {data.size}</span>

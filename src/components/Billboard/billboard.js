@@ -19,7 +19,7 @@ const styles = {
     WebkitOverflowScrolling: 'touch', // iOS momentum scrolling
   },
   slide: {
-    padding: .8+'rem',
+    padding: .3+'rem',
     minHeight: 100
   }
 };

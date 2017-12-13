@@ -49,12 +49,8 @@
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
-                p{
-                    font-size: 14px;
-                }
                 span{
                     color: grey;
-                    font-size: 12px;
                     margin-top: 0.2rem;
                     display: block;
                 }
@@ -68,8 +64,8 @@
     .game-list{
         padding-bottom: 1.5rem;
         img{
-            width: 1.5rem;
-            height: 1.5rem;
+            width: 1.2rem;
+            height: 1.2rem;
         }
         .list-title{
             display: flex;
@@ -77,6 +73,7 @@
             padding: 0.3rem 0.1rem;
             span:first-child{margin-left:0.3rem;}
             span:last-child{margin-right:0.3rem;}
+            span{font-size: 14px;}
         }
         .list-details{
             width: 100%;
@@ -88,7 +85,7 @@
                 .item-detail{
                     flex: 1;
                     padding: 0 0.2rem;
-                    line-height: 0.5rem;
+                    line-height: .4rem;
                     span{
                         display: block;
                         color: grey;
@@ -96,13 +93,14 @@
                     }
                 }
                 .item-btn{
-                    line-height: 1.5rem;
+                    line-height: 1.2rem;
                     button{
                         border: 1px solid #f27d2e;
                         color: #f27d2e;
-                        padding: 0.2rem 0.4rem;
+                        padding: .1rem .2rem;
                         background: #fff;
                         border-radius: 5px;
+                        font-size: 14px;
                     }
                 }
             }
@@ -126,6 +124,5 @@
 
     a{
         display: block;
-        color: #000;
     }
 }

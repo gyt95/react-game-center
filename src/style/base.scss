@@ -15,24 +15,33 @@ body {
     }
 }
 
+img{
+    width: 1rem;
+    vertical-align: middle;
+}
 
 ul{
     margin: 0;
     padding: 0;
     list-style:none;
+    width: 100%; //用于铺满屏幕
+    display: inline-block;
 }
 
 a{
     text-decoration: none;
+    color: #000;
 }
-
 
 p{
     margin: 0;
 }
 
-ul{
-    display: inline-block;
+span{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 12px;
 }
 
 

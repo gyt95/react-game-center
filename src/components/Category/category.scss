@@ -1,13 +1,13 @@
 .category-box{
     background: #efefef;
-    padding: 50px 0 5rem 0;
+    padding: 50px 0 2rem 0;
     .top-box{
         ul{
             display: flex;
             justify-content: center;
-            padding: 1rem 0;
+            padding: .2rem 0;
             .top-part{
-                margin: 0 2rem;
+                margin: 0 .4rem;
             }
         }
     }
@@ -17,13 +17,12 @@
         flex-direction: row;
         .title{
             margin: auto;
-            padding: 1rem;
-            width: 10rem;
-            padding-left: 2rem;
+            width: 2rem;
+            padding-left: .5rem;
             span:last-child{
                 text-align: center;
                 display: block;
-                margin-top: 0.4rem;
+                margin-top: .1rem;
                 width: 100%;
             }
         }
@@ -33,32 +32,32 @@
             ul {
                 text-align: center;
                 li{
-                    min-width: 5rem;
+                    min-width: 1rem;
                     display: inline-block;
-                    padding: 1rem;
+                    padding: .3rem;
                     text-align: center;
                 }
             }
         }
     }
     .top-box,.down-box{
-        margin-bottom: 1rem;
+        margin-bottom: .2rem;
         background: #fff;
         span:first-child{
             background-image: url('../../images/category_sprite.png');
             background-repeat: no-repeat;
-            width: 3.3rem;
-            height: 3.2rem;
+            width: 35px;
+            height: 40px;
             margin: auto;
             display: block;
-            background-size: 13.6rem;
+            background-size: 155px;
         }
-        .icon1{ background-position: 0 -3.7rem; }
-        .icon2{ background-position: -3.3rem 0; }
-        .icon3{ background-position: -6.8rem 0 }
-        .icon4{ background-position: -3.3rem -3.5rem; }
-        .icon5{ background-position: -6.7rem -3.6rem; }
-        .icon6{ background-position: -10.2rem 0; }
+        .icon1{ background-position: 0px -38px; }
+        .icon2{ background-position: -40px 5px; }
+        .icon3{ background-position: -80px 4px; }
+        .icon4{ background-position: -40px -40px; }
+        .icon5{ background-position: -79px -40px; }
+        .icon6{ background-position: -120px 0; }
         .icon7{ background-position: 0 0; }
     }
 }

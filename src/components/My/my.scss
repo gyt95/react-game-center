@@ -1,45 +1,42 @@
 .my-box{
     background: #f2f2f2;
     a{
-        color: #000;
         display: block;
     }
     .user-info{
         display: flex;
         justify-content: space-around;
-        padding: 1rem 0.6rem 1rem 0.8rem;
+        padding: .3rem;
         .user-avatar{
-            img{
-                width: 5rem;
-            }
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .user-text{
             flex: 2;
-            margin-left: 0.5rem;
+            margin-left: .2rem;
             p{
-                line-height: 3rem;
-            }
-            span{
-                font-size: 12px;
+                line-height: .6rem;
             }
         }
     }
     .basic-func{
-        padding: 0 0.6rem;
-        ul li{
+        padding: 0 0.3rem;
+        li{
             display: flex;
-            padding: 0.5rem 0;
+            padding: 0;
         }
         .func-img{
             display: block;
-            padding: 0.5rem;
-            width: 2.5rem;
-            height: 2.5rem;
+            padding: .2rem;
+            width: .8rem;
+            height: .8rem;
         }
         .title{
-            margin-left: 1rem;
-            line-height: 3.8rem;
+            margin-left: .2rem;
+            line-height: 1.25rem;
             flex: 2;
+            font-size: 16px;
         }
     }
     .logout-btn{
@@ -54,7 +51,7 @@
         // display: none;
     }
     .user-info,.basic-func{
-        margin-bottom: 1rem;
+        margin-bottom: .5rem;
         background: #fff;
         button{
             background: #fff;

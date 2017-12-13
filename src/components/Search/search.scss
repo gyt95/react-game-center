@@ -2,7 +2,7 @@ $f:#fff;
 $f2:#f2f2f2;
 $or:orangered;
 @mixin pad{
-    padding: 0.6rem 0.8rem;
+    padding: .2rem;
 }
 .search-header-box{
     height: 50px; 
@@ -14,30 +14,26 @@ $or:orangered;
     position: fixed;
     width: 100%;
     .search-header{
-       // width: 100%;
-        // position: fixed;
         background: #f57d27;
-        // padding: 0.5rem 0 0.9rem 0;
         display: flex;
         justify-content: space-around;
         z-index: 99;
         .head-left{
             color: #fff;
-            margin-left: 0.5rem;
+            margin-left: 15px;
             font-size: 26px;
-            line-height: 3.6rem; 
+            line-height: 50px; 
         }
         .search-input{
             border-radius: 25px;
             background: #f8a468;
-            width: 60%;
-            padding: 0 1rem;
-            height: 2.8rem;
-            margin-top: 0.4rem;
+            width: 55%;
+            padding: 0 .3rem;
+            height: 30px;
+            margin-top: 10px;
             input[type=text]{
                 display: inline-block;
                 width: 82%;
-                margin-left: 0.3rem;
                 border: 0;
                 outline: 0;
                 background: #f8a468;
@@ -50,10 +46,9 @@ $or:orangered;
         }
 
         .icon-sousuo{
-            line-height: 4rem;
+            line-height: 55px;
         }
         i{
-            line-height: 3.5rem;
             font-size: 24px;
             color: #fff;
             vertical-align: middle;
@@ -61,8 +56,8 @@ $or:orangered;
         .search-input{     
             input[type=text]{
                 width: 100%;
-                margin-top: 0.5rem;
-                height: 1.8rem;
+                margin-top: 4px;
+                height: 22px;
             }
             ::-webkit-input-placeholder {
                 color: $f;
@@ -74,15 +69,15 @@ $or:orangered;
 .search-box{
     background: $f2;
     .hot-search{
-        margin-bottom: 1rem;
+        margin-bottom: .3rem;
         background: $f;
         @include pad;
         li{
             font-size: 14px;
             display: inline-block;
             background: $f2;
-            padding: 0.6rem 1.5rem;
-            margin: 0 0.6rem 0.6rem 0;
+            margin: 0 .2rem .2rem 0;
+            padding: .2rem .3rem;
             border-radius: 4px;
         }
     }
@@ -92,12 +87,12 @@ $or:orangered;
         @include pad;
         li{
             font-size: 14px;
-            padding: 1rem 0;
+            padding: .2rem 0;
             border-bottom: 1px solid $f2;
         }
     }
     span{
-        padding: 0.5rem 0;
+        padding: .3rem 0;
         color: grey;
         display: block;
     }
@@ -105,7 +100,7 @@ $or:orangered;
         background: $f;
         text-align: center;
         color: $or;
-        padding: .5rem 1rem 1rem 0;
+        padding: .3rem;
     }
     .mask{
         position: absolute;
