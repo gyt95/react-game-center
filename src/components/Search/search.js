@@ -2,7 +2,7 @@ import React,{ Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import './search.scss';
-import '../Header/header.scss';
+import '../Common/Header/header.scss';
 
 const tag = ['王者荣耀','口袋妖怪','梦幻西游','阴阳师','火影忍者','部落冲突']
 

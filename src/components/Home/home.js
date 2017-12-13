@@ -3,9 +3,9 @@ import { inject, observer } from 'mobx-react';
 
 import './home.scss';
 
-import Header from '../Header/header';
-import Footer from '../Footer/footer';
-import Loading from '../Loading/loading';
+import Header from '../Common/Header/header';
+import Footer from '../Common/Footer/footer';
+import Loading from '../Common/Loading/loading';
 import Content from './content';
 
 let timer = null; //定时器

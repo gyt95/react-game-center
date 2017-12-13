@@ -3,7 +3,7 @@ import { inject, observer }  from 'mobx-react';
 import { Link } from 'react-router-dom';
 
 import './register.scss';
-import Tips from '../Tips/tips';
+import Tips from '../Common/Tips/tips';
 
 @inject('authStore','userStore')
 @observer

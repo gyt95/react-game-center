@@ -3,7 +3,7 @@ import { inject, observer }  from 'mobx-react';
 import { Link } from 'react-router-dom';
 
 import './login.scss';
-import Tips from '../Tips/tips'
+import Tips from '../Common/Tips/tips'
 
 /**
  * @observer 将组件变为一个观察者，响应状态变化

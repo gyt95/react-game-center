@@ -3,8 +3,8 @@ import { inject, observer } from 'mobx-react';
 
 import './my.scss';
 
-import Header from '../Header/header';
-import Footer from '../Footer/footer';
+import Header from '../Common/Header/header';
+import Footer from '../Common/Footer/footer';
 import SettingView from './settingView';
 import LoggedView from './loggedView';
 

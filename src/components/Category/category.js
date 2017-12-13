@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 import './category.scss';
 
-import Header from '../Header/header';
-import Footer from '../Footer/footer';
+import Header from '../Common/Header/header';
+import Footer from '../Common/Footer/footer';
 
 let cateData = {
     nav: [

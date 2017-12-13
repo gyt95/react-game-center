@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 
-import Header from '../Header/header';
+import Header from '../Common/Header/header';
 import Content from './content';
 import './profile.scss';
 

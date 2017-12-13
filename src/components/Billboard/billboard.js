@@ -6,11 +6,11 @@ import Tabs, { Tab } from 'material-ui/Tabs';
 import './billboard.scss';
 import hjqy from '../../images/index_hjqy.png';
 
-import Header from '../Header/header';
-import Footer from '../Footer/footer';
+import Header from '../Common/Header/header';
+import Footer from '../Common/Footer/footer';
+import Loading from '../Common/Loading/loading';
 import { toJS } from 'mobx';
 
-import Loading from '../Loading/loading';
 
 const styles = {
   slideContainer: {
