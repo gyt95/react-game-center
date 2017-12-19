@@ -28,39 +28,6 @@ npm run build //发布环境
 
 > 目前先用[MobX](https://github.com/mobxjs/mobx)实现状态管理，后续才改用[Redux](https://github.com/reactjs/redux)
 
-### 开发计划：
-```
-1.编写静态页面  
-2.为页面增加动画  
-3.注册登录  
-4.mock数据  
-5.koa或者express写后台  
-6.连接数据库  
-7.后台页面  
-8.数据改为访问后台获取
-9.增加表单等交互操作，丰富项目功能
-```
-
-### 学习流程：
-
--> 深入理解React思想及特点  
--> 学习MobX，搞懂工作原理  
--> 大致了解一下Redux  
--> 关于Nodejs开发，先学会Koa2框架的使用  
--> 学习RESTful API，理解设计思路，实现前后端分离开发  
--> 改写MobX为Redux  
-
-### 目前开发状态
-> 无限优化组件代码、不断熟悉MobX
-
-> 暂时用[json-server](https://github.com/typicode/json-server)作为RESTful API，方便进行注册登录等操作  
-
-> 步骤：npm install json-server -g
-> 运行：npm run server
-
-> 11.16初步实现前后端分离开发
-> 11.17开始本项目改为请求后台编写的RESTful API接口来获取后台数据(弃用json-server)
-
 ## 项目结构
 
 ```
