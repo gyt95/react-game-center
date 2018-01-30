@@ -14,7 +14,7 @@ class Header extends Component{
         return(
             <div className="header-box">
             {
-                window.location.pathname.indexOf('/profile')!=-1
+                window.location.pathname.indexOf('/profile')!==-1
                ?
                 <div className="header profile">
                     <div>

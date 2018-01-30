@@ -34,3 +34,5 @@ export var IntervalEnhance = ComposeComponent => class extends ComposeComponent 
 }
 
 export default IntervalEnhance;
+
+//参考：http://www.jianshu.com/p/1eaa48067a86

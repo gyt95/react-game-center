@@ -19,18 +19,20 @@
             z-index: 99;
         }
         .header-font{
-            line-height: 3.1rem;
             color: #fff;
             font-size: 16px;
         }
         .back-btn{
             margin-left: 0.5rem;
+            span{
+                font-size: 16px;
+            }
             span:nth-child(2){
-                margin-left: 1rem;
+                margin-left: .3rem;
             }
         }
         .save-btn{
-            margin-right: 1rem;
+            margin-right: .3rem;
         }
     }
     .main{

@@ -14,7 +14,7 @@
             top: 0; right: 0; bottom: 0; left: 0;
             z-index: 0; //由于其余兄弟元素没有设置z-index，因此这里只能z-index:0
             filter: blur(20px);
-            background: url('../../images/detail01-1.jpg') no-repeat 0 -160px;
+            background: url('../../images/detail01-1.jpg') no-repeat -100px -160px;
             margin: -20px; //去掉blur出现的外阴影
         }
         .show{
@@ -59,6 +59,34 @@
         span{
             font-size: 12px;
         }
+
+        .details-header-box{
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            height: 40px;
+            .head-left{
+                font-size: 20px;
+                font-weight: bold;
+                margin-left: 4%;
+                color: #fff;
+                line-height: 35px;
+            }
+            .search-input{
+                margin-right: 4%;
+            }
+            .icon-sousuo{
+                font-size: 20px;
+                color: #fff;
+                font-weight: bold;
+                line-height: 40px;
+            }
+        }
+    }
+
+    .main-box{
+        padding-bottom: 50px;
     }
 
     ul{  //通过ul和li的简单设置实现横向滚动图片画廊
@@ -81,8 +109,8 @@
         .game-introduce-more{
             position: absolute;
             color: orange;
-            right: 15px;
-            bottom: 2px;
+            right: 10px;
+            bottom: 0px;
         }
     }
     .fold{

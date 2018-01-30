@@ -1,4 +1,5 @@
 import React,{ Component } from 'react';
+import { Link } from 'react-router-dom';
 import Content from './content';
 import './details.scss';
 import hjqy from '../../images/index_hjqy.png';
@@ -8,20 +9,29 @@ class Details extends Component {
         super(props);
         this.state = {
             text: `${document.body.clientWidth}px solid #fff`,
-            className: 'game-introduce fold'
+            className: 'game-introduce fold',
+            introText: '展开'
         }
-        this.removeClass = this.removeClass.bind(this)
     }
     componentDidMount(){
         console.log(document.body.clientWidth)
     }
-    removeClass(){
-        this.setState({ className: 'game-introduce' })
+    changeClass = () => {
+        this.state.className==='game-introduce'
+        ?this.setState({ className: 'game-introduce fold', introText: '展开' })
+        :this.setState({ className: 'game-introduce', introText: '收起' })
     }
     render(){
         return(
             <div className="details-box">
                 <div className="top-box">
+                    <div className="details-header-box">
+                        <Link to="/" className="head-left">&lt;</Link>
+                        <Link to="/search" className="search-input">
+                            <i className="iconfont icon-sousuo"></i>
+                        </Link>
+                    </div>
+                    
                     <div className="show" style={{borderRight:this.state.text}}>
                     </div>
                     <div className="images">
@@ -41,7 +51,11 @@ class Details extends Component {
                 </div>
                 
                 
-                <Content className={this.state.className} removeClass={this.removeClass}/>
+                <Content 
+                    className={this.state.className}
+                    introText={this.state.introText} 
+                    changeClass={this.changeClass}
+                />
             </div>
         )
     }

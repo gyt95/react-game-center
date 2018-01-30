@@ -21,7 +21,7 @@ class CommonStore {
         if(!this.homeData){
             this.loading = true;
             axios.get('/data', {dataType: 'json'})
-                .then(action(res =>{  //action只能影响正在执行的函数，而异步回调的话，意味着不是“正在执行”，因此需要用action包裹，才能在里面修改state
+                .then(action(res =>{  //@action只能影响正在执行的函数，而异步回调的话，意味着不是“正在执行”，因此需要用action包裹，才能在里面修改state
                     this.homeData = res.data;
                     this.loading = false;
                 })

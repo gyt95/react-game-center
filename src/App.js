@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Router,Route,Switch } from 'react-router-dom';
 
+// import asyncComponent from '@/utils/asyncComponent';
+// 教程 https://segmentfault.com/a/1190000010067597
+
 import Home from './components/Home/home';
 import Billboard from './components/Billboard/billboard';
 import Category from './components/Category/category';
