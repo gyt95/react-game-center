@@ -37,7 +37,7 @@ class Editor extends Component {
         let title = '';
         if (pathName === 'signature')
             title = '修改签名'
-        else if (pathName === 'game' || 'movie' || 'book')
+        else if (pathName === 'game' || pathName === 'movie' || pathName === 'book')
             title = '兴趣爱好'
         else
             title = '编辑资料'

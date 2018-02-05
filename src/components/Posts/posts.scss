@@ -1,0 +1,31 @@
+.posts-box{
+    .posts-header{
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        background: #f57d27;
+        z-index: 99;
+        width: 100%;
+        .nav{
+            line-height: 50px;
+            &:nth-child(2){
+                margin-right: 10px;
+            }
+        }
+        span{
+            color: #fff;
+            display: inline-block;
+            margin-left: 10px;
+        }
+    }
+    .main-box{
+
+    }
+    .edit-textarea{
+        min-height: 100px;
+        background: #fff;
+        margin: 10px;
+        overflow: auto;
+        outline: none;
+    }
+}

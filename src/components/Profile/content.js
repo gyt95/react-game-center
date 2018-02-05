@@ -44,6 +44,16 @@ const Content = ({hoby, info}) => (
                         </Link>
                     </div>
 
+                    <div id="sign" className="info-box">
+                        <Link to={`/posts/${info.id}`}>
+                            <div className="info-layout">
+                                <span>个人动态</span>
+                                <span>6条</span>
+                                <span>></span>
+                            </div>
+                        </Link>
+                    </div>
+
                     <div id="hoby" className="info-box hoby">
                         <p>兴趣爱好</p>
                         <ul>

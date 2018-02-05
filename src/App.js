@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router,Route,Switch } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 
 // import asyncComponent from '@/utils/asyncComponent';
 // 教程 https://segmentfault.com/a/1190000010067597
@@ -14,6 +14,7 @@ import Register from './components/Register/register';
 import Profile from './components/Profile/profile';
 import Editor from './components/Editor/editor';
 import Details from './components/Details/details';
+import Posts from './components/Posts/posts';
 import Error from './components/404/error';
 
 import createHistory from 'history/createBrowserHistory';
@@ -23,25 +24,26 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Router history = {history}>
-          <div className="container" ref="body"> 
+        <Router history={history}>
+          <div className="container" ref="body">
             {/*
               关于Switch
               1.<Switch> 下的子节点只能是 <Route> 或 <Redirect> 元素
               2.每次只匹配一个路由，只有与当前访问地址匹配的第一个子节点才会被渲染
             */}
             <Switch>
-              <Route exact path="/" component = { Home }/>
-              <Route path="/category" component = { Category }/>
-              <Route path="/billboard" component = { Billboard }/>
-              <Route path="/my" component = { My }/>
-              <Route path="/search" component = { Search }/>
-              <Route path="/login" component = { Login }/>
-              <Route path="/register" component = { Register }/>
-              <Route path="/profile" component = { Profile }/>
-              <Route path="/editor/:name" component = { Editor }/>              
-              <Route path="/details/:game_name" component = { Details }/>
-              <Route component={ Error }/>
+              <Route exact path="/" component={Home} />
+              <Route path="/category" component={Category} />
+              <Route path="/billboard" component={Billboard} />
+              <Route path="/my" component={My} />
+              <Route path="/search" component={Search} />
+              <Route path="/login" component={Login} />
+              <Route path="/register" component={Register} />
+              <Route path="/profile" component={Profile} />
+              <Route path="/editor/:name" component={Editor} />
+              <Route path="/details/:game_name" component={Details} />
+              <Route path="/posts/:user_id" component={Posts} />
+              <Route component={Error} />
             </Switch>
           </div>
         </Router>

@@ -48,6 +48,11 @@ class Details extends Component {
                         <p>两星</p>
                         <p>3000点评</p>
                     </div>
+                    <div className="game-tags">
+                        <span>电子竞技</span>
+                        <span>策略卡牌</span>
+                        <span>竞技对战</span>
+                    </div>
                 </div>
                 
                 

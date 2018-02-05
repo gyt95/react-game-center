@@ -54,7 +54,7 @@ class Login extends Component {
         return(
             <div className="login-box">
                 <div className="login-header">
-                    <Link to="/">&lt;</Link>
+                    <Link to="/my">&lt;</Link>
                     <span>登录页面</span>
                 </div>
                 <div className="form-table">

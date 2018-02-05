@@ -2,7 +2,7 @@
     .top-box{
         // background:#f2f2f2;
         // background: url('../../images/detail01-1.jpg') no-repeat 0 -160px;
-        height:190px;
+        height:220px;
         //filter:blur(5px); //毛玻璃效果，但会让文字也模糊掉，不适合
 
         //毛玻璃效果：&::before添加遮罩层，溢出部分隐藏即可。主要还是用filter:blur()
@@ -24,7 +24,7 @@
             //一个矩形，左边不动，向上延伸65，向下延伸20，向右延伸320
             border-top: 65px solid transparent;  /*控制梯形高度*/
             border-left: 0px solid transparent; /*控制梯形与左边距离*/
-            border-bottom: 20px solid #fff; 
+            border-bottom: 45px solid #fff; 
             border-right: 320px solid #fff; /*控制梯形宽度*/
             width: 0;
             height: 0;
@@ -51,6 +51,26 @@
             position: absolute;
             right: 0;
             top: 118px;
+        }
+        .game-tags{
+            position: absolute;
+            bottom: 0;
+            top: 180px;
+            span{
+                margin-left: 10px;
+                color: #fff;
+                padding: 5px;
+                border-radius: 10px;
+            }
+            span:nth-child(1){
+                background-color: blue;
+            }
+            span:nth-child(2){
+                background-color: red;
+            }
+            span:nth-child(3){
+                background-color: #ccc;
+            }
         }
         
         p{
@@ -87,6 +107,7 @@
 
     .main-box{
         padding-bottom: 50px;
+        margin-top: 20px;
     }
 
     ul{  //通过ul和li的简单设置实现横向滚动图片画廊

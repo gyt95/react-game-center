@@ -14,6 +14,7 @@ import commonStore from './stores/commonStore';
 import billboardStore from './stores/billboardStore';
 
 import registerServiceWorker from './registerServiceWorker';
+import 'antd-mobile/dist/antd-mobile.css';
 
 const stores = {
     authStore,

@@ -1,4 +1,5 @@
 import React from 'react';
+import {NoticeBar, WhiteSpace, Icon } from 'antd-mobile';
 
 import img01 from '../../images/detail01-1.jpg';
 import img02 from '../../images/detail01-2.jpg';
@@ -9,6 +10,10 @@ const Content = (props) => (
     <div>
         <div className="main-box">
             <div className="desc">
+                <WhiteSpace size="lg" />
+                <NoticeBar mode="link" onClick={() => alert('1')}>
+                    Notice: The arrival time of incomes and transfers of Yu &#39;E Bao will be delayed during National Day.
+                </NoticeBar>
                 <ul>
                     <li><img src={img01} alt=""/></li>
                     <li><img src={img02} alt=""/></li>
