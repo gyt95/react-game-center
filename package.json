@@ -4,6 +4,7 @@
   "private": true,
   "author": "gyt95",
   "dependencies": {
+    "antd-mobile": "^2.1.6",
     "axios": "^0.16.2",
     "material-ui": "^1.0.0-beta.19",
     "mockjs": "^1.0.1-beta3",

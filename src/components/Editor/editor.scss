@@ -35,6 +35,16 @@
             margin-right: .3rem;
         }
     }
+    .edit-option{
+        display: flex;
+        justify-content: space-between;
+        background: #fff;
+        border-bottom: 1px solid #f2f2f2;
+        padding: .2rem;
+        span{
+            margin-left: 5px;
+        }
+    }
     .main{
         position: absolute;
         top: 50px;
@@ -47,4 +57,7 @@
             outline: none;
         }
     }
+    .date-picker-list .am-list-item .am-list-line .am-list-extra {
+        flex-basis: initial;
+      }
 }

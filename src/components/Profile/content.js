@@ -8,7 +8,9 @@ const Content = ({hoby, info}) => (
     <div>
         <div className="profile-box">
             <div className="avatar-area">
-                <button>说点什么</button>
+                <Link to="/editor/info">
+                    <button>编辑资料</button>
+                </Link>
             </div>
             <div className="main">
                 <div className="my-identity">
@@ -29,25 +31,17 @@ const Content = ({hoby, info}) => (
                 </div>
                 <div className="my-info">
                     <div id="sign" className="info-box">
-                        {
-                            info===null||info.signature===null
-                            ?
-                            <Link to="/editor/signature">
-                                <div className="info-layout">
-                                    <span>个性签名</span>
-                                    <span>什么都没写</span>
-                                    <span>></span>
-                                </div>
-                            </Link>
-                            :
-                            <Link to="/editor/signature">
-                                <div className="info-layout">
-                                    <span>个性签名</span>
-                                    <span className="signature">{info.signature}</span>
-                                    <span>></span>
-                                </div>
-                            </Link>
-                        }
+                        <Link to="/editor/signature">
+                            <div className="info-layout">
+                                <span>个性签名</span>
+                                {
+                                    info===null||info.signature===null
+                                    ?<span>什么都没写</span>
+                                    :<span className="signature">{info.signature}</span>
+                                }
+                                <span>></span>
+                            </div>
+                        </Link>
                     </div>
 
                     <div id="hoby" className="info-box hoby">
