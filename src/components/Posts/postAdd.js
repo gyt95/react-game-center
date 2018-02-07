@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 
 class PostAdd extends Component {
-    render(){
-        return(
+    render() {
+        let {handlePostContent} = this.props;
+        return (
             <div className="main-box">
-                <div className="edit-textarea" contentEditable="true">
-
+                <div className="edit-textarea">
+                    <textarea onChange={handlePostContent.bind(this)}></textarea>
                 </div>
             </div>
         )

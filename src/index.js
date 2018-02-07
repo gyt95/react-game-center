@@ -12,6 +12,7 @@ import authStore from './stores/authStore';
 import userStore from './stores/userStore';
 import commonStore from './stores/commonStore';
 import billboardStore from './stores/billboardStore';
+import postStore from './stores/postStore';
 
 import registerServiceWorker from './registerServiceWorker';
 import 'antd-mobile/dist/antd-mobile.css';
@@ -20,7 +21,8 @@ const stores = {
     authStore,
     userStore,
     commonStore,
-    billboardStore
+    billboardStore,
+    postStore
 }
 
 useStrict(true); //开启严格模式（好处：mobx中必须用@action声明方法，否则报错）

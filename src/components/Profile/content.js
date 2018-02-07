@@ -45,7 +45,12 @@ const Content = ({hoby, info}) => (
                     </div>
 
                     <div id="sign" className="info-box">
-                        <Link to={`/posts/${info.id}`}>
+                        <Link to='/posts/4'>
+                        {/*应该有个判断：
+                            1.将info对象setItem到localStorage 
+                            2.如果info为null，重新发送http请求
+                        */}
+                        {/*<Link to={`/posts/${info.id}`}>*/}
                             <div className="info-layout">
                                 <span>个人动态</span>
                                 <span>6条</span>

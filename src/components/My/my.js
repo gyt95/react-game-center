@@ -45,7 +45,13 @@ class My extends Component{
         return "";
     }
     clearCookie(cookieName) {  
-        this.setCookie(cookieName, "", -1);  
+        // 法1
+        // this.setCookie(cookieName, "", -1); 
+        
+        // 法2
+        var date = new Date();   
+        date.setTime(date.getTime() - 10000);   
+        document.cookie = cookieName + "=a; expires=" + date.toGMTString();  
     }  
     setCookie(cname, cvalue, exdays) {
         var d = new Date();

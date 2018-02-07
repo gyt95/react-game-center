@@ -31,7 +31,11 @@ let profileData = {
 class Profile extends Component {
     componentWillMount() {
         document.title = '个人资料';
+        
+    }
+    componentDidMount() {
         if (!this.props.userStore.tokenInCookie) {  //这一层防止每次到该组件都发送一次请求来判断缓存是否带token
+            console.log(22222)
             const token = getCookie('token');
             if (token) {
                 this.props.authStore.show(token)
@@ -43,8 +47,6 @@ class Profile extends Component {
                     .catch(err => console.log(err))
             }
         }
-    }
-    componentDidMount() {
         console.log(this.props.userStore.userInfo)
     }
     render() {

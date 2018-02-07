@@ -19,7 +19,14 @@
         }
     }
     .main-box{
-
+        a{
+            display: block;
+            // margin: 10px 0;
+            padding: 10px 0;
+        }
+        .am-card-footer-extra{
+            flex: 2;
+        }
     }
     .edit-textarea{
         min-height: 100px;
@@ -27,5 +34,11 @@
         margin: 10px;
         overflow: auto;
         outline: none;
+    }
+    textarea{
+        width: 98%;
+        min-height: 85px;
+        /* border: 0; */
+        resize: none;
     }
 }

@@ -1,4 +1,4 @@
-import { observable, action } from 'mobx';
+import { observable, action, toJS } from 'mobx';
 
 class UserStore {
     @observable currentUser = null;
@@ -7,16 +7,20 @@ class UserStore {
 
     @observable userInfo = null;
 
-    @action pullUser(values){
+    @action pullUser(values) {
         this.currentUser = values;
     }
 
-    @action check(){
+    @action check() {
         this.tokenInCookie = true;
     }
 
-    @action getUserInfo(info){
+    @action getUserInfo(info) {
         this.userInfo = info;
+    }
+
+    @action getCurrentUser() {
+        return toJS(this.currentUser);
     }
 }
 
