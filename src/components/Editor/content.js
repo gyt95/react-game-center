@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { DatePicker } from 'antd-mobile';
 
 const Content = ({ title, pathName, handleSubmitForm, userInfo }) => (
     <div className="edit-box">

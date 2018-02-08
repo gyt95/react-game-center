@@ -7,6 +7,8 @@ class PostStore {
 
     @observable postList = null;
 
+    @observable postNavFlag = 0; // 0:postList 1:postAdd 2:postDetails
+
     @action setPostContent(content) {
         this.content = content;
     }
@@ -47,6 +49,11 @@ class PostStore {
             .catch(err => console.log(err))
     }
 
+    @action changePostFlag(num){
+        console.log(num+'???')
+        this.postNavFlag = num;
+    }
+
     @action deletePost() {
 
     }
@@ -64,9 +71,16 @@ class PostStore {
         })
             .then(res => {
                 console.log(res)
-                if (res.status == 200 && res.data.length > 0) {
+                if (res.status === 200 && res.data.length > 0) {
                     console.log(res.data)
                     console.log('====')
+
+                    res.data.map(data => {
+                        if (data.content.indexOf('\n')) {
+                            data.content = data.content.replace(/\n/g, '<br/>')
+                        }
+                    })
+                    console.log(res.data)
                     this.test(res.data);
                     return res.data;
                 } else {
@@ -77,7 +91,7 @@ class PostStore {
             .catch(err => console.log(err))
     }
 
-    @action test(data){
+    @action test(data) {
         this.postList = data;
     }
 

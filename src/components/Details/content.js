@@ -1,5 +1,5 @@
 import React from 'react';
-import {NoticeBar, WhiteSpace, Icon } from 'antd-mobile';
+import {NoticeBar, WhiteSpace } from 'antd-mobile';
 
 import img01 from '../../images/detail01-1.jpg';
 import img02 from '../../images/detail01-2.jpg';

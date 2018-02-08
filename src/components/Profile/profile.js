@@ -34,8 +34,12 @@ class Profile extends Component {
         
     }
     componentDidMount() {
-        if (!this.props.userStore.tokenInCookie) {  //这一层防止每次到该组件都发送一次请求来判断缓存是否带token
-            console.log(22222)
+        console.log(this.props.userStore.tokenInCookie)
+
+        // 这个判断有问题，当有新token时，tokenInCookie还是true，就不会去请求新的
+        // 需要加多个判断，判断新token里解析出的id，是否和已有的数据中的id相同，不是，则重新请求
+        // if (!this.props.userStore.tokenInCookie) {  //这一层防止每次到该组件都发送一次请求来判断缓存是否带token
+        //     console.log(22222)
             const token = getCookie('token');
             if (token) {
                 this.props.authStore.show(token)
@@ -46,7 +50,7 @@ class Profile extends Component {
                     })
                     .catch(err => console.log(err))
             }
-        }
+        // }
         console.log(this.props.userStore.userInfo)
     }
     render() {
