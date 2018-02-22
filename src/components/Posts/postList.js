@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { Card, WingBlank } from 'antd-mobile';
 
 import PostDetails from './postDetails';

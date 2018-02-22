@@ -107,16 +107,120 @@
 
     .main-box{
         padding-bottom: 50px;
-        margin-top: 20px;
+        padding-top: 10px;
+        background-color: lightgrey;
+    }
+
+    .am-notice-bar{
+        background: #fff;
+    }
+
+    .game-detail-box{
+        background: #fff;
+        margin-top: 10px;
+        .box-title{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            .box-num{
+                span:first-child{
+                    color: orange;
+                }
+            }
+            strong{
+                color: orange;
+                font-size: 16px;
+            }
+        }
+        .news-item{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            span{
+                color: grey;
+            }
+        }
+        img{
+            display: inline-block;
+            width: 100px;
+            height: 45px;
+        }
+
+        .box-btn{
+            margin: 0 10px;
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+            a{
+                border: 1px solid orange;
+                color: orange;
+                display: block;
+                text-align: center;
+                padding: .15rem .1rem;
+                border-radius: 4px;
+            }
+        }
+
+        .comments-item{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 130px;
+            border-bottom: 1px solid #ccc;
+            padding: 10px;
+            .c-avatar{
+                img{
+                    display: inline-block;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    top: 0;
+                    border: 0;
+                }
+            }
+            .c-content{
+                flex: 2;
+                margin-left: 10px;
+            }
+            .c-avatar,.c-content{
+                height: 100%;
+            }
+            .c-name{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 30px;
+            }
+            .c-text{
+                height: 80px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 5;
+                /* autoprefixer: off */
+                -webkit-box-orient: vertical;
+                 /* autoprefixer: on */
+            }
+            .c-bottom{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                span{
+                    color: grey;
+                }
+            }
+        }
     }
 
     ul{  //通过ul和li的简单设置实现横向滚动图片画廊
         width: 100%;
         overflow: scroll;
         display: flex;
+        padding: 0 10px;
         li{
             display: inline-block;
-            padding: .1rem;
+            padding: .1rem .1rem 0 0;
         }
         img{
             width: 108px;
@@ -126,13 +230,13 @@
 
     .game-introduce{
         position: relative;
-        
-        .game-introduce-more{
-            position: absolute;
-            color: orange;
-            right: 10px;
-            bottom: 0px;
-        }
+        padding: 10px 10px 0;
+    }
+    .game-introduce-more{
+        position: absolute;
+        color: orange;
+        right: 10px;
+        bottom: 0px;
     }
     .fold{
         display: -webkit-box;
@@ -164,5 +268,13 @@
             border-radius: 5px;
             line-height: 25px;
         }
+    }
+
+    // 修改antd-moblie默认样式
+    .am-tabs-default-bar-tab-active{
+        color: orange;
+    }
+    .am-tabs-default-bar-underline{
+        border: 1px solid orange;
     }
 }
