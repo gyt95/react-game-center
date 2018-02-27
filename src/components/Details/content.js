@@ -16,13 +16,6 @@ const tabs = [
     // { title: <Badge dot>论坛</Badge> }
 ]
 
-const tabs2 = [
-    {title:'First Tab', sub:'1'},
-    {title:'Second Tab', sub:'2'},
-    {title:'Third Tab', sub:'3'},
-    {title:'Forth Tab', sub:'4'}
-]
-
 const Content = (props) => (
     <div>
         <div className="main-box">

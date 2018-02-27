@@ -5,7 +5,7 @@ import { Provider } from 'mobx-react';
 
 import './style/base.scss';
 import './assets/font/iconfont.css';
-import './config/config.js';
+import './utils/rem.js';
 import App from './App';
 
 import authStore from './stores/authStore';

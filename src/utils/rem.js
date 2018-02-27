@@ -28,7 +28,3 @@
     }
     win.addEventListener(resizeEvt, test, false);
 })(document, window);
-
-((doc)=>{
-    
-})(document)

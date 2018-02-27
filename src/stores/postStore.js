@@ -75,11 +75,12 @@ class PostStore {
                     console.log(res.data)
                     console.log('====')
 
-                    res.data.map(data => {
+                    res.data.forEach(data => {
                         if (data.content.indexOf('\n')) {
                             data.content = data.content.replace(/\n/g, '<br/>')
                         }
                     })
+                    console.log('返回列表数据成功.')
                     console.log(res.data)
                     this.test(res.data);
                     return res.data;
