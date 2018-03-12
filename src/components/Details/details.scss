@@ -135,8 +135,8 @@
         }
         .news-item{
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: space-between;
+            // align-items: center;
             padding: 10px;
             span{
                 color: grey;

@@ -1,5 +1,5 @@
 import React from 'react';
-import {NoticeBar, WhiteSpace,Tabs,Badge } from 'antd-mobile';
+import { NoticeBar, WhiteSpace, Tabs, Badge } from 'antd-mobile';
 
 import img01 from '../../images/detail01-1.jpg';
 import img02 from '../../images/detail01-2.jpg';
@@ -31,23 +31,23 @@ const Content = (props) => (
                         </NoticeBar>
                         <WhiteSpace size="lg" />
                         <ul>
-                            <li><img src={img01} alt=""/></li>
-                            <li><img src={img02} alt=""/></li>
-                            <li><img src={img03} alt=""/></li>
-                            <li><img src={img04} alt=""/></li>
+                            <li><img src={img01} alt="" /></li>
+                            <li><img src={img02} alt="" /></li>
+                            <li><img src={img03} alt="" /></li>
+                            <li><img src={img04} alt="" /></li>
                         </ul>
                         <div className={props.className}>
-                            游戏介绍：《荒野行动》，真正做到了容纳100人开局对战。超大地图超远视距，手机端精心设计多种操作模式，带给玩家畅快舒适的竞技体验！ 
-                            <br/>
+                            游戏介绍：《荒野行动》，真正做到了容纳100人开局对战。超大地图超远视距，手机端精心设计多种操作模式，带给玩家畅快舒适的竞技体验！
+                            <br />
                             6400*6400超大世界，真正容纳100人开局！跋涉山峦旷野，探索城镇村郊！组队开黑，战术配合花样迭出；道具种类丰富，自由搭配，更有多种配件强力升级；针对手机端精心设计多种操作模式，提供极致竞技体验！
-                            
+
                         </div>
                         <div className="game-introduce-more" onClick={props.changeClass}>
-                                {props.introText}
-                            </div>
+                            {props.introText}
+                        </div>
                         <WhiteSpace size="lg" />
 
-                        
+
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '250px', backgroundColor: '#fff' }}>
                         Content of second tab
@@ -72,7 +72,7 @@ const Content = (props) => (
                             <span>综合 2018-02-11 13:49:00</span>
                         </div>
                         <div>
-                            <img src={gnews} alt=""/>
+                            <img src={gnews} alt="" />
                         </div>
                     </div>
                     <div className="news-item">
@@ -81,7 +81,7 @@ const Content = (props) => (
                             <span>综合 2018-02-11 13:49:00</span>
                         </div>
                         <div>
-                            <img src={gnews} alt=""/>
+                            <img src={gnews} alt="" />
                         </div>
                     </div>
                 </div>
@@ -100,7 +100,7 @@ const Content = (props) => (
                     </div>
                     <div className="comments-item">
                         <div className="c-avatar">
-                            <img src={hjqy} alt=""/>
+                            <img src={hjqy} alt="" />
                         </div>
                         <div className="c-content">
                             <div className="c-name">
@@ -108,11 +108,11 @@ const Content = (props) => (
                                 <span>最高赞top5有这段话</span>
                             </div>
                             <div className="c-text">
-                                这是评论内容。<br/>说点什么?
-                                <br/> Hello!!
-                                <br/> Hello!!Hello!!
-                                <br/> Hello!!Hello!!后面还有内容
-                                <br/> what
+                                这是评论内容。<br />说点什么?
+                                <br /> Hello!!
+                                <br /> Hello!!Hello!!
+                                <br /> Hello!!Hello!!后面还有内容
+                                <br /> what
                             </div>
                             <div className="c-bottom">
                                 <span>2017-12-31</span>
@@ -125,7 +125,7 @@ const Content = (props) => (
                     </div>
                     <div className="comments-item">
                         <div className="c-avatar">
-                            <img src={hjqy} alt=""/>
+                            <img src={hjqy} alt="" />
                         </div>
                         <div className="c-content">
                             <div className="c-name">
@@ -142,7 +142,7 @@ const Content = (props) => (
                             </div>
                         </div>
                     </div>
-                </div>              
+                </div>
             </div>
         </div>
 
