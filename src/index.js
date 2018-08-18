@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import { useStrict } from 'mobx';
 import { Provider } from 'mobx-react';
 
-import './style/base.scss';
-import './assets/font/iconfont.css';
+import './assets/style/base.scss';
 import './utils/rem.js';
 import App from './App';
 

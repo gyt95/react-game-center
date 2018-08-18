@@ -1,3 +1,37 @@
+@font-face {    // 前缀在iconfont中生成
+    font-family: 'iconfont';
+    src: url('//at.alicdn.com/t/font_426391_y0vkruheu4g.eot');
+    src: url('//at.alicdn.com/t/font_426391_y0vkruheu4g.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_426391_y0vkruheu4g.woff') format('woff'),
+    url('//at.alicdn.com/t/font_426391_y0vkruheu4g.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_426391_y0vkruheu4g.svg#iconfont') format('svg');
+}
+  
+.iconfont {
+    font-family:"iconfont" !important;
+    font-size:16px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+  
+.icon-iconfontlttb:before { content: "\e635"; }
+  
+.icon-wo:before { content: "\e60a"; }
+  
+.icon-shouye:before { content: "\e616"; }
+  
+.icon-faxian:before { content: "\e609"; }
+  
+.icon-sousuo:before { content: "\e61c"; }
+  
+.icon-wendashoujibanICON-:before { content: "\e689"; }
+  
+.icon-xiazai1:before { content: "\e62f"; }
+  
+.icon-bangdanpaihangon:before { content: "\e679"; }
+
+  
 body {
     margin: 0;
     padding: 0;
@@ -76,10 +110,3 @@ span{
 //         font-weight: bold;
 //     }
 // }
-  
-
-  
-  
-  
- 
-  
