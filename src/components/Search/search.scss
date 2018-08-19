@@ -122,26 +122,28 @@ $or:orangered;
         background: $f;
         z-index: 6;
         width: 70%;
-        padding: 1rem;
+        padding: .5rem;
         border-radius: 5px;
         display: none;
         p{
             color: $or;
             padding-bottom: 0.5rem;
             border-bottom: 1px solid $or;
+            font-size: 16px;
         }
         span{
             color: #000;
+            font-size: 16px;
         }
         .clean-btn{
-            margin-top: 2rem;
+            margin-top: .5rem;
             display: flex;
             justify-content: space-between
         }
         input{
             display: inline-block;
             width: 45%;
-            padding: 0.5rem;
+            padding: .2rem;
             text-align: center;
             outline: 0;
         }

@@ -65,7 +65,7 @@ class Search extends Component{
                     </div>
                     <div className="mask" ref="mask"></div>
                     <div className="modal" ref="modal">
-                        <p>清空</p>
+                        <p>提示</p>
                         <span>是否清空历史记录？</span>
                         <div className="clean-btn">
                             <input type="submit" value="取消" onClick = { this.modalHide } />
