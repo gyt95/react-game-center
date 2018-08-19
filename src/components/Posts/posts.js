@@ -10,6 +10,13 @@ import { getCookie } from '../../utils/utils';
 @inject('postStore', 'userStore')
 @observer
 class Posts extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            postData: null,
+            check: false
+        }
+    }
     componentWillMount() {
         console.log(this.props.userStore.getCurrentUser())
         const token = getCookie('token');
@@ -23,15 +30,6 @@ class Posts extends Component {
         this.setState({
             postData: this.props.postStore.getPostData()
         })
-        console.log('em.......')
-        console.log(this.state.postData)
-    }
-    constructor(props) {
-        super(props)
-        this.state = {
-            postData: null,
-            check: false
-        }
     }
     componentDidMount() {
         console.log(this.props.postStore.postList)
@@ -42,10 +40,9 @@ class Posts extends Component {
         if (token) {
             this.props.postStore.addPost(token)
                 .then(res => {
-                    console.log('ok. 请求结束')
-                    window.location.href = `/profile/${name}`
                     console.log(res)
                     this.props.userStore.check(true);
+                    window.location.href = `/profile/${name}`
                 })
                 .catch(err => console.log(err))
         }
@@ -56,12 +53,23 @@ class Posts extends Component {
         : this.props.postStore.changePostFlag(0)
     }
     delPost() {
-        alert('删除啦')
+        const name = this.props.userStore.getCurrentUser().username;
+        const token = getCookie('token');
+        if(token){
+            this.props.postStore.deletePost(token)
+                .then(res => {
+                    console.log(res)
+                    this.props.userStore.check(true);
+                    window.location.href = `/profile/${name}`
+                })
+                .catch(err => console.log(err))
+        }
     }
     handlePostContent = e => {   // 存储动态的内容
         this.props.postStore.setPostContent(e.target.value);
     }
     render() {
+        const { currPostId } = this.props.postStore;
         return (
             <div className="posts-box">
                 {
@@ -113,7 +121,25 @@ class Posts extends Component {
                         } else if (this.props.postStore.postNavFlag === 1) {
                             return (<PostAdd handlePostContent={this.handlePostContent.bind(this)} />)
                         } else if (this.props.postStore.postNavFlag === 2) {
-                            return (<div>333</div>)
+                            return (
+                                <div>
+                                    {
+                                        this.state.postData.map(data =>
+                                            {
+                                                if(data.id === currPostId){
+                                                    return(
+                                                        <div key={data.id} className="posts-content">
+                                                            {data.content}
+                                                        </div>
+                                                    )
+                                                }else{
+                                                    return null
+                                                }
+                                            } 
+                                        )
+                                    }
+                                </div>
+                            )
                         }
                     })()
                 }

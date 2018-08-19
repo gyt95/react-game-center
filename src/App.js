@@ -42,7 +42,7 @@ class App extends Component {
               <Route path="/profile" component={Profile} />
               <Route path="/editor/:name" component={Editor} />
               <Route path="/details/:game_name" component={Details} />
-              <Route path="/posts/:user_id" component={Posts} />
+              <Route path="/posts" component={Posts} />
               <Route component={Error} />
             </Switch>
           </div>

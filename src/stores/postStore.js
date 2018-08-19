@@ -7,6 +7,8 @@ class PostStore {
 
     @observable postList = null;
 
+    @observable currPostId = '';
+
     @observable postNavFlag = 0; // 0:postList 1:postAdd 2:postDetails
 
     @action setPostContent(content) {
@@ -54,8 +56,27 @@ class PostStore {
         this.postNavFlag = num;
     }
 
-    @action deletePost() {
+    @action deletePost(token) {
+        console.log(this.currPostId)
+        return axios({
+            method: 'DELETE',
+            url: '/api/users/posts/' + this.currPostId,
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token,
+            },
+            data: {
+                post_id: this.currPostId
+            }
+        })
+        .then(res => {
+            console.log(res)
+            return res.data;
+        })
+    }
 
+    @action saveCurrPostId(post_id){
+        this.currPostId = post_id;
     }
 
     @action getPostList(token) {
@@ -73,7 +94,6 @@ class PostStore {
                 console.log(res)
                 if (res.status === 200 && res.data.length > 0) {
                     console.log(res.data)
-                    console.log('====')
 
                     res.data.forEach(data => {
                         if (data.content.indexOf('\n')) {
@@ -81,8 +101,7 @@ class PostStore {
                         }
                     })
                     console.log('返回列表数据成功.')
-                    console.log(res.data)
-                    this.test(res.data);
+                    this.postList = res.data;
                     return res.data;
                 } else {
                     console.log('返回数据失败????')
@@ -90,10 +109,6 @@ class PostStore {
 
             })
             .catch(err => console.log(err))
-    }
-
-    @action test(data) {
-        this.postList = data;
     }
 
     @action getPostData() {

@@ -20,6 +20,10 @@
             font-size: .3rem;
         }
     }
+    .posts-content{
+        font-size: .3rem;
+        padding: .3rem;
+    }
     .main-box{
         .am-card{
             display: block;
@@ -31,9 +35,18 @@
             overflow: hidden;
         }
         .am-card-footer-extra{
-            flex: 2;
+            flex: inherit;
         }
-        
+        // .am-card-footer-extra{
+        //     flex: 2;
+        // }
+        .am-card-footer-content{
+            flex: inherit;
+            margin-right: .2rem;
+        }
+        .am-card-footer{
+            justify-content: flex-end;
+        }
     }
     .edit-textarea{
         min-height: 100px;

@@ -35,9 +35,9 @@ class CommonStore {
         this.loading = true;
         return axios.get('/api/game')
             .then(res => {
-                console.log(res.data)
-                this.homeList = res.data;
-                return res.data
+                console.log(res.data.data)
+                this.homeList = res.data.data;
+                return res.data.data
             })
             .catch(err => console.log(err))
     }
