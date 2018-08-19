@@ -18,11 +18,19 @@ class Home extends Component{ //定义一个继承于react顶层Component的新�
         this.state = {
             showBack: false,  //回到顶部按钮是否显示
             isTop: false,    //是否回滚到顶部，手动终止回滚时，通过判断isTop来清空定时器
+            homeData: null  // 首页游戏列表数据
         }
         this.backClick = this.backClick.bind(this)
     }
     componentWillMount(){
         document.title = '首页'
+        this.props.commonStore.loadHomeList()
+            .then(res => {
+                console.log(res)
+                this.setState({
+                    homeData: this.props.commonStore.getHomeData()
+                })
+            })
     }
     /**监听滚动条事件 */
     scrollHandler = this.handleScroll.bind(this);
@@ -30,8 +38,6 @@ class Home extends Component{ //定义一个继承于react顶层Component的新�
         //理论上此时的this指向的是window，但由于已经在constructor()中通过显示绑定this，将this指向了当前组件
         //因此现在监听器中的this指向的是这个组件
         window.addEventListener('scroll', this.scrollHandler);
-        this.props.commonStore.loadHomeData();
-
     }
     _handleScroll(scrollTop,screenHeight) {
         // console.log(scrollTop)         //滚动条距离页面的高度
@@ -79,7 +85,7 @@ class Home extends Component{ //定义一个继承于react顶层Component的新�
     render(){
         let text = this.state.showBack ? 'block' : 'none',
             style = { display: text };
-        const { homeData,loading } = this.props.commonStore;
+        const { loading } = this.props.commonStore;
         
         return(
             <div className="main">
@@ -88,7 +94,7 @@ class Home extends Component{ //定义一个继承于react顶层Component的新�
                 {
                     loading
                     ? <Loading />
-                    : <Content homeData = {homeData} style = {style} backClick = {this.backClick}/> 
+                    : <Content homeData = {this.state.homeData} style = {style} backClick = {this.backClick}/> 
                 }
                 
                 <Footer/>

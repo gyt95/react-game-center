@@ -3,15 +3,10 @@ import Slider from 'react-slick';
 
 import banner1 from '../../images/banner1.png';
 import card2 from '../../images/index_card2.png';
-import hjqy from '../../images/index_hjqy.png';
-
-import { toJS } from 'mobx';
-import { Link } from 'react-router-dom';
 
 import index_card1 from '../../images/index_card1.png';
 import index_card2 from '../../images/index_card2.png';
 import NavCard from './navCard';
-
 
 let data = {
     navbar:['新游','网游','每日推荐','单机','开测'],
@@ -31,9 +26,7 @@ let data = {
     ]
 }
 class Content extends Component {
-    
     render(){
-        let homeData = toJS(this.props.homeData)
         const settings = {
             arrows: false,
             infinite: true,
@@ -58,22 +51,20 @@ class Content extends Component {
                     </div>
                     <ul className="list-details">
                         {
-                            homeData
+                            this.props.homeData != null
                             ?
-                            homeData.subjects.map((data =>
-                                <Link key={data.id} to={data.href}>
-                                    <li>
-                                        <div className="item-photo">
-                                            <img src={hjqy} alt=""/>
-                                        </div>
-                                        <div className="item-detail">
-                                            <p className="item-name">{data.title}</p>
-                                            <span className="item-size">{data.type} | {data.size}</span>
-                                            <span className="item-text">2017年经典手游重磅巨制！</span>
-                                        </div>
-                                        <div className="item-btn"><button>下载</button></div>
-                                    </li>
-                                </Link>
+                            this.props.homeData.map((data =>
+                                <li key={data.id}>
+                                    <div className="item-photo">
+                                        <img src={data.image} alt=""/>
+                                    </div>
+                                    <div className="item-detail">
+                                        <p className="item-name">{data.name}</p>
+                                        <span className="item-size">{data.type} | {data.size}</span>
+                                        <span className="item-text">{data.summary}</span>
+                                    </div>
+                                    <div className="item-btn"><button>下载</button></div>
+                                </li>
                                 )
                             )
                             : <div></div>
